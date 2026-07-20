@@ -1,0 +1,30 @@
+generated: '2026-07-18'
+method: searched
+source: openapi/datanomik-openbanking-openapi.json, openapi/datanomik-remuneration-openapi.json
+docs: https://docs.datanomik.com/docs/create-account
+summary:
+  types:
+  - http
+  http_schemes:
+  - basic
+  model: api-keys-http-basic
+notes: >-
+  Datanomik authenticates every request with HTTP Basic credentials. After creating a
+  dashboard account you generate a pair of API keys - secretId (username) and
+  secretPassword (password) - at https://dashboard.datanomik.com/#/settings/api-keys and
+  send them as HTTP Basic auth. The secretPassword is shown only once at generation time
+  and cannot be recovered; if lost you must regenerate the key pair. Keys are scoped per
+  environment (sandbox vs production) and links created in one environment cannot be used
+  in another. Role-based access (e.g. ROLE_PAYMENTS_READ, ROLE_INVESTMENTS_READ) governs
+  which endpoints a key pair can call.
+schemes:
+- name: sec0
+  type: http
+  scheme: basic
+  description: HTTP Basic auth using generated API keys (secretId / secretPassword).
+  sources:
+  - openapi/datanomik-openbanking-openapi.json
+  - openapi/datanomik-remuneration-openapi.json
+roles:
+- ROLE_PAYMENTS_READ
+- ROLE_INVESTMENTS_READ
