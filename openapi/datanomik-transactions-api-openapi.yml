@@ -1,0 +1,382 @@
+openapi: 3.1.0
+info:
+  title: openbanking-api Accounts Transactions API
+  version: '1.0'
+servers:
+- url: https://api.datanomik.com
+tags:
+- name: Transactions
+paths:
+  /v1/transactions:
+    post:
+      summary: Create Manual Transaction
+      description: Create a link
+      operationId: create-manual-transaction
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                RAW_BODY:
+                  type: array
+                  items:
+                    properties:
+                      account_id:
+                        type: string
+                        description: Account Id from Account > List Accounts
+                      date:
+                        type: string
+                        description: Projected transaction date
+                        format: date
+                      type:
+                        type: string
+                        description: Transaction Type
+                        enum:
+                        - INFLOW
+                        - OUTFLOW
+                      categories_ids:
+                        type: array
+                        description: Transaction Category Id list from Transactions > List Transactions Categories
+                        default: []
+                        items:
+                          type: string
+                      amount:
+                        type: number
+                        description: Transaction Amount
+                        format: double
+                      external_id:
+                        type: string
+                        description: External transaction Id
+                      description:
+                        type: string
+                        description: Transaction Description
+                      reference:
+                        type: string
+                        description: Transaction Reference
+                    required:
+                    - account_id
+                    - date
+                    - type
+                    - amount
+                    - external_id
+                    type: object
+            examples:
+              Request Example:
+                value:
+                - account_id: bb01472b-e39e-467c-9661-99e48b090efd
+                  categories_ids:
+                  - 79c7e4d8-888c-48cc-b680-2e7f04b8d255
+                  date: '2028-02-01'
+                  type: OUTFLOW
+                  reference: Reference
+                  description: Description
+                  amount: 100
+                  external_id: '123456789'
+                  sender:
+                    document: 91.336.009/0001-23
+                    document_type: CNPJ
+                    display_name: Juan Carlos Da Silva
+                    reference: Pagamento
+                  beneficiary:
+                    document: 34.267.781/0001-05
+                    document_type: CNPJ
+                    display_name: Alison
+                    reference: Pagamento
+      responses:
+        '201':
+          description: '201'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "[\n    {\n        \"id\": \"0771de3f-1df9-46ab-b7c5-e28c4a864093\",\n        \"date\": \"2028-02-01\",\n        \"description\": \"Description\",\n        \"reference\": \"Reference\",\n        \"type\": \"OUTFLOW\",\n        \"mode\": \"MANUAL\",\n        \"currency\": \"UYU\",\n        \"amount\": 100.00,\n        \"link\": {\n            \"id\": \"ac89fb64-272b-460e-a6d1-6a572b547bf9\",\n            \"country\": \"UY\",\n            \"institution\": \"ITAU\",\n            \"institution_description\": \"Itau\",\n            \"institution_logo\": \"https://resources.datanomik.com/institutions/uy/Itau.svg\"\n        },\n        \"account\": {\n            \"id\": \"bb01472b-e39e-467c-9661-99e48b090efd\",\n            \"account_number\": \"2346467\",\n            \"owner\": {\n                \"id\": \"012ca1d9-6193-49e4-bf83-c5c058d92d10\",\n                \"document\": \"333587948682\",\n                \"document_type\": \"RUT\",\n                \"display_name\": \"BATISTA BARRIOS PLC\"\n            }\n        },\n        \"status\": \"APPROVED\",\n        \"additional_data\": {},\n        \"categories\": [\n            {\n                \"id\": \"79c7e4d8-888c-48cc-b680-2e7f04b8d255\",\n                \"name\": \"Test Categories\",\n                \"color\": \"#FFE2B6\",\n                \"type\": \"OUTFLOW\",\n                \"ordering\": 0,\n                \"multiple_categorize\": false\n            }\n        ]\n    }\n]"
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    id:
+                      type: string
+                      example: 0771de3f-1df9-46ab-b7c5-e28c4a864093
+                    date:
+                      type: string
+                      example: '2028-02-01'
+                    description:
+                      type: string
+                      example: Description
+                    reference:
+                      type: string
+                      example: Reference
+                    type:
+                      type: string
+                      example: OUTFLOW
+                    mode:
+                      type: string
+                      example: MANUAL
+                    currency:
+                      type: string
+                      example: UYU
+                    amount:
+                      type: integer
+                      example: 100
+                      default: 0
+                    link:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: ac89fb64-272b-460e-a6d1-6a572b547bf9
+                        country:
+                          type: string
+                          example: UY
+                        institution:
+                          type: string
+                          example: ITAU
+                        institution_description:
+                          type: string
+                          example: Itau
+                        institution_logo:
+                          type: string
+                          example: https://resources.datanomik.com/institutions/uy/Itau.svg
+                    account:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: bb01472b-e39e-467c-9661-99e48b090efd
+                        account_number:
+                          type: string
+                          example: '2346467'
+                        owner:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              example: 012ca1d9-6193-49e4-bf83-c5c058d92d10
+                            document:
+                              type: string
+                              example: '333587948682'
+                            document_type:
+                              type: string
+                              example: RUT
+                            display_name:
+                              type: string
+                              example: BATISTA BARRIOS PLC
+                    status:
+                      type: string
+                      example: APPROVED
+                    additional_data:
+                      type: object
+                      properties: {}
+                    categories:
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          id:
+                            type: string
+                            example: 79c7e4d8-888c-48cc-b680-2e7f04b8d255
+                          name:
+                            type: string
+                            example: Test Categories
+                          color:
+                            type: string
+                            example: '#FFE2B6'
+                          type:
+                            type: string
+                            example: OUTFLOW
+                          ordering:
+                            type: integer
+                            example: 0
+                            default: 0
+                          multiple_categorize:
+                            type: boolean
+                            example: false
+                            default: true
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"code\": 456,\n    \"type\": \"INVALID_REQUEST_BODY\",\n    \"message\": \"Invalid request body\",\n    \"trace_id\": \"d7640f6728efb826\"\n}"
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 456
+                    default: 0
+                  type:
+                    type: string
+                    example: INVALID_REQUEST_BODY
+                  message:
+                    type: string
+                    example: Invalid request body
+                  trace_id:
+                    type: string
+                    example: d7640f6728efb826
+        '404':
+          description: '404'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"code\": 620,\n    \"type\": \"ACCOUNT_NOT_FOUND\",\n    \"message\": \"Account resource not found.\",\n    \"trace_id\": \"8d274b5b5c502dbe\"\n}"
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 620
+                    default: 0
+                  type:
+                    type: string
+                    example: ACCOUNT_NOT_FOUND
+                  message:
+                    type: string
+                    example: Account resource not found.
+                  trace_id:
+                    type: string
+                    example: 8d274b5b5c502dbe
+      deprecated: false
+      tags:
+      - Transactions
+  /api/v1/transactions:
+    get:
+      summary: List Transactions
+      description: ''
+      operationId: list-remunerated-account-transactions
+      parameters:
+      - name: page
+        in: query
+        description: Page Number
+        required: true
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: size
+        in: query
+        description: Page Size
+        required: true
+        schema:
+          type: integer
+          format: int32
+          default: 50
+      - name: dateFrom
+        in: query
+        description: Transaction Date From
+        required: true
+        schema:
+          type: string
+          format: date
+      - name: dateTo
+        in: query
+        description: Transaction Date To
+        required: true
+        schema:
+          type: string
+          format: date
+      - name: fiscalNumber
+        in: query
+        description: Account Fiscal Number
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"content\": [\n        {\n            \"id\": \"79470875-dcdc-447b-8bd2-881f1ae6be2e\",\n            \"externalId\": \"20250401-2201-EMP600016\",\n            \"cnpj\": \"56941234567890\",\n            \"branch\": \"0001\",\n            \"accountNumber\": \"654321-0\",\n            \"currency\": \"BRL\",\n            \"amount\": 22.00,\n            \"date\": \"2025-04-01\",\n            \"type\": \"INFLOW\",\n            \"mode\": \"CONTAREMUNERADA\",\n            \"description\": \"REPASSE CONTA REMUNERADA CLIENTE\",\n            \"redemptionProcessed\": false\n        }\n    ],\n    \"first\": true,\n    \"last\": true,\n    \"pageNumber\": 0,\n    \"pageSize\": 50,\n    \"totalElements\": 1,\n    \"totalPages\": 1\n}"
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 79470875-dcdc-447b-8bd2-881f1ae6be2e
+                        externalId:
+                          type: string
+                          example: 20250401-2201-EMP600016
+                        cnpj:
+                          type: string
+                          example: '56941234567890'
+                        branch:
+                          type: string
+                          example: '0001'
+                        accountNumber:
+                          type: string
+                          example: 654321-0
+                        currency:
+                          type: string
+                          example: BRL
+                        amount:
+                          type: integer
+                          example: 22
+                          default: 0
+                        date:
+                          type: string
+                          example: '2025-04-01'
+                        type:
+                          type: string
+                          example: INFLOW
+                        mode:
+                          type: string
+                          example: CONTAREMUNERADA
+                        description:
+                          type: string
+                          example: REPASSE CONTA REMUNERADA CLIENTE
+                        redemptionProcessed:
+                          type: boolean
+                          example: false
+                          default: true
+                  first:
+                    type: boolean
+                    example: true
+                    default: true
+                  last:
+                    type: boolean
+                    example: true
+                    default: true
+                  pageNumber:
+                    type: integer
+                    example: 0
+                    default: 0
+                  pageSize:
+                    type: integer
+                    example: 50
+                    default: 0
+                  totalElements:
+                    type: integer
+                    example: 1
+                    default: 0
+                  totalPages:
+                    type: integer
+                    example: 1
+                    default: 0
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Transactions
+components:
+  securitySchemes:
+    sec0:
+      type: http
+      scheme: basic

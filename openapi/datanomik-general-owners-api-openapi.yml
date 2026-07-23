@@ -1,0 +1,226 @@
+openapi: 3.1.0
+info:
+  title: openbanking-api Accounts General Owners API
+  version: '1.0'
+servers:
+- url: https://api.datanomik.com
+tags:
+- name: General Owners
+paths:
+  /v1/general-owners/{id}:
+    get:
+      summary: Detail General Owner
+      description: List all account owners of yours links
+      operationId: detail-general-owner
+      parameters:
+      - name: id
+        in: path
+        description: General Owner Identifier (UUID)
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "\n        {\n            \"id\": \"00d2425e-d7bf-4162-ad33-5926bda057d2\",\n            \"document\": \"11.111.111/0001-11\",\n            \"document_type\": \"CNPJ\",\n            \"display_name\": \"GENERAL OWNER DISPLAY NAME\",\n            \"owners\": [\n                {\n                    \"id\": \"d88b5cb9-72b6-48fc-89fe-68145738DD33\",\n                    \"document\": \"11.111.111/0001-11\",\n                    \"document_type\": \"CNPJ\",\n                    \"display_name\": \"OWNER DISPLAY NAME\"\n                },\n                {\n                    \"id\": \"f49d1c1b-2cfd-4910-aab4-f80f82aaFF43\",\n                    \"display_name\": \"OWNER DISPLAY NAME\"\n                }\n            ],\n            \"created_at\": \"2023-10-30T20:10:01.389464Z\",\n            \"tags\": [\n                {\n                    \"id\": \"6c732538-ad5a-4c29-84fa-8ec19c05e7fa\",\n                    \"name\": \"GENERAL OWNER TAG\",\n                    \"type\": \"GENERAL_OWNER\"\n                }\n            ]\n        }"
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: 00d2425e-d7bf-4162-ad33-5926bda057d2
+                  document:
+                    type: string
+                    example: 11.111.111/0001-11
+                  document_type:
+                    type: string
+                    example: CNPJ
+                  display_name:
+                    type: string
+                    example: GENERAL OWNER DISPLAY NAME
+                  owners:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: d88b5cb9-72b6-48fc-89fe-68145738DD33
+                        document:
+                          type: string
+                          example: 11.111.111/0001-11
+                        document_type:
+                          type: string
+                          example: CNPJ
+                        display_name:
+                          type: string
+                          example: OWNER DISPLAY NAME
+                  created_at:
+                    type: string
+                    example: '2023-10-30T20:10:01.389464Z'
+                  tags:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 6c732538-ad5a-4c29-84fa-8ec19c05e7fa
+                        name:
+                          type: string
+                          example: GENERAL OWNER TAG
+                        type:
+                          type: string
+                          example: GENERAL_OWNER
+        '401':
+          description: '401'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"code\": 401,\n  \"type\": \"UNAUTHORIZED\",\n  \"message\": \"Invalid credentials\"\n}"
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 401
+                    default: 0
+                  type:
+                    type: string
+                    example: UNAUTHORIZED
+                  message:
+                    type: string
+                    example: Invalid credentials
+      deprecated: false
+      tags:
+      - General Owners
+  /v1/general-owners:
+    get:
+      summary: List General Owners
+      description: List all account owners of yours links
+      operationId: list-general-owners
+      parameters:
+      - name: displayName
+        in: query
+        description: General Owner Display Name
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"content\": [\n        {\n            \"id\": \"00d2425e-d7bf-4162-ad33-5926bda057d2\",\n            \"document\": \"11.111.111/0001-11\",\n            \"document_type\": \"CNPJ\",\n            \"display_name\": \"GENERAL OWNER DISPLAY NAME\",\n            \"owners\": [\n                {\n                    \"id\": \"d88b5cb9-72b6-48fc-89fe-68145738DD33\",\n                    \"document\": \"11.111.111/0001-11\",\n                    \"document_type\": \"CNPJ\",\n                    \"display_name\": \"OWNER DISPLAY NAME\"\n                },\n                {\n                    \"id\": \"f49d1c1b-2cfd-4910-aab4-f80f82aaFF43\",\n                    \"display_name\": \"OWNER DISPLAY NAME\"\n                }\n            ],\n            \"created_at\": \"2023-10-30T20:10:01.389464Z\",\n            \"tags\": [\n                {\n                    \"id\": \"6c732538-ad5a-4c29-84fa-8ec19c05e7fa\",\n                    \"name\": \"GENERAL OWNER TAG\",\n                    \"type\": \"GENERAL_OWNER\"\n                }\n            ]\n        }\n    ],\n    \"first\": true,\n    \"last\": false,\n    \"page_number\": 0,\n    \"page_size\": 1,\n    \"total_elements\": 1,\n    \"total_pages\": 1\n}"
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 00d2425e-d7bf-4162-ad33-5926bda057d2
+                        document:
+                          type: string
+                          example: 11.111.111/0001-11
+                        document_type:
+                          type: string
+                          example: CNPJ
+                        display_name:
+                          type: string
+                          example: GENERAL OWNER DISPLAY NAME
+                        owners:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                example: d88b5cb9-72b6-48fc-89fe-68145738DD33
+                              document:
+                                type: string
+                                example: 11.111.111/0001-11
+                              document_type:
+                                type: string
+                                example: CNPJ
+                              display_name:
+                                type: string
+                                example: OWNER DISPLAY NAME
+                        created_at:
+                          type: string
+                          example: '2023-10-30T20:10:01.389464Z'
+                        tags:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                example: 6c732538-ad5a-4c29-84fa-8ec19c05e7fa
+                              name:
+                                type: string
+                                example: GENERAL OWNER TAG
+                              type:
+                                type: string
+                                example: GENERAL_OWNER
+                  first:
+                    type: boolean
+                    example: true
+                    default: true
+                  last:
+                    type: boolean
+                    example: false
+                    default: true
+                  page_number:
+                    type: integer
+                    example: 0
+                    default: 0
+                  page_size:
+                    type: integer
+                    example: 1
+                    default: 0
+                  total_elements:
+                    type: integer
+                    example: 1
+                    default: 0
+                  total_pages:
+                    type: integer
+                    example: 1
+                    default: 0
+        '401':
+          description: '401'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"code\": 401,\n  \"type\": \"UNAUTHORIZED\",\n  \"message\": \"Invalid credentials\"\n}"
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 401
+                    default: 0
+                  type:
+                    type: string
+                    example: UNAUTHORIZED
+                  message:
+                    type: string
+                    example: Invalid credentials
+      deprecated: false
+      tags:
+      - General Owners
+components:
+  securitySchemes:
+    sec0:
+      type: http
+      scheme: basic

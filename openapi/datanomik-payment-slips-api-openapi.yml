@@ -1,0 +1,127 @@
+openapi: 3.1.0
+info:
+  title: openbanking-api Accounts Payment Slips API
+  version: '1.0'
+servers:
+- url: https://api.datanomik.com
+tags:
+- name: Payment Slips
+paths:
+  /v1/payment-slips:
+    get:
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                OK:
+                  summary: OK
+                  value:
+                    content:
+                    - id: 11111111-1111-1111-1111-111111111111
+                      bank_number: '00000000000'
+                      client_number: '0000000'
+                      amount: 14860.34
+                      charged_amount: 14860.34
+                      fee: 0
+                      date: '2026-05-29'
+                      due_date: '2026-06-05'
+                      metadata:
+                        display_name: EXAMPLE BENEFICIARY LTDA
+                        fluctuation: 0
+                        occurrence: 1
+                        modality: BOLETO
+                        payer_document: 12.345.678/0001-99
+                        tx_id: '00000000000000000000'
+                        movement_description: Boleto outros bancos
+                        status: SETTLED
+                        settlement_date: '2026-05-29'
+                        settled_amount: 14860.34
+                        discount: 0
+                        rebate: 0
+                        penalty: 0
+                        interest: 0
+                        tariff: 0
+                        costs: 0
+                      link:
+                        id: 22222222-2222-2222-2222-222222222222
+                        country: BR
+                        institution: ITAU_WEB
+                        institution_description: Itau
+                        institution_logo: https://resources.datanomik.com/institutions/br/Itau.svg
+                      account:
+                        id: 33333333-3333-3333-3333-333333333333
+                        account_number: 00000-0
+                        branch: '0000'
+                        currency: BRL
+                        type: Conta Corrente
+                        owner:
+                          id: 44444444-4444-4444-4444-444444444444
+                          document: 98.765.432/0001-10
+                          document_type: CNPJ
+                          display_name: EXAMPLE OWNER LTDA
+                        description: Conta Corrente
+                        category: CHECKING
+                    first: true
+                    last: false
+                    page_number: 0
+                    page_size: 1
+                    total_elements: 12
+                    total_pages: 12
+      parameters:
+      - in: query
+        name: linkId
+        schema:
+          type: string
+        description: Link identifier
+      - in: query
+        name: accountId
+        schema:
+          type: string
+        description: Account identifier
+      - in: query
+        name: ownerId
+        schema:
+          type: string
+        description: Owner identifier
+      - in: query
+        name: generalOwnerId
+        schema:
+          type: string
+        description: General owner identifier
+      - in: query
+        name: institutionId
+        schema:
+          type: string
+        description: Institution identifier
+      - in: query
+        name: dateFrom
+        schema:
+          type: string
+        description: Start date (YYYY-MM-DD)
+      - in: query
+        name: dateTo
+        schema:
+          type: string
+        description: End date (YYYY-MM-DD)
+      - in: query
+        name: currency
+        schema:
+          type: string
+        description: Currency (BRL, USD, etc.)
+      - in: query
+        name: country
+        schema:
+          type: string
+        description: Country (BR, AR, etc.)
+      summary: List Payment Slips
+      operationId: get_v1-payments-2
+      description: 'List payment slips. Role: ROLE_PAYMENTS_READ.'
+      tags:
+      - Payment Slips
+components:
+  securitySchemes:
+    sec0:
+      type: http
+      scheme: basic

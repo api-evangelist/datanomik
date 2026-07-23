@@ -1,0 +1,791 @@
+openapi: 3.1.0
+info:
+  title: openbanking-api Accounts API
+  version: '1.0'
+servers:
+- url: https://api.datanomik.com
+tags:
+- name: Accounts
+paths:
+  /v1/accounts/position:
+    get:
+      summary: Account Position
+      description: List all accounts of yours links
+      operationId: account-position
+      parameters:
+      - name: linkId
+        in: query
+        description: Identifier of the link from which you want to get detailed information about.
+        schema:
+          type: string
+      - name: country
+        in: query
+        description: Country code in ISO Alpha-2 format
+        schema:
+          type: string
+          enum:
+          - AR
+          - BR
+          - BO
+          - CO
+          - CH
+          - PY
+          - PE
+          - UY
+      - name: institution
+        in: query
+        description: Institution name
+        schema:
+          type: string
+      - name: accountId
+        in: query
+        description: Identifier of the account from which you want to get detailed information about.
+        schema:
+          type: string
+      - name: accountNumber
+        in: query
+        description: Account number in the institution
+        schema:
+          type: string
+      - name: accountType
+        in: query
+        description: Account type, such as SAVING, CHECKING, etc
+        schema:
+          type: string
+      - name: currency
+        in: query
+        description: Currency code in ISO 4217 format
+        schema:
+          type: string
+      - name: availableBalanceGte
+        in: query
+        description: Available balance greater than or equals
+        schema:
+          type: number
+          format: double
+      - name: availableBalanceLte
+        in: query
+        description: Available balance less than or equals
+        schema:
+          type: number
+          format: double
+      - name: currentBalanceGte
+        in: query
+        description: Current balance greater than or equals
+        schema:
+          type: number
+          format: double
+      - name: currentBalanceLte
+        in: query
+        description: Current balance less than or equals
+        schema:
+          type: number
+          format: double
+      - name: updateAtFrom
+        in: query
+        description: 'Date format: YYYY-MM-dd HH:mm:ss'
+        schema:
+          type: string
+      - name: updateAtTo
+        in: query
+        description: 'Date format: YYYY-MM-dd HH:mm:ss'
+        schema:
+          type: string
+      - name: institutionId
+        in: query
+        description: Institution Id
+        schema:
+          type: string
+      - name: ownerId
+        in: query
+        description: Owner Id
+        schema:
+          type: string
+      - name: workspaceView
+        in: query
+        description: View name or id
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"content\": [\n        {\n            \"id\": \"5042b7b2-1914-44f0-8c59-18cfcf37eeea\",\n            \"account_number\": \"2022612\",\n            \"type\": \"Conta Corrente\",\n            \"category\": \"CHECKING\",\n            \"balance\": {\n                \"current_balance\": 834662.03,\n                \"available_balance\": 834662.03,\n                \"diff_percentage\": 0,\n                \"diff_indicator\": {\n                    \"type\": \"REGULAR\"\n                },\n                \"start_of_day_balance\": 834662.03,\n                \"last_day_balance\": 171134.17,\n                \"currency\": \"BRL\",\n                \"balance_history\": {},\n                \"investment_current_balance\": 47160.73,\n                \"investment_available_balance\": 46760.70,\n                \"forecast_balance\": 171134.17,\n                \"cash_position\": 217894.87\n            },\n            \"refreshed_at\": \"2024-06-13T10:00:43.202554Z\",\n            \"up_to_date\": true,\n            \"updated_at\": \"2024-06-13T10:00:25.97143Z\",\n            \"owner\": {\n                \"id\": \"16d0c3cc-059e-4765-915b-775611c2d29d\",\n                \"document\": \"91.626.076/8512-79\",\n                \"document_type\": \"CNPJ\",\n                \"display_name\": \"FERREIRA PEIXOTO LTDA.\",\n                \"email\": \"isabelly15@example.org\",\n                \"phone_number\": \"21 2269 7817\"\n            },\n            \"metadata\": {},\n            \"status\": \"ACTIVE\",\n            \"country\": \"BR\",\n            \"institution_logo\": \"https://resources.datanomik.com/institutions/br/XP.svg\",\n            \"institution\": \"XP\",\n            \"institution_description\": \"XP\",\n            \"institution_id\": \"d2d8f39f-6daa-4623-92fd-797ef7d881da\",\n            \"investments\": [\n                {\n                    \"id\": \"b402b168-84e5-4f3e-bf81-82c5e060966c\",\n                    \"instrument_type\": \"DEPOSIT\",\n                    \"description\": \"CDB BANCO\",\n                    \"net_balance\": 46760.70,\n                    \"main_balance\": 46760.70,\n                    \"gross_balance\": 47160.73,\n                    \"updated_at\": \"2024-06-13T10:00:43.698017Z\"\n                }\n            ],\n            \"link_id\": \"dd265cf9-5851-4422-850c-0e03783a0a85\",\n            \"external_id\": \"24e28561-b196-4c52-935c-7a22dc7c35ba\",\n            \"tags\": [],\n            \"favourite\": false,\n            \"ownership\": 100.0,\n            \"account_sync_status\": \"PROCESSED\",\n            \"trx_sync_status\": \"PROCESSED\",\n            \"investment_sync_status\": \"PROCESSED\",\n            \"payment_sync_status\": \"PROCESSED\",\n            \"account_group\": {}\n        }\n    ],\n    \"first\": true,\n    \"last\": true,\n    \"page_number\": 0,\n    \"page_size\": 50,\n    \"total_elements\": 1,\n    \"total_pages\": 1\n}"
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: 5042b7b2-1914-44f0-8c59-18cfcf37eeea
+                        account_number:
+                          type: string
+                          example: '2022612'
+                        type:
+                          type: string
+                          example: Conta Corrente
+                        category:
+                          type: string
+                          example: CHECKING
+                        balance:
+                          type: object
+                          properties:
+                            current_balance:
+                              type: number
+                              example: 834662.03
+                              default: 0
+                            available_balance:
+                              type: number
+                              example: 834662.03
+                              default: 0
+                            diff_percentage:
+                              type: integer
+                              example: 0
+                              default: 0
+                            diff_indicator:
+                              type: object
+                              properties:
+                                type:
+                                  type: string
+                                  example: REGULAR
+                            start_of_day_balance:
+                              type: number
+                              example: 834662.03
+                              default: 0
+                            last_day_balance:
+                              type: number
+                              example: 171134.17
+                              default: 0
+                            currency:
+                              type: string
+                              example: BRL
+                            balance_history:
+                              type: object
+                              properties: {}
+                            investment_current_balance:
+                              type: number
+                              example: 47160.73
+                              default: 0
+                            investment_available_balance:
+                              type: number
+                              example: 46760.7
+                              default: 0
+                            forecast_balance:
+                              type: number
+                              example: 171134.17
+                              default: 0
+                            cash_position:
+                              type: number
+                              example: 217894.87
+                              default: 0
+                        refreshed_at:
+                          type: string
+                          example: '2024-06-13T10:00:43.202554Z'
+                        up_to_date:
+                          type: boolean
+                          example: true
+                          default: true
+                        updated_at:
+                          type: string
+                          example: '2024-06-13T10:00:25.97143Z'
+                        owner:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              example: 16d0c3cc-059e-4765-915b-775611c2d29d
+                            document:
+                              type: string
+                              example: 91.626.076/8512-79
+                            document_type:
+                              type: string
+                              example: CNPJ
+                            display_name:
+                              type: string
+                              example: FERREIRA PEIXOTO LTDA.
+                            email:
+                              type: string
+                              example: isabelly15@example.org
+                            phone_number:
+                              type: string
+                              example: 21 2269 7817
+                        metadata:
+                          type: object
+                          properties: {}
+                        status:
+                          type: string
+                          example: ACTIVE
+                        country:
+                          type: string
+                          example: BR
+                        institution_logo:
+                          type: string
+                          example: https://resources.datanomik.com/institutions/br/XP.svg
+                        institution:
+                          type: string
+                          example: XP
+                        institution_description:
+                          type: string
+                          example: XP
+                        institution_id:
+                          type: string
+                          example: d2d8f39f-6daa-4623-92fd-797ef7d881da
+                        investments:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              id:
+                                type: string
+                                example: b402b168-84e5-4f3e-bf81-82c5e060966c
+                              instrument_type:
+                                type: string
+                                example: DEPOSIT
+                              description:
+                                type: string
+                                example: CDB BANCO
+                              net_balance:
+                                type: number
+                                example: 46760.7
+                                default: 0
+                              main_balance:
+                                type: number
+                                example: 46760.7
+                                default: 0
+                              gross_balance:
+                                type: number
+                                example: 47160.73
+                                default: 0
+                              updated_at:
+                                type: string
+                                example: '2024-06-13T10:00:43.698017Z'
+                        link_id:
+                          type: string
+                          example: dd265cf9-5851-4422-850c-0e03783a0a85
+                        external_id:
+                          type: string
+                          example: 24e28561-b196-4c52-935c-7a22dc7c35ba
+                        tags:
+                          type: array
+                          items:
+                            type: object
+                            properties: {}
+                        favourite:
+                          type: boolean
+                          example: false
+                          default: true
+                        ownership:
+                          type: integer
+                          example: 100
+                          default: 0
+                        account_sync_status:
+                          type: string
+                          example: PROCESSED
+                        trx_sync_status:
+                          type: string
+                          example: PROCESSED
+                        investment_sync_status:
+                          type: string
+                          example: PROCESSED
+                        payment_sync_status:
+                          type: string
+                          example: PROCESSED
+                        account_group:
+                          type: object
+                          properties: {}
+                  first:
+                    type: boolean
+                    example: true
+                    default: true
+                  last:
+                    type: boolean
+                    example: true
+                    default: true
+                  page_number:
+                    type: integer
+                    example: 0
+                    default: 0
+                  page_size:
+                    type: integer
+                    example: 50
+                    default: 0
+                  total_elements:
+                    type: integer
+                    example: 1
+                    default: 0
+                  total_pages:
+                    type: integer
+                    example: 1
+                    default: 0
+        '401':
+          description: '401'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"code\": 401,\n  \"type\": \"UNAUTHORIZED\",\n  \"message\": \"Invalid credentials\"\n}"
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 401
+                    default: 0
+                  type:
+                    type: string
+                    example: UNAUTHORIZED
+                  message:
+                    type: string
+                    example: Invalid credentials
+      deprecated: false
+      tags:
+      - Accounts
+  /v1/accounts/{id}:
+    get:
+      summary: Detail Account
+      description: Account detail information
+      operationId: detail-account
+      parameters:
+      - name: id
+        in: path
+        description: Account identifier (UUID)
+        schema:
+          type: string
+        required: true
+      - name: workspaceView
+        in: query
+        description: View name or id
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "        {\n            \"id\": \"118a011c-85cf-49cd-b818-c9fd1063f0ce\",\n            \"description\": \"Account Description\",\n            \"account_number\": \"45555223\",\n          \t\"type\": \"CA\", \n            \"category\t\": \"SAVING\",\n            \"balance\": {\n                \"current_balance\": 10.0,\n                \"available_balance\": 10.0,\n                \"currency\": \"USD\"\n            },\n            \"refreshed_at\": \"2022-05-13T13:01:11.952Z\",\n            \"created_at\": \"2022-05-13T12:57:45.564897Z\",\n            \"updated_at\": \"2022-05-13T13:01:12.168382Z\",\n            \"owner\": {\n                \"id\": \"a2d9a143-ab1e-4cba-874f-6d0fc2d7dd5d\",\n                \"document\": \"123456789\",\n                \"document_type\": \"CPF\",\n                \"first_name\": \"PEDRO\",\n                \"last_name\": \"OLIVEIRA\",\n                \"second_last_name\": \"NUNEZ\",\n                \"display_name\": \"PEDRO OLIVEIRA NUNEZ\",\n                \"email\": \"demo@demo.com\"\n             }\n            ],\n          \t\"blocked\": false\n        }"
+        '401':
+          description: '401'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"code\": 401,\n  \"type\": \"UNAUTHORIZED\",\n  \"message\": \"Invalid credentials\"\n}"
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 401
+                    default: 0
+                  type:
+                    type: string
+                    example: UNAUTHORIZED
+                  message:
+                    type: string
+                    example: Invalid credentials
+        '404':
+          description: '404'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"code\": 620,\n    \"type\": \"ACCOUNT_NOT_FOUND\",\n    \"message\": \"Account resource not found.\"\n}"
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 620
+                    default: 0
+                  type:
+                    type: string
+                    example: ACCOUNT_NOT_FOUND
+                  message:
+                    type: string
+                    example: Account resource not found.
+      deprecated: false
+      tags:
+      - Accounts
+  /v1/accounts:
+    get:
+      summary: List Accounts
+      description: List all accounts of yours links
+      operationId: list-accounts
+      parameters:
+      - name: linkId
+        in: query
+        description: Identifier of the link from which you want to get detailed information about.
+        schema:
+          type: string
+      - name: country
+        in: query
+        description: Country code in ISO Alpha-2 format
+        schema:
+          type: string
+          enum:
+          - AR
+          - BR
+          - BO
+          - CO
+          - CH
+          - PY
+          - PE
+          - UY
+      - name: institution
+        in: query
+        description: Institution name
+        schema:
+          type: string
+      - name: accountId
+        in: query
+        description: Identifier of the account from which you want to get detailed information about.
+        schema:
+          type: string
+      - name: accountNumber
+        in: query
+        description: Account number in the institution
+        schema:
+          type: string
+      - name: accountType
+        in: query
+        description: Account type, such as SAVING, CHECKING, etc
+        schema:
+          type: string
+      - name: currency
+        in: query
+        description: Currency code in ISO 4217 format
+        schema:
+          type: string
+      - name: availableBalanceGte
+        in: query
+        description: Available balance greater than or equals
+        schema:
+          type: number
+          format: double
+      - name: availableBalanceLte
+        in: query
+        description: Available balance less than or equals
+        schema:
+          type: number
+          format: double
+      - name: currentBalanceGte
+        in: query
+        description: Current balance greater than or equals
+        schema:
+          type: number
+          format: double
+      - name: currentBalanceLte
+        in: query
+        description: Current balance less than or equals
+        schema:
+          type: number
+          format: double
+      - name: updateAtFrom
+        in: query
+        description: 'Date format: YYYY-MM-dd HH:mm:ss'
+        schema:
+          type: string
+      - name: updateAtTo
+        in: query
+        description: 'Date format: YYYY-MM-dd HH:mm:ss'
+        schema:
+          type: string
+      - name: institutionId
+        in: query
+        description: Institution Id
+        schema:
+          type: string
+      - name: ownerId
+        in: query
+        description: Owner Id
+        schema:
+          type: string
+      - name: blocked
+        in: query
+        description: Blocked true or false
+        schema:
+          type: boolean
+      - name: showBalanceInfo
+        in: query
+        description: Show Extra Balance Information
+        schema:
+          type: boolean
+      - name: workspaceView
+        in: query
+        description: View name or id
+        schema:
+          type: string
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"content\": [\n        {\n            \"id\": \"118a011c-85cf-49cd-b818-c9fd1063f0ce\",\n            \"description\": \"Account Description\",\n            \"account_number\": \"45555223\",\n          \t\"type\": \"CA\", \n            \"category\t\": \"SAVING\",\n            \"balance\": {\n                \"current_balance\": 10.0,\n                \"available_balance\": 10.0,\n                \"currency\": \"USD\"\n            },\n            \"refreshed_at\": \"2022-05-13T13:01:11.952Z\",\n            \"created_at\": \"2022-05-13T12:57:45.564897Z\",\n            \"updated_at\": \"2022-05-13T13:01:12.168382Z\",\n            \"owner\": {\n                \"id\": \"a2d9a143-ab1e-4cba-874f-6d0fc2d7dd5d\",\n                \"document\": \"123456789\",\n                \"document_type\": \"CPF\",\n                \"first_name\": \"PEDRO\",\n                \"last_name\": \"OLIVEIRA\",\n                \"second_last_name\": \"NUNEZ\",\n                \"display_name\": \"PEDRO OLIVEIRA NUNEZ\",\n                \"email\": \"demo@demo.com\"\n             },\n          \t\"blocked\": false\n        }\n    ],\n    \"first\": true,\n    \"last\": true,\n    \"page_number\": 0,\n    \"page_size\": 50,\n    \"total_elements\": 1,\n    \"total_pages\": 1\n}"
+        '401':
+          description: '401'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"code\": 401,\n  \"type\": \"UNAUTHORIZED\",\n  \"message\": \"Invalid credentials\"\n}"
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 401
+                    default: 0
+                  type:
+                    type: string
+                    example: UNAUTHORIZED
+                  message:
+                    type: string
+                    example: Invalid credentials
+      deprecated: false
+      tags:
+      - Accounts
+  /api/v1/accounts/:
+    get:
+      summary: Detail Account
+      description: ''
+      operationId: detail-remuneration-account
+      parameters:
+      - name: fiscalNumber
+        in: path
+        description: Account Fiscal Number
+        schema:
+          type: string
+        required: true
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"id\": \"56941234567890\",\n    \"name\": \"DATANOMIK ACCOUNT LTDA\",\n    \"cnpj\": \"56941234567890\",\n    \"branch\": \"0001\",\n    \"accountNumber\": \"123456-0\",\n    \"totalBalance\": 37283.88,\n    \"availableBalance\": 37283.88,\n    \"blockedEarningBalance\": 0,\n    \"lastUpdate\": \"2025-07-01T10:39:06.54Z\",\n    \"currency\": \"BRL\",\n    \"dailyEarnings\": [\n        {\n            \"date\": \"2025-06-23\",\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0.00,\n            \"totalBalance\": 37283.88\n        },\n        {\n            \"date\": \"2025-06-24\",\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0.00,\n            \"totalBalance\": 37283.88\n        },\n        {\n            \"date\": \"2025-06-25\",\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0.00,\n            \"totalBalance\": 37283.88\n        },\n        {\n            \"date\": \"2025-06-26\",\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0.00,\n            \"totalBalance\": 37283.88\n        },\n        {\n            \"date\": \"2025-06-27\",\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0.00,\n            \"totalBalance\": 37283.88\n        },\n        {\n            \"date\": \"2025-06-30\",\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0.00,\n            \"totalBalance\": 37283.88\n        },\n        {\n            \"date\": \"2025-07-01\",\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0,\n            \"totalBalance\": 37283.88\n        }\n    ],\n    \"accountType\": \"Conta Corrente\",\n    \"bankCode\": \"398\"\n}"
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: '56941234567890'
+                  name:
+                    type: string
+                    example: DATANOMIK ACCOUNT LTDA
+                  cnpj:
+                    type: string
+                    example: '56941234567890'
+                  branch:
+                    type: string
+                    example: '0001'
+                  accountNumber:
+                    type: string
+                    example: 123456-0
+                  totalBalance:
+                    type: number
+                    example: 37283.88
+                    default: 0
+                  availableBalance:
+                    type: number
+                    example: 37283.88
+                    default: 0
+                  blockedEarningBalance:
+                    type: integer
+                    example: 0
+                    default: 0
+                  lastUpdate:
+                    type: string
+                    example: '2025-07-01T10:39:06.54Z'
+                  currency:
+                    type: string
+                    example: BRL
+                  dailyEarnings:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        date:
+                          type: string
+                          example: '2025-06-23'
+                        availableBalance:
+                          type: number
+                          example: 37283.88
+                          default: 0
+                        blockedEarningBalance:
+                          type: integer
+                          example: 0
+                          default: 0
+                        totalBalance:
+                          type: number
+                          example: 37283.88
+                          default: 0
+                  accountType:
+                    type: string
+                    example: Conta Corrente
+                  bankCode:
+                    type: string
+                    example: '398'
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Accounts
+  /api/v1/accounts:
+    get:
+      summary: List Accounts
+      description: ''
+      operationId: list-remuneration-accounts
+      parameters:
+      - name: page
+        in: query
+        description: Page Number
+        required: true
+        schema:
+          type: integer
+          format: int32
+          default: 0
+      - name: size
+        in: query
+        description: Page Size
+        required: true
+        schema:
+          type: integer
+          format: int32
+          default: 50
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"content\": [\n        {\n            \"id\": \"56941234567890\",\n            \"name\": \"DATANOMIK ACCOUNT LTDA\",\n            \"cnpj\": \"56941234567890\",\n            \"branch\": \"0001\",\n            \"accountNumber\": \"123456-0\",\n            \"totalBalance\": 37283.88,\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0,\n            \"lastUpdate\": \"2025-07-01T10:39:06.54Z\",\n            \"currency\": \"BRL\",\n            \"dailyEarnings\": [\n                {\n                    \"date\": \"2025-06-23\",\n                    \"availableBalance\": 37283.88,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 37283.88\n                },\n                {\n                    \"date\": \"2025-06-24\",\n                    \"availableBalance\": 37283.88,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 37283.88\n                },\n                {\n                    \"date\": \"2025-06-25\",\n                    \"availableBalance\": 37283.88,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 37283.88\n                },\n                {\n                    \"date\": \"2025-06-26\",\n                    \"availableBalance\": 37283.88,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 37283.88\n                },\n                {\n                    \"date\": \"2025-06-27\",\n                    \"availableBalance\": 37283.88,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 37283.88\n                },\n                {\n                    \"date\": \"2025-06-30\",\n                    \"availableBalance\": 37283.88,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 37283.88\n                },\n                {\n                    \"date\": \"2025-07-01\",\n                    \"availableBalance\": 37283.88,\n                    \"blockedEarningBalance\": 0,\n                    \"totalBalance\": 37283.88\n                }\n            ],\n            \"accountType\": \"Conta Corrente\",\n            \"bankCode\": \"398\"\n        },\n        {\n            \"id\": \"12346576879809\",\n            \"name\": \"DATANOMIK BRASIL LTDA\",\n            \"cnpj\": \"12346576879809\",\n            \"branch\": \"0001\",\n            \"accountNumber\": \"654321-0\",\n            \"totalBalance\": 46850.78,\n            \"availableBalance\": 46850.78,\n            \"blockedEarningBalance\": 0,\n            \"lastUpdate\": \"2025-07-01T10:39:06.54Z\",\n            \"currency\": \"BRL\",\n            \"dailyEarnings\": [\n                {\n                    \"date\": \"2025-06-23\",\n                    \"availableBalance\": 46851.78,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 46851.78\n                },\n                {\n                    \"date\": \"2025-06-24\",\n                    \"availableBalance\": 46851.78,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 46851.78\n                },\n                {\n                    \"date\": \"2025-06-25\",\n                    \"availableBalance\": 46850.78,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 46850.78\n                },\n                {\n                    \"date\": \"2025-06-26\",\n                    \"availableBalance\": 46850.78,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 46850.78\n                },\n                {\n                    \"date\": \"2025-06-27\",\n                    \"availableBalance\": 46850.78,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 46850.78\n                },\n                {\n                    \"date\": \"2025-06-30\",\n                    \"availableBalance\": 46850.78,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 46850.78\n                },\n                {\n                    \"date\": \"2025-07-01\",\n                    \"availableBalance\": 46850.78,\n                    \"blockedEarningBalance\": 0,\n                    \"totalBalance\": 46850.78\n                }\n            ],\n            \"accountType\": \"Conta Corrente\",\n            \"bankCode\": \"398\"\n        }\n    ],\n    \"first\": true,\n    \"last\": true,\n    \"pageNumber\": 0,\n    \"pageSize\": 50,\n    \"totalElements\": 2,\n    \"totalPages\": 1\n}"
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          example: '56941234567890'
+                        name:
+                          type: string
+                          example: DATANOMIK ACCOUNT LTDA
+                        cnpj:
+                          type: string
+                          example: '56941234567890'
+                        branch:
+                          type: string
+                          example: '0001'
+                        accountNumber:
+                          type: string
+                          example: 123456-0
+                        totalBalance:
+                          type: number
+                          example: 37283.88
+                          default: 0
+                        availableBalance:
+                          type: number
+                          example: 37283.88
+                          default: 0
+                        blockedEarningBalance:
+                          type: integer
+                          example: 0
+                          default: 0
+                        lastUpdate:
+                          type: string
+                          example: '2025-07-01T10:39:06.54Z'
+                        currency:
+                          type: string
+                          example: BRL
+                        dailyEarnings:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              date:
+                                type: string
+                                example: '2025-06-23'
+                              availableBalance:
+                                type: number
+                                example: 37283.88
+                                default: 0
+                              blockedEarningBalance:
+                                type: integer
+                                example: 0
+                                default: 0
+                              totalBalance:
+                                type: number
+                                example: 37283.88
+                                default: 0
+                        accountType:
+                          type: string
+                          example: Conta Corrente
+                        bankCode:
+                          type: string
+                          example: '398'
+                  first:
+                    type: boolean
+                    example: true
+                    default: true
+                  last:
+                    type: boolean
+                    example: true
+                    default: true
+                  pageNumber:
+                    type: integer
+                    example: 0
+                    default: 0
+                  pageSize:
+                    type: integer
+                    example: 50
+                    default: 0
+                  totalElements:
+                    type: integer
+                    example: 2
+                    default: 0
+                  totalPages:
+                    type: integer
+                    example: 1
+                    default: 0
+        '400':
+          description: '400'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: '{}'
+              schema:
+                type: object
+                properties: {}
+      deprecated: false
+      tags:
+      - Accounts
+components:
+  securitySchemes:
+    sec0:
+      type: http
+      scheme: basic

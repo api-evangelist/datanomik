@@ -1,0 +1,185 @@
+openapi: 3.1.0
+info:
+  title: openbanking-api Accounts Payments API
+  version: '1.0'
+servers:
+- url: https://api.datanomik.com
+tags:
+- name: Payments
+paths:
+  /v1/payments/{paymentId}/receipt:
+    get:
+      responses:
+        '200':
+          description: ''
+      parameters:
+      - in: path
+        name: paymentId
+        schema:
+          type: string
+        required: true
+        description: Payment identifier
+      summary: Download Payment Receipt (PDF)
+      operationId: get_v1-payments-1
+      description: 'Downloads the payment receipt (PDF) by id (application/pdf). Role: ROLE_PAYMENTS_READ.'
+      tags:
+      - Payments
+  /v1/payments:
+    get:
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              examples:
+                OK:
+                  summary: OK
+                  value:
+                    content:
+                    - id: 11111111-1111-1111-1111-111111111111
+                      date: '2026-06-30'
+                      relative_order: 0
+                      reference: 0000/000-00000
+                      type: TICKET
+                      description: Boleto outros bancos
+                      batch: '000000000'
+                      amount: 3591.84
+                      beneficiary:
+                        document: 12.345.678/0001-99
+                        document_type: CNPJ
+                        display_name: EXAMPLE BENEFICIARY S/A
+                      link:
+                        id: 22222222-2222-2222-2222-222222222222
+                        country: BR
+                        institution: ITAU_WEB
+                        institution_description: Itau
+                        institution_logo: https://resources.datanomik.com/institutions/br/Itau.svg
+                      account:
+                        id: 33333333-3333-3333-3333-333333333333
+                        account_number: 00000-0
+                        branch: '0000'
+                        currency: BRL
+                        type: Conta Corrente
+                        owner:
+                          id: 44444444-4444-4444-4444-444444444444
+                          document: 98.765.432/0001-10
+                          document_type: CNPJ
+                          display_name: EXAMPLE OWNER LTDA
+                        category: CHECKING
+                      status: EXECUTED
+                      downloadable: PROCESSED
+                      downloadable_since: '2026-06-30T21:24:36.291797Z'
+                      created_at: '2026-06-30T20:52:10.861343Z'
+                      updated_at: '2026-06-30T21:24:36.291797Z'
+                    first: true
+                    last: false
+                    page_number: 0
+                    page_size: 1
+                    total_elements: 6788
+                    total_pages: 6788
+      parameters:
+      - in: query
+        name: linkId
+        schema:
+          type: string
+        description: Link identifier
+      - in: query
+        name: accountId
+        schema:
+          type: string
+        description: Account identifier
+      - in: query
+        name: ownerId
+        schema:
+          type: string
+        description: Owner identifier
+      - in: query
+        name: generalOwnerId
+        schema:
+          type: string
+        description: General owner identifier
+      - in: query
+        name: institutionId
+        schema:
+          type: string
+        description: Institution identifier
+      - in: query
+        name: dateFrom
+        schema:
+          type: string
+        description: Start date (YYYY-MM-DD)
+      - in: query
+        name: dateTo
+        schema:
+          type: string
+        description: End date (YYYY-MM-DD)
+      - in: query
+        name: type
+        schema:
+          type: string
+        description: Payment type
+      - in: query
+        name: status
+        schema:
+          type: string
+        description: Payment status
+      - in: query
+        name: amountFrom
+        schema:
+          type: string
+        description: Minimum amount
+      - in: query
+        name: amountTo
+        schema:
+          type: string
+        description: Maximum amount
+      - in: query
+        name: currency
+        schema:
+          type: string
+        description: Currency (BRL, USD, etc.)
+      - in: query
+        name: country
+        schema:
+          type: string
+        description: Country (BR, AR, etc.)
+      - in: query
+        name: beneficiaryName
+        schema:
+          type: string
+        description: Beneficiary name
+      - in: query
+        name: beneficiaryDocument
+        schema:
+          type: string
+        description: Beneficiary document
+      - in: query
+        name: description
+        schema:
+          type: string
+        description: Description
+      - in: query
+        name: transactionId
+        schema:
+          type: string
+        description: Transaction identifier
+      - in: query
+        name: reference
+        schema:
+          type: string
+        description: Reference
+      - in: query
+        name: categoryId
+        schema:
+          type: string
+        description: Category identifier
+      summary: List Payments
+      operationId: get_v1-payments
+      description: 'List payments. Role: ROLE_PAYMENTS_READ.'
+      tags:
+      - Payments
+components:
+  securitySchemes:
+    sec0:
+      type: http
+      scheme: basic

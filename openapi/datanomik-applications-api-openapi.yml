@@ -1,0 +1,149 @@
+openapi: 3.1.0
+info:
+  title: openbanking-api Accounts Applications API
+  version: '1.0'
+servers:
+- url: https://api.datanomik.com
+tags:
+- name: Applications
+paths:
+  /v1/applications/details:
+    get:
+      description: Returns the consolidated detail of all investment applications across the available application types (committed, fund, deposit, COE). Supports filtering by application type, date range, account, link, investment and institution. Results are paginated.
+      responses:
+        '200':
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    applicationId:
+                      type: string
+                      description: Unique identifier of the application.
+                    applicationType:
+                      type: string
+                      description: 'Application type: one of COMMITTED, FUND, DEPOSIT, COE.'
+                    investmentId:
+                      type: string
+                      description: Identifier of the investment that this application belongs to.
+                    accountId:
+                      type: string
+                      description: Account associated with the application.
+                    linkId:
+                      type: string
+                      description: Link associated with the application.
+                    institutionId:
+                      type: string
+                      description: Institution associated with the application.
+                    date:
+                      type: string
+                      description: 'Application date. Format: YYYY-MM-DD.'
+                    mainBalance:
+                      type: number
+                      description: Principal amount of the application.
+                    grossBalance:
+                      type: string
+                      description: Gross balance of the application before taxes.
+                    netBalance:
+                      type: string
+                      description: Net balance of the application after taxes.
+                  required:
+                  - applicationId
+              examples:
+                OK:
+                  summary: OK
+                  value:
+                    content:
+                    - application_id: 11111111-1111-1111-1111-111111111111
+                      application_type: DEPOSIT
+                      investment_id: 22222222-2222-2222-2222-222222222222
+                      investment_external_id: '1'
+                      investment_description: CDB-DI
+                      account_id: 33333333-3333-3333-3333-333333333333
+                      link_id: 44444444-4444-4444-4444-444444444444
+                      institution_id: 55555555-5555-5555-5555-555555555555
+                      institution_name: ITAU_WEB
+                      date: '2026-06-25'
+                      due_date: '2027-06-21'
+                      main_balance: 355913
+                      gross_balance: 356460.15
+                      net_balance: 355985.09
+                      income_tax: 20.92
+                      income_tax_percentage: 22.5
+                      financial_tax: 454.13
+                      financial_tax_percentage: 83
+                      gross_profit: 547.15
+                      net_profit: 72.09
+                      cdi_based_remuneration_percentage: 97.5
+                      operation_number: '0000000000000'
+                      status: ACTIVE
+                    first: true
+                    last: false
+                    page_number: 0
+                    page_size: 1
+                    total_elements: 134
+                    total_pages: 134
+        '400':
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  name:
+                    type: string
+                required:
+                - name
+      parameters:
+      - in: query
+        name: applicationType
+        schema:
+          type: string
+          enum:
+          - COMMITTED
+          - FUND
+          - DEPOSIT
+          - COE
+        description: Application type to filter by. Can be repeated to include multiple types. Defaults to all four types.
+      - in: query
+        name: dateFrom
+        schema:
+          type: string
+        description: 'Lower bound (inclusive) for the application date. Format: YYYY-MM-DD.'
+      - in: query
+        name: dateTo
+        schema:
+          type: string
+        description: 'Upper bound (inclusive) for the application date. Format: YYYY-MM-DD.'
+      - in: query
+        name: accountId
+        schema:
+          type: string
+        description: Filter by one or more account IDs. Can be repeated.
+      - in: query
+        name: linkId
+        schema:
+          type: string
+        description: Filter by one or more link IDs. Can be repeated.
+      - in: query
+        name: investmentId
+        schema:
+          type: string
+        description: Filter by one or more investment IDs. Can be repeated.
+      - in: query
+        name: institutionId
+        schema:
+          type: string
+        description: Filter by one or more institution IDs. Can be repeated.
+      operationId: get_v1-applications-details
+      summary: List Application Details
+      tags:
+      - Applications
+components:
+  securitySchemes:
+    sec0:
+      type: http
+      scheme: basic

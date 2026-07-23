@@ -1,0 +1,56 @@
+openapi: 3.1.0
+info:
+  title: openbanking-api Accounts Links API
+  version: '1.0'
+servers:
+- url: https://api.datanomik.com
+tags:
+- name: Links
+paths:
+  /v1/links/sync/assets/{linkId}:
+    post:
+      summary: Sync Assets
+      description: Consolidated information of yours links with owners, users, accounts and balances
+      operationId: list-assets-copy
+      parameters:
+      - name: linkId
+        in: query
+        description: Identifier of the link from which you want to get detailed information about.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: '204'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"content\": [\n        {\n            \"id\": \"c40d94ca-184b-4520-9fd1-5cc418b8f612\",\n            \"description\": \"Test Link\",\n            \"institution\": \"BRADESCO\",\n            \"institution_logo\": \"https://resources.datanomik.com/institutions/uy/Bradesco.svg\",\n            \"access_type\": \"BUSINESS\",\n            \"country\": \"BR\",\n            \"refresh_rate\": \"180\",\n            \"accessed_at\": \"2022-02-15T19:04:57.980228\",\n            \"created_at\": \"2022-02-15T19:05:00.064292\",\n            \"updated_at\": \"2022-02-15T19:05:00.064308\",\n            \"source\": \"API\",\n            \"recurrent\": false,\n            \"live\": false,\n            \"status\": \"ACTIVE\",\n            \"accounts\": [\n          {\n            \"id\": \"118a011c-85cf-49cd-b818-c9fd1063f0ce\",\n            \"description\": \"Account Description\",\n            \"account_number\": \"45555223\",\n          \t\"type\": \"CA\", \n            \"category\t\": \"SAVING\",\n            \"balance\": {\n                \"current_balance\": 10.0,\n                \"available_balance\": 10.0,\n                \"currency\": \"USD\"\n            },\n            \"refreshed_at\": \"2022-05-13T13:01:11.952Z\",\n            \"created_at\": \"2022-05-13T12:57:45.564897Z\",\n            \"updated_at\": \"2022-05-13T13:01:12.168382Z\",\n            \"owners\": [\n                {\n                    \"id\": \"a2d9a143-ab1e-4cba-874f-6d0fc2d7dd5d\",\n                    \"document\": \"123456789\",\n                    \"document_type\": \"CPF\",\n                    \"first_name\": \"PEDRO\",\n                    \"last_name\": \"OLIVEIRA\",\n                    \"second_last_name\": \"NUNEZ\",\n                    \"display_name\": \"PEDRO OLIVEIRA NUNEZ\",\n                    \"email\": \"demo@demo.com\"\n             }\n            ],\n          \t\"blocked\": false\n        }\n            ],\n            \"users\": [\n                {\n                    \"id\": \"f5d70f6d-cbfe-495e-933e-42fb05ab648b\",\n                    \"username\": \"12345678\",\n                    \"metadata\": {\n                        \"document\": \"12345678\",\n                        \"document_type\": \"CI\",\n                        \"first_name\": \"PEDRO\",\n                        \"last_name\": \"OLIVEIRA\",\n                        \"second_last_name\": \"NUNEZ\",\n                        \"display_name\": \"PEDRO OLIVEIRA NUNEZ\",\n                        \"email\": \"pedrooliveira@gmail.com\",\n                        \"address\": \"ADDRESS 1234, 11300, MONTEVIDEO, URUGUAY\",\n                        \"phone_number\": \"099999999\"\n                    }\n                }\n            ]\n        }\n    ],\n    \"first\": true,\n    \"last\": true,\n    \"page_number\": 0,\n    \"page_size\": 20,\n    \"total_elements\": 1,\n    \"total_pages\": 1\n}"
+        '401':
+          description: '401'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"code\": 401,\n  \"type\": \"UNAUTHORIZED\",\n  \"message\": \"Invalid credentials\"\n}"
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 401
+                    default: 0
+                  type:
+                    type: string
+                    example: UNAUTHORIZED
+                  message:
+                    type: string
+                    example: Invalid credentials
+      deprecated: false
+      tags:
+      - Links
+components:
+  securitySchemes:
+    sec0:
+      type: http
+      scheme: basic

@@ -1,0 +1,136 @@
+openapi: 3.1.0
+info:
+  title: openbanking-api Accounts Balances API
+  version: '1.0'
+servers:
+- url: https://api.datanomik.com
+tags:
+- name: Balances
+paths:
+  /v1/balances/history:
+    get:
+      summary: List Balances History
+      description: List all accounts balance of yours links
+      operationId: list-balances-copy
+      parameters:
+      - name: accountId
+        in: query
+        description: Identifier of the account from which you want to get detailed information about.
+        schema:
+          type: string
+      - name: dateFrom
+        in: query
+        description: Date From
+        schema:
+          type: string
+          format: date
+      - name: dateTo
+        in: query
+        description: Date To
+        schema:
+          type: string
+          format: date
+      responses:
+        '200':
+          description: '200'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n    \"content\": [\n        {\n            \"current_balance\": 27889.0,\n            \"available_balance\": 4338.79,\n            \"currency\": \"EUR\",\n            \"link_id\": \"23786be0-62fd-4016-aa3d-fa886acaddd5\",\n            \"account\": {\n                \"id\": \"058ffd01-7268-43a8-bea3-893c501ab76e\",\n                \"description\": \"Account Description\",\n                \"account_number\": \"45555223\",\n                \"type\": \"CC\",\n                \"category\": \"SAVING\",\n                \"blocked\": false\n            }\n        }\n    ],\n    \"first\": true,\n    \"last\": true,\n    \"page_number\": 0,\n    \"page_size\": 50,\n    \"total_elements\":1,\n    \"total_pages\": 1\n}"
+              schema:
+                type: object
+                properties:
+                  content:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        current_balance:
+                          type: integer
+                          example: 27889
+                          default: 0
+                        available_balance:
+                          type: number
+                          example: 4338.79
+                          default: 0
+                        currency:
+                          type: string
+                          example: EUR
+                        link_id:
+                          type: string
+                          example: 23786be0-62fd-4016-aa3d-fa886acaddd5
+                        account:
+                          type: object
+                          properties:
+                            id:
+                              type: string
+                              example: 058ffd01-7268-43a8-bea3-893c501ab76e
+                            description:
+                              type: string
+                              example: Account Description
+                            account_number:
+                              type: string
+                              example: '45555223'
+                            type:
+                              type: string
+                              example: CC
+                            category:
+                              type: string
+                              example: SAVING
+                            blocked:
+                              type: boolean
+                              example: false
+                              default: true
+                  first:
+                    type: boolean
+                    example: true
+                    default: true
+                  last:
+                    type: boolean
+                    example: true
+                    default: true
+                  page_number:
+                    type: integer
+                    example: 0
+                    default: 0
+                  page_size:
+                    type: integer
+                    example: 50
+                    default: 0
+                  total_elements:
+                    type: integer
+                    example: 1
+                    default: 0
+                  total_pages:
+                    type: integer
+                    example: 1
+                    default: 0
+        '401':
+          description: '401'
+          content:
+            application/json:
+              examples:
+                Result:
+                  value: "{\n  \"code\": 401,\n  \"type\": \"UNAUTHORIZED\",\n  \"message\": \"Invalid credentials\"\n}"
+              schema:
+                type: object
+                properties:
+                  code:
+                    type: integer
+                    example: 401
+                    default: 0
+                  type:
+                    type: string
+                    example: UNAUTHORIZED
+                  message:
+                    type: string
+                    example: Invalid credentials
+      deprecated: false
+      tags:
+      - Balances
+components:
+  securitySchemes:
+    sec0:
+      type: http
+      scheme: basic
