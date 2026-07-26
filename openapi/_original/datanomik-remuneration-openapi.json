@@ -1,0 +1,520 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "remuneration-api",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://treasury-api.datanomik.com"
+    }
+  ],
+  "paths": {
+    "/api/v1/accounts/": {
+      "get": {
+        "summary": "Detail Account",
+        "description": "",
+        "operationId": "detail-remuneration-account",
+        "parameters": [
+          {
+            "name": "fiscalNumber",
+            "in": "path",
+            "description": "Account Fiscal Number",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"id\": \"56941234567890\",\n    \"name\": \"DATANOMIK ACCOUNT LTDA\",\n    \"cnpj\": \"56941234567890\",\n    \"branch\": \"0001\",\n    \"accountNumber\": \"123456-0\",\n    \"totalBalance\": 37283.88,\n    \"availableBalance\": 37283.88,\n    \"blockedEarningBalance\": 0,\n    \"lastUpdate\": \"2025-07-01T10:39:06.54Z\",\n    \"currency\": \"BRL\",\n    \"dailyEarnings\": [\n        {\n            \"date\": \"2025-06-23\",\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0.00,\n            \"totalBalance\": 37283.88\n        },\n        {\n            \"date\": \"2025-06-24\",\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0.00,\n            \"totalBalance\": 37283.88\n        },\n        {\n            \"date\": \"2025-06-25\",\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0.00,\n            \"totalBalance\": 37283.88\n        },\n        {\n            \"date\": \"2025-06-26\",\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0.00,\n            \"totalBalance\": 37283.88\n        },\n        {\n            \"date\": \"2025-06-27\",\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0.00,\n            \"totalBalance\": 37283.88\n        },\n        {\n            \"date\": \"2025-06-30\",\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0.00,\n            \"totalBalance\": 37283.88\n        },\n        {\n            \"date\": \"2025-07-01\",\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0,\n            \"totalBalance\": 37283.88\n        }\n    ],\n    \"accountType\": \"Conta Corrente\",\n    \"bankCode\": \"398\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "56941234567890"
+                    },
+                    "name": {
+                      "type": "string",
+                      "example": "DATANOMIK ACCOUNT LTDA"
+                    },
+                    "cnpj": {
+                      "type": "string",
+                      "example": "56941234567890"
+                    },
+                    "branch": {
+                      "type": "string",
+                      "example": "0001"
+                    },
+                    "accountNumber": {
+                      "type": "string",
+                      "example": "123456-0"
+                    },
+                    "totalBalance": {
+                      "type": "number",
+                      "example": 37283.88,
+                      "default": 0
+                    },
+                    "availableBalance": {
+                      "type": "number",
+                      "example": 37283.88,
+                      "default": 0
+                    },
+                    "blockedEarningBalance": {
+                      "type": "integer",
+                      "example": 0,
+                      "default": 0
+                    },
+                    "lastUpdate": {
+                      "type": "string",
+                      "example": "2025-07-01T10:39:06.54Z"
+                    },
+                    "currency": {
+                      "type": "string",
+                      "example": "BRL"
+                    },
+                    "dailyEarnings": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "date": {
+                            "type": "string",
+                            "example": "2025-06-23"
+                          },
+                          "availableBalance": {
+                            "type": "number",
+                            "example": 37283.88,
+                            "default": 0
+                          },
+                          "blockedEarningBalance": {
+                            "type": "integer",
+                            "example": 0,
+                            "default": 0
+                          },
+                          "totalBalance": {
+                            "type": "number",
+                            "example": 37283.88,
+                            "default": 0
+                          }
+                        }
+                      }
+                    },
+                    "accountType": {
+                      "type": "string",
+                      "example": "Conta Corrente"
+                    },
+                    "bankCode": {
+                      "type": "string",
+                      "example": "398"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/transactions": {
+      "get": {
+        "summary": "List Transactions",
+        "description": "",
+        "operationId": "list-remunerated-account-transactions",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page Number",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "Page Size",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 50
+            }
+          },
+          {
+            "name": "dateFrom",
+            "in": "query",
+            "description": "Transaction Date From",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "dateTo",
+            "in": "query",
+            "description": "Transaction Date To",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "fiscalNumber",
+            "in": "query",
+            "description": "Account Fiscal Number",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"content\": [\n        {\n            \"id\": \"79470875-dcdc-447b-8bd2-881f1ae6be2e\",\n            \"externalId\": \"20250401-2201-EMP600016\",\n            \"cnpj\": \"56941234567890\",\n            \"branch\": \"0001\",\n            \"accountNumber\": \"654321-0\",\n            \"currency\": \"BRL\",\n            \"amount\": 22.00,\n            \"date\": \"2025-04-01\",\n            \"type\": \"INFLOW\",\n            \"mode\": \"CONTAREMUNERADA\",\n            \"description\": \"REPASSE CONTA REMUNERADA CLIENTE\",\n            \"redemptionProcessed\": false\n        }\n    ],\n    \"first\": true,\n    \"last\": true,\n    \"pageNumber\": 0,\n    \"pageSize\": 50,\n    \"totalElements\": 1,\n    \"totalPages\": 1\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "content": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "79470875-dcdc-447b-8bd2-881f1ae6be2e"
+                          },
+                          "externalId": {
+                            "type": "string",
+                            "example": "20250401-2201-EMP600016"
+                          },
+                          "cnpj": {
+                            "type": "string",
+                            "example": "56941234567890"
+                          },
+                          "branch": {
+                            "type": "string",
+                            "example": "0001"
+                          },
+                          "accountNumber": {
+                            "type": "string",
+                            "example": "654321-0"
+                          },
+                          "currency": {
+                            "type": "string",
+                            "example": "BRL"
+                          },
+                          "amount": {
+                            "type": "integer",
+                            "example": 22,
+                            "default": 0
+                          },
+                          "date": {
+                            "type": "string",
+                            "example": "2025-04-01"
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "INFLOW"
+                          },
+                          "mode": {
+                            "type": "string",
+                            "example": "CONTAREMUNERADA"
+                          },
+                          "description": {
+                            "type": "string",
+                            "example": "REPASSE CONTA REMUNERADA CLIENTE"
+                          },
+                          "redemptionProcessed": {
+                            "type": "boolean",
+                            "example": false,
+                            "default": true
+                          }
+                        }
+                      }
+                    },
+                    "first": {
+                      "type": "boolean",
+                      "example": true,
+                      "default": true
+                    },
+                    "last": {
+                      "type": "boolean",
+                      "example": true,
+                      "default": true
+                    },
+                    "pageNumber": {
+                      "type": "integer",
+                      "example": 0,
+                      "default": 0
+                    },
+                    "pageSize": {
+                      "type": "integer",
+                      "example": 50,
+                      "default": 0
+                    },
+                    "totalElements": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "totalPages": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/api/v1/accounts": {
+      "get": {
+        "summary": "List Accounts",
+        "description": "",
+        "operationId": "list-remuneration-accounts",
+        "parameters": [
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Page Number",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 0
+            }
+          },
+          {
+            "name": "size",
+            "in": "query",
+            "description": "Page Size",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "default": 50
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"content\": [\n        {\n            \"id\": \"56941234567890\",\n            \"name\": \"DATANOMIK ACCOUNT LTDA\",\n            \"cnpj\": \"56941234567890\",\n            \"branch\": \"0001\",\n            \"accountNumber\": \"123456-0\",\n            \"totalBalance\": 37283.88,\n            \"availableBalance\": 37283.88,\n            \"blockedEarningBalance\": 0,\n            \"lastUpdate\": \"2025-07-01T10:39:06.54Z\",\n            \"currency\": \"BRL\",\n            \"dailyEarnings\": [\n                {\n                    \"date\": \"2025-06-23\",\n                    \"availableBalance\": 37283.88,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 37283.88\n                },\n                {\n                    \"date\": \"2025-06-24\",\n                    \"availableBalance\": 37283.88,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 37283.88\n                },\n                {\n                    \"date\": \"2025-06-25\",\n                    \"availableBalance\": 37283.88,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 37283.88\n                },\n                {\n                    \"date\": \"2025-06-26\",\n                    \"availableBalance\": 37283.88,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 37283.88\n                },\n                {\n                    \"date\": \"2025-06-27\",\n                    \"availableBalance\": 37283.88,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 37283.88\n                },\n                {\n                    \"date\": \"2025-06-30\",\n                    \"availableBalance\": 37283.88,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 37283.88\n                },\n                {\n                    \"date\": \"2025-07-01\",\n                    \"availableBalance\": 37283.88,\n                    \"blockedEarningBalance\": 0,\n                    \"totalBalance\": 37283.88\n                }\n            ],\n            \"accountType\": \"Conta Corrente\",\n            \"bankCode\": \"398\"\n        },\n        {\n            \"id\": \"12346576879809\",\n            \"name\": \"DATANOMIK BRASIL LTDA\",\n            \"cnpj\": \"12346576879809\",\n            \"branch\": \"0001\",\n            \"accountNumber\": \"654321-0\",\n            \"totalBalance\": 46850.78,\n            \"availableBalance\": 46850.78,\n            \"blockedEarningBalance\": 0,\n            \"lastUpdate\": \"2025-07-01T10:39:06.54Z\",\n            \"currency\": \"BRL\",\n            \"dailyEarnings\": [\n                {\n                    \"date\": \"2025-06-23\",\n                    \"availableBalance\": 46851.78,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 46851.78\n                },\n                {\n                    \"date\": \"2025-06-24\",\n                    \"availableBalance\": 46851.78,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 46851.78\n                },\n                {\n                    \"date\": \"2025-06-25\",\n                    \"availableBalance\": 46850.78,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 46850.78\n                },\n                {\n                    \"date\": \"2025-06-26\",\n                    \"availableBalance\": 46850.78,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 46850.78\n                },\n                {\n                    \"date\": \"2025-06-27\",\n                    \"availableBalance\": 46850.78,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 46850.78\n                },\n                {\n                    \"date\": \"2025-06-30\",\n                    \"availableBalance\": 46850.78,\n                    \"blockedEarningBalance\": 0.00,\n                    \"totalBalance\": 46850.78\n                },\n                {\n                    \"date\": \"2025-07-01\",\n                    \"availableBalance\": 46850.78,\n                    \"blockedEarningBalance\": 0,\n                    \"totalBalance\": 46850.78\n                }\n            ],\n            \"accountType\": \"Conta Corrente\",\n            \"bankCode\": \"398\"\n        }\n    ],\n    \"first\": true,\n    \"last\": true,\n    \"pageNumber\": 0,\n    \"pageSize\": 50,\n    \"totalElements\": 2,\n    \"totalPages\": 1\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "content": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "56941234567890"
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "DATANOMIK ACCOUNT LTDA"
+                          },
+                          "cnpj": {
+                            "type": "string",
+                            "example": "56941234567890"
+                          },
+                          "branch": {
+                            "type": "string",
+                            "example": "0001"
+                          },
+                          "accountNumber": {
+                            "type": "string",
+                            "example": "123456-0"
+                          },
+                          "totalBalance": {
+                            "type": "number",
+                            "example": 37283.88,
+                            "default": 0
+                          },
+                          "availableBalance": {
+                            "type": "number",
+                            "example": 37283.88,
+                            "default": 0
+                          },
+                          "blockedEarningBalance": {
+                            "type": "integer",
+                            "example": 0,
+                            "default": 0
+                          },
+                          "lastUpdate": {
+                            "type": "string",
+                            "example": "2025-07-01T10:39:06.54Z"
+                          },
+                          "currency": {
+                            "type": "string",
+                            "example": "BRL"
+                          },
+                          "dailyEarnings": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "date": {
+                                  "type": "string",
+                                  "example": "2025-06-23"
+                                },
+                                "availableBalance": {
+                                  "type": "number",
+                                  "example": 37283.88,
+                                  "default": 0
+                                },
+                                "blockedEarningBalance": {
+                                  "type": "integer",
+                                  "example": 0,
+                                  "default": 0
+                                },
+                                "totalBalance": {
+                                  "type": "number",
+                                  "example": 37283.88,
+                                  "default": 0
+                                }
+                              }
+                            }
+                          },
+                          "accountType": {
+                            "type": "string",
+                            "example": "Conta Corrente"
+                          },
+                          "bankCode": {
+                            "type": "string",
+                            "example": "398"
+                          }
+                        }
+                      }
+                    },
+                    "first": {
+                      "type": "boolean",
+                      "example": true,
+                      "default": true
+                    },
+                    "last": {
+                      "type": "boolean",
+                      "example": true,
+                      "default": true
+                    },
+                    "pageNumber": {
+                      "type": "integer",
+                      "example": 0,
+                      "default": 0
+                    },
+                    "pageSize": {
+                      "type": "integer",
+                      "example": 50,
+                      "default": 0
+                    },
+                    "totalElements": {
+                      "type": "integer",
+                      "example": 2,
+                      "default": 0
+                    },
+                    "totalPages": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "sec0": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  }
+}

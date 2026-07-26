@@ -1,0 +1,30 @@
+# Datanomik - Developers Documentation
+
+> Datanomik OpenBanking LatAm
+
+## Guides
+- [🏛 Institution coverage](https://docs.datanomik.com/docs/institution-coverage.md)
+
+## API Reference
+- [🔐 Pagination](https://docs.datanomik.com/reference/authentication-copy.md)
+- [List Accounts](https://docs.datanomik.com/reference/list-accounts.md): List all accounts of yours links
+- [Detail Account](https://docs.datanomik.com/reference/detail-account.md): Account detail information
+- [Account Position](https://docs.datanomik.com/reference/account-position.md): List all accounts of yours links
+- [List Balances History](https://docs.datanomik.com/reference/list-balances-copy.md): List all accounts balance of yours links
+- [List General Owners](https://docs.datanomik.com/reference/list-general-owners.md): List all account owners of yours links
+- [Detail General Owner](https://docs.datanomik.com/reference/detail-general-owner.md): List all account owners of yours links
+- [Create Manual Transaction](https://docs.datanomik.com/reference/create-manual-transaction.md): Create a link
+- [Sync Assets](https://docs.datanomik.com/reference/list-assets-copy.md): Consolidated information of yours links with owners, users, accounts and balances
+- [List Investments](https://docs.datanomik.com/reference/list-investments.md)
+- [List Investments History](https://docs.datanomik.com/reference/list-investments-history.md)
+- [List Investment Movements](https://docs.datanomik.com/reference/list-investment-movements.md): Flat list of investment movements from automatic applications. Role: ROLE_INVESTMENTS_READ.
+- [Get Investment Movement Receipt](https://docs.datanomik.com/reference/get-investment-movement-receipt.md): Receipt metadata for an investment movement (clientId, accountId, institution, date, receiptUrl). Role: ROLE_INVESTMENTS_READ.
+- [List Application Details](https://docs.datanomik.com/reference/list-application-details.md): Returns the consolidated detail of all investment applications across the available application types (committed, fund, deposit, COE). Supports filtering by application type, date range, account, link, investment and institution. Results are paginated.
+- [List Payments](https://docs.datanomik.com/reference/list-payments.md): List payments. Role: ROLE_PAYMENTS_READ.
+- [Download Payment Receipt (PDF)](https://docs.datanomik.com/reference/download-payment-receipt-pdf.md): Downloads the payment receipt (PDF) by id (application/pdf). Role: ROLE_PAYMENTS_READ.
+- [List PIX Transactions](https://docs.datanomik.com/reference/list-pix-transactions.md): List PIX transactions. Role: ROLE_PAYMENTS_READ.
+- [Download PIX Receipt (PDF)](https://docs.datanomik.com/reference/download-pix-receipt-pdf.md): Downloads the PIX transaction receipt (PDF) by id (application/pdf). Role: ROLE_PAYMENTS_READ.
+- [List Payment Slips](https://docs.datanomik.com/reference/get_v1-payments-2.md): List payment slips. Role: ROLE_PAYMENTS_READ.
+- [List Accounts](https://docs.datanomik.com/reference/list-remuneration-accounts.md)
+- [Detail Account](https://docs.datanomik.com/reference/detail-remuneration-account.md)
+- [List Transactions](https://docs.datanomik.com/reference/list-remunerated-account-transactions.md)

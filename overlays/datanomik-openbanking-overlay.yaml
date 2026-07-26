@@ -1,0 +1,31 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Datanomik OpenBanking API
+  version: 1.0.0
+extends: openapi/datanomik-openbanking-openapi.json
+actions:
+- target: $.info
+  update:
+    description: >-
+      Datanomik OpenBanking API - real-time open-banking data across connected
+      Brazilian financial institutions: accounts, balances, general owners, manual
+      transactions, investments (funds, committed, deposits, COE), payments, PIX
+      transactions and payment slips. Authenticated with HTTP Basic API keys
+      (secretId / secretPassword). Base URL https://api.datanomik.com. Pagination via
+      page and size query parameters.
+    contact:
+      name: Datanomik Support
+      email: support@datanomik.com
+      url: https://docs.datanomik.com
+    x-apievangelist-enriched: true
+    x-apievangelist-auth: http-basic-api-keys
+    x-apievangelist-pagination: page-size
+    x-apievangelist-country: BR
+- target: $.servers
+  update:
+  - url: https://api.datanomik.com
+    description: Production
+- target: $.externalDocs
+  update:
+    description: Datanomik developer documentation
+    url: https://docs.datanomik.com/docs/getting-started

@@ -1,0 +1,28 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.datanomik.com/docs/quick-start
+docs:
+- https://docs.datanomik.com/docs/quick-start
+- https://docs.datanomik.com/docs/create-account
+- https://docs.datanomik.com/docs/environment
+summary: >-
+  Datanomik provides a dedicated Sandbox environment that lets developers test the API
+  with unlimited sample data without providing real bank credentials. Sandbox and
+  production are fully separated - each has its own API key pair, and links created in one
+  environment cannot be moved to another.
+environments:
+  sandbox:
+    description: Dedicated sandbox with unlimited sample data; no real institution credentials required.
+    keys: separate sandbox secretId / secretPassword generated in the dashboard
+  production:
+    base_url_openbanking: https://api.datanomik.com
+    base_url_treasury: https://treasury-api.datanomik.com
+key_generation: https://dashboard.datanomik.com/#/settings/api-keys
+test_values:
+  published: false
+  notes: >-
+    Datanomik does not publish fixed magic test identifiers (test cards, test IBANs, magic
+    numbers). Sample data is provisioned inside the sandbox account itself rather than via
+    documented literal test values, so none are captured here to avoid fabrication.
+testing_tools:
+  postman_workspace: https://www.postman.com/datanomik-team/workspace/datanomik-api/overview/

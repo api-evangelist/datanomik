@@ -1,22 +1,246 @@
 aid: datanomik
 name: Datanomik
-description: Datanomik is a company surfaced as a portfolio company of a16z and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Datanomik is a Brazilian open finance and treasury-management platform that gives
+  mid-to-large enterprises real-time, consolidated visibility across their bank
+  accounts, balances, investments and payments through a single API. Authorized by
+  Banco Central do Brasil as a Payment Transaction Initiator (ITP) and a participant
+  in Brazil's Open Finance ecosystem, Datanomik connects to 30+ Brazilian financial
+  institutions (Banco do Brasil, Itau, Bradesco, Caixa, BTG, Nubank, Safra, Mercado
+  Pago and others) to deliver bank connectivity, cash and liquidity management,
+  investment-portfolio tracking, cash-flow forecasting, cash pooling and transfers,
+  automated bank statements and financial reporting. The company exposes two REST
+  APIs - an OpenBanking data API and a Treasury/Remuneration API - secured with HTTP
+  Basic API keys, documented on a ReadMe developer portal with a public Postman
+  workspace and a dedicated sandbox. Backed by a16z, its clients include iFood,
+  Magalu, Flamengo and Unimed.
 url: https://raw.githubusercontent.com/api-evangelist/datanomik/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
 x-backed-by:
 - a16z
-x-tier: stub
-x-tier-reason: portfolio-lead
+x-tier: profiled
+x-tier-reason: enrichment-pipeline
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-18'
+image: https://datanomik.com/favicon.ico
 tags:
 - Company
-apis: []
+- Open Finance
+- Open Banking
+- Treasury Management
+- Cash Management
+- Payments
+- PIX
+- Financial Data
+- Bank Connectivity
+- Brazil
+- LatAm
+- Fintech
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+apis:
+- aid: datanomik:datanomik-accounts-api
+  name: Datanomik Accounts API
+  description: The Accounts API from Datanomik — 5 operation(s) for accounts.
+  humanURL: https://docs.datanomik.com/docs/getting-started
+  baseURL: https://api.datanomik.com
+  tags:
+  - Accounts
+  properties:
+  - type: OpenAPI
+    url: openapi/datanomik-accounts-api-openapi.yml
+  - type: Documentation
+    url: https://docs.datanomik.com/reference
+- aid: datanomik:datanomik-applications-api
+  name: Datanomik Applications API
+  description: The Applications API from Datanomik — 1 operation(s) for applications.
+  humanURL: https://docs.datanomik.com/docs/getting-started
+  baseURL: https://api.datanomik.com
+  tags:
+  - Applications
+  properties:
+  - type: OpenAPI
+    url: openapi/datanomik-applications-api-openapi.yml
+  - type: Documentation
+    url: https://docs.datanomik.com/reference
+- aid: datanomik:datanomik-balances-api
+  name: Datanomik Balances API
+  description: The Balances API from Datanomik — 1 operation(s) for balances.
+  humanURL: https://docs.datanomik.com/docs/getting-started
+  baseURL: https://api.datanomik.com
+  tags:
+  - Balances
+  properties:
+  - type: OpenAPI
+    url: openapi/datanomik-balances-api-openapi.yml
+  - type: Documentation
+    url: https://docs.datanomik.com/reference
+- aid: datanomik:datanomik-general-owners-api
+  name: Datanomik General Owners API
+  description: The General Owners API from Datanomik — 2 operation(s) for general owners.
+  humanURL: https://docs.datanomik.com/docs/getting-started
+  baseURL: https://api.datanomik.com
+  tags:
+  - General Owners
+  properties:
+  - type: OpenAPI
+    url: openapi/datanomik-general-owners-api-openapi.yml
+  - type: Documentation
+    url: https://docs.datanomik.com/reference
+- aid: datanomik:datanomik-investments-api
+  name: Datanomik Investments API
+  description: The Investments API from Datanomik — 4 operation(s) for investments.
+  humanURL: https://docs.datanomik.com/docs/getting-started
+  baseURL: https://api.datanomik.com
+  tags:
+  - Investments
+  properties:
+  - type: OpenAPI
+    url: openapi/datanomik-investments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.datanomik.com/reference
+- aid: datanomik:datanomik-links-api
+  name: Datanomik Links API
+  description: The Links API from Datanomik — 1 operation(s) for links.
+  humanURL: https://docs.datanomik.com/docs/getting-started
+  baseURL: https://api.datanomik.com
+  tags:
+  - Links
+  properties:
+  - type: OpenAPI
+    url: openapi/datanomik-links-api-openapi.yml
+  - type: Documentation
+    url: https://docs.datanomik.com/reference
+- aid: datanomik:datanomik-payment-slips-api
+  name: Datanomik Payment Slips API
+  description: The Payment Slips API from Datanomik — 1 operation(s) for payment slips.
+  humanURL: https://docs.datanomik.com/docs/getting-started
+  baseURL: https://api.datanomik.com
+  tags:
+  - Payment Slips
+  properties:
+  - type: OpenAPI
+    url: openapi/datanomik-payment-slips-api-openapi.yml
+  - type: Documentation
+    url: https://docs.datanomik.com/reference
+- aid: datanomik:datanomik-payments-api
+  name: Datanomik Payments API
+  description: The Payments API from Datanomik — 2 operation(s) for payments.
+  humanURL: https://docs.datanomik.com/docs/getting-started
+  baseURL: https://api.datanomik.com
+  tags:
+  - Payments
+  properties:
+  - type: OpenAPI
+    url: openapi/datanomik-payments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.datanomik.com/reference
+- aid: datanomik:datanomik-pix-transactions-api
+  name: Datanomik Pix Transactions API
+  description: The Pix Transactions API from Datanomik — 2 operation(s) for pix transactions.
+  humanURL: https://docs.datanomik.com/docs/getting-started
+  baseURL: https://api.datanomik.com
+  tags:
+  - Pix Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/datanomik-pix-transactions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.datanomik.com/reference
+- aid: datanomik:datanomik-transactions-api
+  name: Datanomik Transactions API
+  description: The Transactions API from Datanomik — 2 operation(s) for transactions.
+  humanURL: https://docs.datanomik.com/docs/getting-started
+  baseURL: https://api.datanomik.com
+  tags:
+  - Transactions
+  properties:
+  - type: OpenAPI
+    url: openapi/datanomik-transactions-api-openapi.yml
+  - type: Documentation
+    url: https://docs.datanomik.com/reference
+common:
+- type: DomainSecurity
+  url: security/datanomik-domain-security.yml
+- type: AgenticAccess
+  url: agentic-access/datanomik-agentic-access.yml
+- type: DeveloperPortal
+  url: https://docs.datanomik.com/docs/getting-started
+- type: Documentation
+  url: https://docs.datanomik.com/docs/getting-started
+- type: APIReference
+  url: https://docs.datanomik.com/reference
+- type: GettingStarted
+  url: https://docs.datanomik.com/docs/quick-start
+- type: Quickstart
+  url: https://docs.datanomik.com/docs/quick-start
+- type: SignUp
+  url: https://dashboard.datanomik.com/#/sign-up
+- type: Login
+  url: https://dashboard.datanomik.com/
+- type: Support
+  url: mailto:support@datanomik.com
+- type: Blog
+  url: https://datanomik.com/entre-tesoureiros
+- type: StatusPage
+  url: https://status.datanomik.com
+- type: GitHubOrganization
+  url: https://github.com/datanomik
+- type: TermsOfService
+  url: https://datanomik.com/termos-e-condicoes
+- type: PrivacyPolicy
+  url: https://datanomik.com/politica-de-privacidade
+- type: Postman
+  url: https://www.postman.com/datanomik-team/workspace/datanomik-api/overview/
+- type: Website
+  url: https://datanomik.com
+- type: LinkedIn
+  url: https://www.linkedin.com/company/datanomik/
+- type: LLMsTxt
+  url: llms/datanomik-llms.txt
+- type: Authentication
+  url: authentication/datanomik-authentication.yml
+- type: Conventions
+  url: conventions/datanomik-conventions.yml
+- type: ErrorCatalog
+  url: errors/datanomik-problem-types.yml
+- type: Lifecycle
+  url: lifecycle/datanomik-lifecycle.yml
+- type: Sandbox
+  url: sandbox/datanomik-sandbox.yml
+- type: Components
+  url: components/datanomik-components.yml
+- type: DataModel
+  url: data-model/datanomik-data-model.yml
+- type: Conformance
+  url: conformance/datanomik-conformance.yml
+- type: Compliance
+  url: https://datanomik.com/seguranca
+- type: MCPServer
+  url: mcp/datanomik-mcp.yml
+- type: WellKnown
+  url: well-known/datanomik-well-known.yml
+- type: AgentSkill
+  url: skills/_index.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence

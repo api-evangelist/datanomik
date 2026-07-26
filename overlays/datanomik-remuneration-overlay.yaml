@@ -1,0 +1,29 @@
+overlay: 1.0.0
+info:
+  title: API Evangelist enhancements for Datanomik Treasury / Remuneration API
+  version: 1.0.0
+extends: openapi/datanomik-remuneration-openapi.json
+actions:
+- target: $.info
+  update:
+    description: >-
+      Datanomik Treasury / Remuneration API - list interest-bearing (remunerated)
+      accounts, retrieve account detail and access transaction history. Authenticated
+      with HTTP Basic API keys (secretId / secretPassword). Base URL
+      https://treasury-api.datanomik.com. Pagination via page and size query parameters.
+    contact:
+      name: Datanomik Support
+      email: support@datanomik.com
+      url: https://docs.datanomik.com
+    x-apievangelist-enriched: true
+    x-apievangelist-auth: http-basic-api-keys
+    x-apievangelist-pagination: page-size
+    x-apievangelist-country: BR
+- target: $.servers
+  update:
+  - url: https://treasury-api.datanomik.com
+    description: Production
+- target: $.externalDocs
+  update:
+    description: Datanomik developer documentation
+    url: https://docs.datanomik.com/reference/list-remuneration-accounts

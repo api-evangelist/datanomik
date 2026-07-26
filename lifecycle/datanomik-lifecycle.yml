@@ -1,0 +1,23 @@
+generated: '2026-07-18'
+method: searched
+source: https://status.datanomik.com
+versioning:
+  scheme: uri-path
+  openbanking_current: v1
+  remuneration_current: v1
+  docs: https://docs.datanomik.com/reference
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No formal deprecation / sunset policy is published.
+sla:
+  url: null
+  uptime_target: null
+  notes: No public SLA / uptime commitment documented.
+status_page: https://status.datanomik.com
+status_page_title: Datanomik Status
+deprecated_operations: []
+notes: >-
+  Datanomik operates a public status page at status.datanomik.com. No deprecation policy,
+  RFC 8594 Sunset/Deprecation header support, or published SLA was found. Both APIs are on
+  their first major version (v1).

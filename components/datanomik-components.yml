@@ -1,0 +1,20 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.datanomik.com/docs/concepts
+summary: >-
+  Datanomik ships a client-side Connect Widget - an embeddable UI surface that a
+  consuming application drops into its own app so that end users (its clients) can connect
+  their financial-institution accounts. Once connected, the integrator can query that
+  client's consolidated financial information through the API.
+components:
+- family: Connect Widget
+  name: Datanomik Connect Widget
+  kind: embedded-connect-flow
+  description: >-
+    Hosted account-linking widget your customers use to authenticate with their bank and
+    create a "link" (recurrent or one-shot) that authorizes Datanomik to retrieve their
+    financial data. It is the front-end counterpart to the OpenBanking data API.
+  docs: https://docs.datanomik.com/docs/concepts
+  notes: >-
+    Link types created via the widget: recurrent (ongoing access, change notifications)
+    and one-shot (single retrieval; credentials are not stored).

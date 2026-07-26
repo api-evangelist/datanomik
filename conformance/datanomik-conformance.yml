@@ -1,0 +1,40 @@
+generated: '2026-07-18'
+method: searched
+source:
+- https://datanomik.com
+- https://datanomik.com/seguranca
+- https://docs.datanomik.com/docs/about-security
+standards:
+- id: open-finance-brazil
+  conforms: true
+  evidence: Participant in Brazil's Open Finance ecosystem; authorized by Banco Central do Brasil as a Payment Transaction Initiator (ITP).
+- id: iso-27001
+  conforms: true
+  evidence: ISO/IEC 27001 certification stated on the company website.
+- id: lgpd
+  conforms: true
+  evidence: LGPD (Brazilian General Data Protection Law) compliance stated on the company website.
+- id: pix
+  conforms: true
+  evidence: PIX transaction listing and receipt endpoints in the OpenBanking API.
+- id: aes-256-encryption
+  conforms: true
+  evidence: Data encrypted with AES-256 via AWS KMS (docs/about-security).
+- id: oauth2
+  conforms: false
+  evidence: API uses HTTP Basic API keys, not OAuth2.
+- id: openid-connect
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Error responses use plain HTTP status codes, not application/problem+json.
+- id: rfc8594-sunset-header
+  conforms: false
+compliance_program:
+  published: true
+  certifications:
+  - ISO/IEC 27001
+  - LGPD
+  regulatory:
+  - Banco Central do Brasil - Payment Transaction Initiator (ITP)
+  url: https://datanomik.com/seguranca

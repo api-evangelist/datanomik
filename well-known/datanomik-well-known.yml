@@ -1,0 +1,33 @@
+generated: '2026-07-18'
+method: searched
+notes: >-
+  Probed the standard /.well-known/ discovery surface on every Datanomik host. No
+  discovery documents are published - the API hosts return a challenge/blocked response
+  (HTTP 473) for all paths and the website/docs hosts return 404. Recorded as honest
+  negative results.
+hosts:
+- host: https://api.datanomik.com
+  documents:
+  - {path: /.well-known/security.txt, status: 473}
+  - {path: /.well-known/openid-configuration, status: 473}
+  - {path: /.well-known/oauth-authorization-server, status: 473}
+  - {path: /.well-known/api-catalog, status: 473}
+  - {path: /.well-known/ai-plugin.json, status: 473}
+- host: https://treasury-api.datanomik.com
+  documents:
+  - {path: /.well-known/security.txt, status: 473}
+  - {path: /.well-known/openid-configuration, status: 473}
+  - {path: /.well-known/oauth-authorization-server, status: 473}
+  - {path: /.well-known/api-catalog, status: 473}
+  - {path: /.well-known/ai-plugin.json, status: 473}
+- host: https://datanomik.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/openid-configuration, status: 404}
+  - {path: /.well-known/oauth-authorization-server, status: 404}
+  - {path: /.well-known/api-catalog, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}
+- host: https://docs.datanomik.com
+  documents:
+  - {path: /.well-known/security.txt, status: 404}
+  - {path: /.well-known/ai-plugin.json, status: 404}

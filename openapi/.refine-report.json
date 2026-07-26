@@ -1,0 +1,32 @@
+{
+  "provider": "datanomik",
+  "sources": [
+    "datanomik-accounts-api-openapi.yml",
+    "datanomik-applications-api-openapi.yml",
+    "datanomik-balances-api-openapi.yml",
+    "datanomik-general-owners-api-openapi.yml",
+    "datanomik-investments-api-openapi.yml",
+    "datanomik-links-api-openapi.yml",
+    "datanomik-payment-slips-api-openapi.yml",
+    "datanomik-payments-api-openapi.yml",
+    "datanomik-pix-transactions-api-openapi.yml",
+    "datanomik-transactions-api-openapi.yml"
+  ],
+  "outputs": [
+    "datanomik-accounts-api-openapi.yml",
+    "datanomik-applications-api-openapi.yml",
+    "datanomik-balances-api-openapi.yml",
+    "datanomik-general-owners-api-openapi.yml",
+    "datanomik-investments-api-openapi.yml",
+    "datanomik-links-api-openapi.yml",
+    "datanomik-payment-slips-api-openapi.yml",
+    "datanomik-payments-api-openapi.yml",
+    "datanomik-pix-transactions-api-openapi.yml",
+    "datanomik-transactions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

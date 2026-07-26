@@ -1,0 +1,16 @@
+generated: '2026-07-18'
+method: generated
+source: openapi/datanomik-openbanking-openapi.json
+skills:
+- file: datanomik-consolidate-accounts.md
+  name: Consolidate bank accounts and balances
+  api: openapi/datanomik-openbanking-openapi.json
+  operations: [list-accounts, account-position, list-balances-copy, list-general-owners, detail-account, detail-general-owner]
+- file: datanomik-track-investments.md
+  name: Track investment holdings and movements
+  api: openapi/datanomik-openbanking-openapi.json
+  operations: [list-investments, list-investments-history, get_v1-investments-movements, get_v1-investments-movements-1, get_v1-applications-details]
+- file: datanomik-reconcile-payments.md
+  name: Reconcile payments and PIX transactions
+  api: openapi/datanomik-openbanking-openapi.json
+  operations: [get_v1-payments, get_v1-payments-1, get_v1-payments-2, get_v1-pix-transactions, get_v1-pix-transactions-1]

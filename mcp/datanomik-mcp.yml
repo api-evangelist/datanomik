@@ -1,0 +1,74 @@
+generated: '2026-07-18'
+method: derived
+status: candidate
+source: openapi/datanomik-openbanking-openapi.json, openapi/datanomik-remuneration-openapi.json
+notes: No official hosted/remote MCP server was found for Datanomik. This is a candidate tool list derived
+  one-per-operation from the harvested OpenAPI, provided as a starting point for an MCP server.
+server:
+  name: datanomik
+  transport: stdio
+  url: null
+tools:
+- name: account_position
+  description: Account Position
+  source_operation: openapi/datanomik-openbanking-openapi.json#account-position
+- name: create_manual_transaction
+  description: Create Manual Transaction
+  source_operation: openapi/datanomik-openbanking-openapi.json#create-manual-transaction
+- name: detail_account
+  description: Detail Account
+  source_operation: openapi/datanomik-openbanking-openapi.json#detail-account
+- name: detail_general_owner
+  description: Detail General Owner
+  source_operation: openapi/datanomik-openbanking-openapi.json#detail-general-owner
+- name: get_v1_payments_1
+  description: Download Payment Receipt (PDF)
+  source_operation: openapi/datanomik-openbanking-openapi.json#get_v1-payments-1
+- name: get_v1_pix_transactions_1
+  description: Download PIX Receipt (PDF)
+  source_operation: openapi/datanomik-openbanking-openapi.json#get_v1-pix-transactions-1
+- name: get_v1_investments_movements_1
+  description: Get Investment Movement Receipt
+  source_operation: openapi/datanomik-openbanking-openapi.json#get_v1-investments-movements-1
+- name: get_v1_payments_2
+  description: List Payment Slips
+  source_operation: openapi/datanomik-openbanking-openapi.json#get_v1-payments-2
+- name: list_accounts
+  description: List Accounts
+  source_operation: openapi/datanomik-openbanking-openapi.json#list-accounts
+- name: get_v1_applications_details
+  description: List Application Details
+  source_operation: openapi/datanomik-openbanking-openapi.json#get_v1-applications-details
+- name: list_assets_copy
+  description: Sync Assets
+  source_operation: openapi/datanomik-openbanking-openapi.json#list-assets-copy
+- name: list_balances_copy
+  description: List Balances History
+  source_operation: openapi/datanomik-openbanking-openapi.json#list-balances-copy
+- name: list_general_owners
+  description: List General Owners
+  source_operation: openapi/datanomik-openbanking-openapi.json#list-general-owners
+- name: get_v1_investments_movements
+  description: List Investment Movements
+  source_operation: openapi/datanomik-openbanking-openapi.json#get_v1-investments-movements
+- name: list_investments_history
+  description: List Investments History
+  source_operation: openapi/datanomik-openbanking-openapi.json#list-investments-history
+- name: list_investments
+  description: List Investments
+  source_operation: openapi/datanomik-openbanking-openapi.json#list-investments
+- name: get_v1_payments
+  description: List Payments
+  source_operation: openapi/datanomik-openbanking-openapi.json#get_v1-payments
+- name: get_v1_pix_transactions
+  description: List PIX Transactions
+  source_operation: openapi/datanomik-openbanking-openapi.json#get_v1-pix-transactions
+- name: detail_remuneration_account
+  description: Detail Account
+  source_operation: openapi/datanomik-remuneration-openapi.json#detail-remuneration-account
+- name: list_remunerated_account_transactions
+  description: List Transactions
+  source_operation: openapi/datanomik-remuneration-openapi.json#list-remunerated-account-transactions
+- name: list_remuneration_accounts
+  description: List Accounts
+  source_operation: openapi/datanomik-remuneration-openapi.json#list-remuneration-accounts

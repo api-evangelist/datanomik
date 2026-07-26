@@ -1,0 +1,42 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/datanomik-openbanking-openapi.json, openapi/datanomik-remuneration-openapi.json
+format: http-status
+notes: >-
+  Derived from the 4xx responses declared across the harvested OpenAPI. Datanomik returns
+  standard HTTP status codes with JSON error bodies; responses are not RFC 9457
+  application/problem+json. Titles/remediation below are synthesized from HTTP semantics
+  and the documented HTTP-verb conventions (docs/concepts) - Datanomik does not publish a
+  dedicated error-code reference page.
+problems:
+- status: 400
+  title: Bad Request
+  meaning: The request was malformed or a required/valid parameter was missing or invalid.
+  remediation: Check query parameters, path parameters and request body against the reference.
+  seen_on:
+  - create-manual-transaction
+  - get_v1-applications-details
+  - list-investments
+  - list-investments-history
+  - detail-remuneration-account
+  - list-remunerated-account-transactions
+  - list-remuneration-accounts
+- status: 401
+  title: Unauthorized
+  meaning: Missing or invalid HTTP Basic credentials (secretId / secretPassword), or the key pair lacks the required role.
+  remediation: Send valid API keys via HTTP Basic auth and ensure the key has the endpoint's role (e.g. ROLE_PAYMENTS_READ).
+  seen_on:
+  - list-accounts
+  - detail-account
+  - account-position
+  - list-balances-copy
+  - list-general-owners
+  - detail-general-owner
+  - list-assets-copy
+- status: 404
+  title: Not Found
+  meaning: The referenced resource (account, link, owner) does not exist or is not accessible with the current credentials.
+  remediation: Verify the resource id / linkId belongs to your account and exists in the current environment.
+  seen_on:
+  - create-manual-transaction
+  - detail-account

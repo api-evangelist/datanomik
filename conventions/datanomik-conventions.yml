@@ -1,0 +1,58 @@
+generated: '2026-07-18'
+method: searched
+source: https://docs.datanomik.com/reference/authentication-copy
+docs: https://docs.datanomik.com/docs/concepts
+summary: >-
+  Cross-cutting request/response conventions for the Datanomik OpenBanking and Treasury
+  APIs, captured from the developer documentation and the harvested OpenAPI. Datanomik is
+  a read-mostly open-finance data API secured with HTTP Basic API keys; there is no
+  documented idempotency-key contract.
+authentication:
+  style: http-basic
+  detail: secretId / secretPassword API keys sent as HTTP Basic auth
+  ref: authentication/datanomik-authentication.yml
+pagination:
+  style: page-number
+  params:
+    page: zero-based page number
+    size: page size (rows per page)
+  example: GET {baseUrl}/v1/transactions?page=0&size=100
+  source: https://docs.datanomik.com/reference/authentication-copy
+idempotency:
+  supported: false
+  notes: >-
+    No idempotency-key header or parameter is documented in the API reference or the
+    OpenAPI. Most operations are GET reads; writes (create-manual-transaction, sync
+    assets) do not advertise an idempotency contract.
+versioning:
+  scheme: uri-path
+  openbanking_current: v1
+  remuneration_current: v1
+  notes: Version carried in the URL path (/v1/..., /api/v1/...).
+environments:
+  model: separate sandbox and production key pairs
+  production_openbanking: https://api.datanomik.com
+  production_treasury: https://treasury-api.datanomik.com
+  notes: Links created in one environment cannot be reused in another.
+error_envelope:
+  format: json
+  problem_json: false
+  notes: >-
+    Errors return standard HTTP status codes (400, 401, 404) with JSON bodies; responses
+    are not RFC 9457 application/problem+json. See errors/datanomik-problem-types.yml.
+  ref: errors/datanomik-problem-types.yml
+rate_limit_signaling:
+  documented: false
+  notes: No rate-limit headers or quota policy documented in the public reference.
+date_fields:
+  format: ISO 8601
+  fields:
+    date: bank processing date
+    created_at: date the account/resource was created in Datanomik
+    acceded_at: last time the information was updated
+    updated_at: date a resource's information (e.g. credentials) was updated
+cross_links:
+  authentication: authentication/datanomik-authentication.yml
+  errors: errors/datanomik-problem-types.yml
+  lifecycle: lifecycle/datanomik-lifecycle.yml
+  data_model: data-model/datanomik-data-model.yml

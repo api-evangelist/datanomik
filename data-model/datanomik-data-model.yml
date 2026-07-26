@@ -1,0 +1,76 @@
+generated: '2026-07-18'
+method: derived
+source: openapi/datanomik-openbanking-openapi.json
+docs: https://docs.datanomik.com/docs/concepts
+summary: >-
+  Entity-relationship graph derived from the OpenBanking API paths and the documented
+  glossary of resources. The central entity is the Link (a set of institution
+  credentials); accounts, balances, owners, transactions, investments and payments all
+  hang off a Link via the linkId reference used across the endpoints.
+entities:
+- name: Link
+  description: A set of credentials to access an institution account (recurrent or one-shot). Root of the graph.
+  key: linkId
+- name: Account
+  description: An account at a connected financial institution.
+  key: accountId
+  path: /v1/accounts
+- name: Balance
+  description: Account balance, with history.
+  path: /v1/balances/history
+- name: GeneralOwner
+  description: Owner of an institution account.
+  key: ownerId / generalOwnerId
+  path: /v1/general-owners
+- name: Transaction
+  description: A transaction on an account (including manually created ones).
+  path: /v1/transactions
+- name: Asset
+  description: Consolidated view of a link (accounts, balances, owners, users).
+  path: /v1/links/sync/assets/{linkId}
+- name: Investment
+  description: Investment holdings and movements (funds, committed, deposits, COE).
+  path: /v1/investments
+- name: Payment
+  description: Payments and payment slips, with downloadable receipts.
+  path: /v1/payments
+- name: PixTransaction
+  description: PIX transactions, with downloadable receipts.
+  path: /v1/pix-transactions
+relationships:
+- from: Account
+  to: Link
+  type: belongs_to
+  via: linkId
+- from: Balance
+  to: Account
+  type: belongs_to
+  via: accountId
+- from: GeneralOwner
+  to: Link
+  type: belongs_to
+  via: linkId
+- from: Transaction
+  to: Account
+  type: belongs_to
+  via: accountId
+- from: Asset
+  to: Link
+  type: belongs_to
+  via: linkId
+- from: Investment
+  to: Link
+  type: belongs_to
+  via: linkId
+- from: Payment
+  to: Link
+  type: belongs_to
+  via: linkId
+- from: PixTransaction
+  to: Link
+  type: belongs_to
+  via: linkId
+- from: Payment
+  to: GeneralOwner
+  type: has_one
+  via: generalOwnerId

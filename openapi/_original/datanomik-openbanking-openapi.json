@@ -1,0 +1,3201 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "openbanking-api",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://api.datanomik.com"
+    }
+  ],
+  "paths": {
+    "/v1/accounts/position": {
+      "get": {
+        "summary": "Account Position",
+        "description": "List all accounts of yours links",
+        "operationId": "account-position",
+        "parameters": [
+          {
+            "name": "linkId",
+            "in": "query",
+            "description": "Identifier of the link from which you want to get detailed information about.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "description": "Country code in ISO Alpha-2 format",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "AR",
+                "BR",
+                "BO",
+                "CO",
+                "CH",
+                "PY",
+                "PE",
+                "UY"
+              ]
+            }
+          },
+          {
+            "name": "institution",
+            "in": "query",
+            "description": "Institution name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountId",
+            "in": "query",
+            "description": "Identifier of the account from which you want to get detailed information about.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountNumber",
+            "in": "query",
+            "description": "Account number in the institution",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountType",
+            "in": "query",
+            "description": "Account type, such as SAVING, CHECKING, etc",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "currency",
+            "in": "query",
+            "description": "Currency code in ISO 4217 format",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "availableBalanceGte",
+            "in": "query",
+            "description": "Available balance greater than or equals",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "availableBalanceLte",
+            "in": "query",
+            "description": "Available balance less than or equals",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "currentBalanceGte",
+            "in": "query",
+            "description": "Current balance greater than or equals",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "currentBalanceLte",
+            "in": "query",
+            "description": "Current balance less than or equals",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "updateAtFrom",
+            "in": "query",
+            "description": "Date format: YYYY-MM-dd HH:mm:ss",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "updateAtTo",
+            "in": "query",
+            "description": "Date format: YYYY-MM-dd HH:mm:ss",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "institutionId",
+            "in": "query",
+            "description": "Institution Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ownerId",
+            "in": "query",
+            "description": "Owner Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "workspaceView",
+            "in": "query",
+            "description": "View name or id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"content\": [\n        {\n            \"id\": \"5042b7b2-1914-44f0-8c59-18cfcf37eeea\",\n            \"account_number\": \"2022612\",\n            \"type\": \"Conta Corrente\",\n            \"category\": \"CHECKING\",\n            \"balance\": {\n                \"current_balance\": 834662.03,\n                \"available_balance\": 834662.03,\n                \"diff_percentage\": 0,\n                \"diff_indicator\": {\n                    \"type\": \"REGULAR\"\n                },\n                \"start_of_day_balance\": 834662.03,\n                \"last_day_balance\": 171134.17,\n                \"currency\": \"BRL\",\n                \"balance_history\": {},\n                \"investment_current_balance\": 47160.73,\n                \"investment_available_balance\": 46760.70,\n                \"forecast_balance\": 171134.17,\n                \"cash_position\": 217894.87\n            },\n            \"refreshed_at\": \"2024-06-13T10:00:43.202554Z\",\n            \"up_to_date\": true,\n            \"updated_at\": \"2024-06-13T10:00:25.97143Z\",\n            \"owner\": {\n                \"id\": \"16d0c3cc-059e-4765-915b-775611c2d29d\",\n                \"document\": \"91.626.076/8512-79\",\n                \"document_type\": \"CNPJ\",\n                \"display_name\": \"FERREIRA PEIXOTO LTDA.\",\n                \"email\": \"isabelly15@example.org\",\n                \"phone_number\": \"21 2269 7817\"\n            },\n            \"metadata\": {},\n            \"status\": \"ACTIVE\",\n            \"country\": \"BR\",\n            \"institution_logo\": \"https://resources.datanomik.com/institutions/br/XP.svg\",\n            \"institution\": \"XP\",\n            \"institution_description\": \"XP\",\n            \"institution_id\": \"d2d8f39f-6daa-4623-92fd-797ef7d881da\",\n            \"investments\": [\n                {\n                    \"id\": \"b402b168-84e5-4f3e-bf81-82c5e060966c\",\n                    \"instrument_type\": \"DEPOSIT\",\n                    \"description\": \"CDB BANCO\",\n                    \"net_balance\": 46760.70,\n                    \"main_balance\": 46760.70,\n                    \"gross_balance\": 47160.73,\n                    \"updated_at\": \"2024-06-13T10:00:43.698017Z\"\n                }\n            ],\n            \"link_id\": \"dd265cf9-5851-4422-850c-0e03783a0a85\",\n            \"external_id\": \"24e28561-b196-4c52-935c-7a22dc7c35ba\",\n            \"tags\": [],\n            \"favourite\": false,\n            \"ownership\": 100.0,\n            \"account_sync_status\": \"PROCESSED\",\n            \"trx_sync_status\": \"PROCESSED\",\n            \"investment_sync_status\": \"PROCESSED\",\n            \"payment_sync_status\": \"PROCESSED\",\n            \"account_group\": {}\n        }\n    ],\n    \"first\": true,\n    \"last\": true,\n    \"page_number\": 0,\n    \"page_size\": 50,\n    \"total_elements\": 1,\n    \"total_pages\": 1\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "content": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "5042b7b2-1914-44f0-8c59-18cfcf37eeea"
+                          },
+                          "account_number": {
+                            "type": "string",
+                            "example": "2022612"
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "Conta Corrente"
+                          },
+                          "category": {
+                            "type": "string",
+                            "example": "CHECKING"
+                          },
+                          "balance": {
+                            "type": "object",
+                            "properties": {
+                              "current_balance": {
+                                "type": "number",
+                                "example": 834662.03,
+                                "default": 0
+                              },
+                              "available_balance": {
+                                "type": "number",
+                                "example": 834662.03,
+                                "default": 0
+                              },
+                              "diff_percentage": {
+                                "type": "integer",
+                                "example": 0,
+                                "default": 0
+                              },
+                              "diff_indicator": {
+                                "type": "object",
+                                "properties": {
+                                  "type": {
+                                    "type": "string",
+                                    "example": "REGULAR"
+                                  }
+                                }
+                              },
+                              "start_of_day_balance": {
+                                "type": "number",
+                                "example": 834662.03,
+                                "default": 0
+                              },
+                              "last_day_balance": {
+                                "type": "number",
+                                "example": 171134.17,
+                                "default": 0
+                              },
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              },
+                              "balance_history": {
+                                "type": "object",
+                                "properties": {}
+                              },
+                              "investment_current_balance": {
+                                "type": "number",
+                                "example": 47160.73,
+                                "default": 0
+                              },
+                              "investment_available_balance": {
+                                "type": "number",
+                                "example": 46760.7,
+                                "default": 0
+                              },
+                              "forecast_balance": {
+                                "type": "number",
+                                "example": 171134.17,
+                                "default": 0
+                              },
+                              "cash_position": {
+                                "type": "number",
+                                "example": 217894.87,
+                                "default": 0
+                              }
+                            }
+                          },
+                          "refreshed_at": {
+                            "type": "string",
+                            "example": "2024-06-13T10:00:43.202554Z"
+                          },
+                          "up_to_date": {
+                            "type": "boolean",
+                            "example": true,
+                            "default": true
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "example": "2024-06-13T10:00:25.97143Z"
+                          },
+                          "owner": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "16d0c3cc-059e-4765-915b-775611c2d29d"
+                              },
+                              "document": {
+                                "type": "string",
+                                "example": "91.626.076/8512-79"
+                              },
+                              "document_type": {
+                                "type": "string",
+                                "example": "CNPJ"
+                              },
+                              "display_name": {
+                                "type": "string",
+                                "example": "FERREIRA PEIXOTO LTDA."
+                              },
+                              "email": {
+                                "type": "string",
+                                "example": "isabelly15@example.org"
+                              },
+                              "phone_number": {
+                                "type": "string",
+                                "example": "21 2269 7817"
+                              }
+                            }
+                          },
+                          "metadata": {
+                            "type": "object",
+                            "properties": {}
+                          },
+                          "status": {
+                            "type": "string",
+                            "example": "ACTIVE"
+                          },
+                          "country": {
+                            "type": "string",
+                            "example": "BR"
+                          },
+                          "institution_logo": {
+                            "type": "string",
+                            "example": "https://resources.datanomik.com/institutions/br/XP.svg"
+                          },
+                          "institution": {
+                            "type": "string",
+                            "example": "XP"
+                          },
+                          "institution_description": {
+                            "type": "string",
+                            "example": "XP"
+                          },
+                          "institution_id": {
+                            "type": "string",
+                            "example": "d2d8f39f-6daa-4623-92fd-797ef7d881da"
+                          },
+                          "investments": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "example": "b402b168-84e5-4f3e-bf81-82c5e060966c"
+                                },
+                                "instrument_type": {
+                                  "type": "string",
+                                  "example": "DEPOSIT"
+                                },
+                                "description": {
+                                  "type": "string",
+                                  "example": "CDB BANCO"
+                                },
+                                "net_balance": {
+                                  "type": "number",
+                                  "example": 46760.7,
+                                  "default": 0
+                                },
+                                "main_balance": {
+                                  "type": "number",
+                                  "example": 46760.7,
+                                  "default": 0
+                                },
+                                "gross_balance": {
+                                  "type": "number",
+                                  "example": 47160.73,
+                                  "default": 0
+                                },
+                                "updated_at": {
+                                  "type": "string",
+                                  "example": "2024-06-13T10:00:43.698017Z"
+                                }
+                              }
+                            }
+                          },
+                          "link_id": {
+                            "type": "string",
+                            "example": "dd265cf9-5851-4422-850c-0e03783a0a85"
+                          },
+                          "external_id": {
+                            "type": "string",
+                            "example": "24e28561-b196-4c52-935c-7a22dc7c35ba"
+                          },
+                          "tags": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {}
+                            }
+                          },
+                          "favourite": {
+                            "type": "boolean",
+                            "example": false,
+                            "default": true
+                          },
+                          "ownership": {
+                            "type": "integer",
+                            "example": 100,
+                            "default": 0
+                          },
+                          "account_sync_status": {
+                            "type": "string",
+                            "example": "PROCESSED"
+                          },
+                          "trx_sync_status": {
+                            "type": "string",
+                            "example": "PROCESSED"
+                          },
+                          "investment_sync_status": {
+                            "type": "string",
+                            "example": "PROCESSED"
+                          },
+                          "payment_sync_status": {
+                            "type": "string",
+                            "example": "PROCESSED"
+                          },
+                          "account_group": {
+                            "type": "object",
+                            "properties": {}
+                          }
+                        }
+                      }
+                    },
+                    "first": {
+                      "type": "boolean",
+                      "example": true,
+                      "default": true
+                    },
+                    "last": {
+                      "type": "boolean",
+                      "example": true,
+                      "default": true
+                    },
+                    "page_number": {
+                      "type": "integer",
+                      "example": 0,
+                      "default": 0
+                    },
+                    "page_size": {
+                      "type": "integer",
+                      "example": 50,
+                      "default": 0
+                    },
+                    "total_elements": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "total_pages": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"code\": 401,\n  \"type\": \"UNAUTHORIZED\",\n  \"message\": \"Invalid credentials\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "example": 401,
+                      "default": 0
+                    },
+                    "type": {
+                      "type": "string",
+                      "example": "UNAUTHORIZED"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid credentials"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/transactions": {
+      "post": {
+        "summary": "Create Manual Transaction",
+        "description": "Create a link",
+        "operationId": "create-manual-transaction",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "RAW_BODY": {
+                    "type": "array",
+                    "items": {
+                      "properties": {
+                        "account_id": {
+                          "type": "string",
+                          "description": "Account Id from Account > List Accounts"
+                        },
+                        "date": {
+                          "type": "string",
+                          "description": "Projected transaction date",
+                          "format": "date"
+                        },
+                        "type": {
+                          "type": "string",
+                          "description": "Transaction Type",
+                          "enum": [
+                            "INFLOW",
+                            "OUTFLOW"
+                          ]
+                        },
+                        "categories_ids": {
+                          "type": "array",
+                          "description": "Transaction Category Id list from Transactions > List Transactions Categories",
+                          "default": [],
+                          "items": {
+                            "type": "string"
+                          }
+                        },
+                        "amount": {
+                          "type": "number",
+                          "description": "Transaction Amount",
+                          "format": "double"
+                        },
+                        "external_id": {
+                          "type": "string",
+                          "description": "External transaction Id"
+                        },
+                        "description": {
+                          "type": "string",
+                          "description": "Transaction Description"
+                        },
+                        "reference": {
+                          "type": "string",
+                          "description": "Transaction Reference"
+                        }
+                      },
+                      "required": [
+                        "account_id",
+                        "date",
+                        "type",
+                        "amount",
+                        "external_id"
+                      ],
+                      "type": "object"
+                    }
+                  }
+                }
+              },
+              "examples": {
+                "Request Example": {
+                  "value": [
+                    {
+                      "account_id": "bb01472b-e39e-467c-9661-99e48b090efd",
+                      "categories_ids": [
+                        "79c7e4d8-888c-48cc-b680-2e7f04b8d255"
+                      ],
+                      "date": "2028-02-01",
+                      "type": "OUTFLOW",
+                      "reference": "Reference",
+                      "description": "Description",
+                      "amount": 100,
+                      "external_id": "123456789",
+                      "sender": {
+                        "document": "91.336.009/0001-23",
+                        "document_type": "CNPJ",
+                        "display_name": "Juan Carlos Da Silva",
+                        "reference": "Pagamento"
+                      },
+                      "beneficiary": {
+                        "document": "34.267.781/0001-05",
+                        "document_type": "CNPJ",
+                        "display_name": "Alison",
+                        "reference": "Pagamento"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "201",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "[\n    {\n        \"id\": \"0771de3f-1df9-46ab-b7c5-e28c4a864093\",\n        \"date\": \"2028-02-01\",\n        \"description\": \"Description\",\n        \"reference\": \"Reference\",\n        \"type\": \"OUTFLOW\",\n        \"mode\": \"MANUAL\",\n        \"currency\": \"UYU\",\n        \"amount\": 100.00,\n        \"link\": {\n            \"id\": \"ac89fb64-272b-460e-a6d1-6a572b547bf9\",\n            \"country\": \"UY\",\n            \"institution\": \"ITAU\",\n            \"institution_description\": \"Itau\",\n            \"institution_logo\": \"https://resources.datanomik.com/institutions/uy/Itau.svg\"\n        },\n        \"account\": {\n            \"id\": \"bb01472b-e39e-467c-9661-99e48b090efd\",\n            \"account_number\": \"2346467\",\n            \"owner\": {\n                \"id\": \"012ca1d9-6193-49e4-bf83-c5c058d92d10\",\n                \"document\": \"333587948682\",\n                \"document_type\": \"RUT\",\n                \"display_name\": \"BATISTA BARRIOS PLC\"\n            }\n        },\n        \"status\": \"APPROVED\",\n        \"additional_data\": {},\n        \"categories\": [\n            {\n                \"id\": \"79c7e4d8-888c-48cc-b680-2e7f04b8d255\",\n                \"name\": \"Test Categories\",\n                \"color\": \"#FFE2B6\",\n                \"type\": \"OUTFLOW\",\n                \"ordering\": 0,\n                \"multiple_categorize\": false\n            }\n        ]\n    }\n]"
+                  }
+                },
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "0771de3f-1df9-46ab-b7c5-e28c4a864093"
+                      },
+                      "date": {
+                        "type": "string",
+                        "example": "2028-02-01"
+                      },
+                      "description": {
+                        "type": "string",
+                        "example": "Description"
+                      },
+                      "reference": {
+                        "type": "string",
+                        "example": "Reference"
+                      },
+                      "type": {
+                        "type": "string",
+                        "example": "OUTFLOW"
+                      },
+                      "mode": {
+                        "type": "string",
+                        "example": "MANUAL"
+                      },
+                      "currency": {
+                        "type": "string",
+                        "example": "UYU"
+                      },
+                      "amount": {
+                        "type": "integer",
+                        "example": 100,
+                        "default": 0
+                      },
+                      "link": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "ac89fb64-272b-460e-a6d1-6a572b547bf9"
+                          },
+                          "country": {
+                            "type": "string",
+                            "example": "UY"
+                          },
+                          "institution": {
+                            "type": "string",
+                            "example": "ITAU"
+                          },
+                          "institution_description": {
+                            "type": "string",
+                            "example": "Itau"
+                          },
+                          "institution_logo": {
+                            "type": "string",
+                            "example": "https://resources.datanomik.com/institutions/uy/Itau.svg"
+                          }
+                        }
+                      },
+                      "account": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "bb01472b-e39e-467c-9661-99e48b090efd"
+                          },
+                          "account_number": {
+                            "type": "string",
+                            "example": "2346467"
+                          },
+                          "owner": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "012ca1d9-6193-49e4-bf83-c5c058d92d10"
+                              },
+                              "document": {
+                                "type": "string",
+                                "example": "333587948682"
+                              },
+                              "document_type": {
+                                "type": "string",
+                                "example": "RUT"
+                              },
+                              "display_name": {
+                                "type": "string",
+                                "example": "BATISTA BARRIOS PLC"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      "status": {
+                        "type": "string",
+                        "example": "APPROVED"
+                      },
+                      "additional_data": {
+                        "type": "object",
+                        "properties": {}
+                      },
+                      "categories": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "id": {
+                              "type": "string",
+                              "example": "79c7e4d8-888c-48cc-b680-2e7f04b8d255"
+                            },
+                            "name": {
+                              "type": "string",
+                              "example": "Test Categories"
+                            },
+                            "color": {
+                              "type": "string",
+                              "example": "#FFE2B6"
+                            },
+                            "type": {
+                              "type": "string",
+                              "example": "OUTFLOW"
+                            },
+                            "ordering": {
+                              "type": "integer",
+                              "example": 0,
+                              "default": 0
+                            },
+                            "multiple_categorize": {
+                              "type": "boolean",
+                              "example": false,
+                              "default": true
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"code\": 456,\n    \"type\": \"INVALID_REQUEST_BODY\",\n    \"message\": \"Invalid request body\",\n    \"trace_id\": \"d7640f6728efb826\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "example": 456,
+                      "default": 0
+                    },
+                    "type": {
+                      "type": "string",
+                      "example": "INVALID_REQUEST_BODY"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid request body"
+                    },
+                    "trace_id": {
+                      "type": "string",
+                      "example": "d7640f6728efb826"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"code\": 620,\n    \"type\": \"ACCOUNT_NOT_FOUND\",\n    \"message\": \"Account resource not found.\",\n    \"trace_id\": \"8d274b5b5c502dbe\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "example": 620,
+                      "default": 0
+                    },
+                    "type": {
+                      "type": "string",
+                      "example": "ACCOUNT_NOT_FOUND"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Account resource not found."
+                    },
+                    "trace_id": {
+                      "type": "string",
+                      "example": "8d274b5b5c502dbe"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/accounts/{id}": {
+      "get": {
+        "summary": "Detail Account",
+        "description": "Account detail information",
+        "operationId": "detail-account",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "Account identifier (UUID)",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          },
+          {
+            "name": "workspaceView",
+            "in": "query",
+            "description": "View name or id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "        {\n            \"id\": \"118a011c-85cf-49cd-b818-c9fd1063f0ce\",\n            \"description\": \"Account Description\",\n            \"account_number\": \"45555223\",\n          \t\"type\": \"CA\", \n            \"category\t\": \"SAVING\",\n            \"balance\": {\n                \"current_balance\": 10.0,\n                \"available_balance\": 10.0,\n                \"currency\": \"USD\"\n            },\n            \"refreshed_at\": \"2022-05-13T13:01:11.952Z\",\n            \"created_at\": \"2022-05-13T12:57:45.564897Z\",\n            \"updated_at\": \"2022-05-13T13:01:12.168382Z\",\n            \"owner\": {\n                \"id\": \"a2d9a143-ab1e-4cba-874f-6d0fc2d7dd5d\",\n                \"document\": \"123456789\",\n                \"document_type\": \"CPF\",\n                \"first_name\": \"PEDRO\",\n                \"last_name\": \"OLIVEIRA\",\n                \"second_last_name\": \"NUNEZ\",\n                \"display_name\": \"PEDRO OLIVEIRA NUNEZ\",\n                \"email\": \"demo@demo.com\"\n             }\n            ],\n          \t\"blocked\": false\n        }"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"code\": 401,\n  \"type\": \"UNAUTHORIZED\",\n  \"message\": \"Invalid credentials\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "example": 401,
+                      "default": 0
+                    },
+                    "type": {
+                      "type": "string",
+                      "example": "UNAUTHORIZED"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid credentials"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "404",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"code\": 620,\n    \"type\": \"ACCOUNT_NOT_FOUND\",\n    \"message\": \"Account resource not found.\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "example": 620,
+                      "default": 0
+                    },
+                    "type": {
+                      "type": "string",
+                      "example": "ACCOUNT_NOT_FOUND"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Account resource not found."
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/general-owners/{id}": {
+      "get": {
+        "summary": "Detail General Owner",
+        "description": "List all account owners of yours links",
+        "operationId": "detail-general-owner",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "General Owner Identifier (UUID)",
+            "schema": {
+              "type": "string"
+            },
+            "required": true
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "\n        {\n            \"id\": \"00d2425e-d7bf-4162-ad33-5926bda057d2\",\n            \"document\": \"11.111.111/0001-11\",\n            \"document_type\": \"CNPJ\",\n            \"display_name\": \"GENERAL OWNER DISPLAY NAME\",\n            \"owners\": [\n                {\n                    \"id\": \"d88b5cb9-72b6-48fc-89fe-68145738DD33\",\n                    \"document\": \"11.111.111/0001-11\",\n                    \"document_type\": \"CNPJ\",\n                    \"display_name\": \"OWNER DISPLAY NAME\"\n                },\n                {\n                    \"id\": \"f49d1c1b-2cfd-4910-aab4-f80f82aaFF43\",\n                    \"display_name\": \"OWNER DISPLAY NAME\"\n                }\n            ],\n            \"created_at\": \"2023-10-30T20:10:01.389464Z\",\n            \"tags\": [\n                {\n                    \"id\": \"6c732538-ad5a-4c29-84fa-8ec19c05e7fa\",\n                    \"name\": \"GENERAL OWNER TAG\",\n                    \"type\": \"GENERAL_OWNER\"\n                }\n            ]\n        }"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "example": "00d2425e-d7bf-4162-ad33-5926bda057d2"
+                    },
+                    "document": {
+                      "type": "string",
+                      "example": "11.111.111/0001-11"
+                    },
+                    "document_type": {
+                      "type": "string",
+                      "example": "CNPJ"
+                    },
+                    "display_name": {
+                      "type": "string",
+                      "example": "GENERAL OWNER DISPLAY NAME"
+                    },
+                    "owners": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "d88b5cb9-72b6-48fc-89fe-68145738DD33"
+                          },
+                          "document": {
+                            "type": "string",
+                            "example": "11.111.111/0001-11"
+                          },
+                          "document_type": {
+                            "type": "string",
+                            "example": "CNPJ"
+                          },
+                          "display_name": {
+                            "type": "string",
+                            "example": "OWNER DISPLAY NAME"
+                          }
+                        }
+                      }
+                    },
+                    "created_at": {
+                      "type": "string",
+                      "example": "2023-10-30T20:10:01.389464Z"
+                    },
+                    "tags": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "6c732538-ad5a-4c29-84fa-8ec19c05e7fa"
+                          },
+                          "name": {
+                            "type": "string",
+                            "example": "GENERAL OWNER TAG"
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "GENERAL_OWNER"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"code\": 401,\n  \"type\": \"UNAUTHORIZED\",\n  \"message\": \"Invalid credentials\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "example": 401,
+                      "default": 0
+                    },
+                    "type": {
+                      "type": "string",
+                      "example": "UNAUTHORIZED"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid credentials"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/payments/{paymentId}/receipt": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "paymentId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Payment identifier"
+          }
+        ],
+        "summary": "Download Payment Receipt (PDF)",
+        "operationId": "get_v1-payments-1",
+        "description": "Downloads the payment receipt (PDF) by id (application/pdf). Role: ROLE_PAYMENTS_READ."
+      }
+    },
+    "/v1/pix-transactions/{pixTransactionId}/receipt": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "pixTransactionId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "PIX transaction identifier"
+          }
+        ],
+        "summary": "Download PIX Receipt (PDF)",
+        "operationId": "get_v1-pix-transactions-1",
+        "description": "Downloads the PIX transaction receipt (PDF) by id (application/pdf). Role: ROLE_PAYMENTS_READ."
+      }
+    },
+    "/v1/investments/movements/{movementId}/receipt": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": ""
+          }
+        },
+        "parameters": [
+          {
+            "in": "path",
+            "name": "movementId",
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "description": "Movement identifier"
+          }
+        ],
+        "summary": "Get Investment Movement Receipt",
+        "operationId": "get_v1-investments-movements-1",
+        "description": "Receipt metadata for an investment movement (clientId, accountId, institution, date, receiptUrl). Role: ROLE_INVESTMENTS_READ."
+      }
+    },
+    "/v1/payment-slips": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "content": [
+                        {
+                          "id": "11111111-1111-1111-1111-111111111111",
+                          "bank_number": "00000000000",
+                          "client_number": "0000000",
+                          "amount": 14860.34,
+                          "charged_amount": 14860.34,
+                          "fee": 0,
+                          "date": "2026-05-29",
+                          "due_date": "2026-06-05",
+                          "metadata": {
+                            "display_name": "EXAMPLE BENEFICIARY LTDA",
+                            "fluctuation": 0,
+                            "occurrence": 1,
+                            "modality": "BOLETO",
+                            "payer_document": "12.345.678/0001-99",
+                            "tx_id": "00000000000000000000",
+                            "movement_description": "Boleto outros bancos",
+                            "status": "SETTLED",
+                            "settlement_date": "2026-05-29",
+                            "settled_amount": 14860.34,
+                            "discount": 0,
+                            "rebate": 0,
+                            "penalty": 0,
+                            "interest": 0,
+                            "tariff": 0,
+                            "costs": 0
+                          },
+                          "link": {
+                            "id": "22222222-2222-2222-2222-222222222222",
+                            "country": "BR",
+                            "institution": "ITAU_WEB",
+                            "institution_description": "Itau",
+                            "institution_logo": "https://resources.datanomik.com/institutions/br/Itau.svg"
+                          },
+                          "account": {
+                            "id": "33333333-3333-3333-3333-333333333333",
+                            "account_number": "00000-0",
+                            "branch": "0000",
+                            "currency": "BRL",
+                            "type": "Conta Corrente",
+                            "owner": {
+                              "id": "44444444-4444-4444-4444-444444444444",
+                              "document": "98.765.432/0001-10",
+                              "document_type": "CNPJ",
+                              "display_name": "EXAMPLE OWNER LTDA"
+                            },
+                            "description": "Conta Corrente",
+                            "category": "CHECKING"
+                          }
+                        }
+                      ],
+                      "first": true,
+                      "last": false,
+                      "page_number": 0,
+                      "page_size": 1,
+                      "total_elements": 12,
+                      "total_pages": 12
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "query",
+            "name": "linkId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Link identifier"
+          },
+          {
+            "in": "query",
+            "name": "accountId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Account identifier"
+          },
+          {
+            "in": "query",
+            "name": "ownerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Owner identifier"
+          },
+          {
+            "in": "query",
+            "name": "generalOwnerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "General owner identifier"
+          },
+          {
+            "in": "query",
+            "name": "institutionId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Institution identifier"
+          },
+          {
+            "in": "query",
+            "name": "dateFrom",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Start date (YYYY-MM-DD)"
+          },
+          {
+            "in": "query",
+            "name": "dateTo",
+            "schema": {
+              "type": "string"
+            },
+            "description": "End date (YYYY-MM-DD)"
+          },
+          {
+            "in": "query",
+            "name": "currency",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Currency (BRL, USD, etc.)"
+          },
+          {
+            "in": "query",
+            "name": "country",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Country (BR, AR, etc.)"
+          }
+        ],
+        "summary": "List Payment Slips",
+        "operationId": "get_v1-payments-2",
+        "description": "List payment slips. Role: ROLE_PAYMENTS_READ."
+      }
+    },
+    "/v1/accounts": {
+      "get": {
+        "summary": "List Accounts",
+        "description": "List all accounts of yours links",
+        "operationId": "list-accounts",
+        "parameters": [
+          {
+            "name": "linkId",
+            "in": "query",
+            "description": "Identifier of the link from which you want to get detailed information about.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "description": "Country code in ISO Alpha-2 format",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "AR",
+                "BR",
+                "BO",
+                "CO",
+                "CH",
+                "PY",
+                "PE",
+                "UY"
+              ]
+            }
+          },
+          {
+            "name": "institution",
+            "in": "query",
+            "description": "Institution name",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountId",
+            "in": "query",
+            "description": "Identifier of the account from which you want to get detailed information about.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountNumber",
+            "in": "query",
+            "description": "Account number in the institution",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountType",
+            "in": "query",
+            "description": "Account type, such as SAVING, CHECKING, etc",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "currency",
+            "in": "query",
+            "description": "Currency code in ISO 4217 format",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "availableBalanceGte",
+            "in": "query",
+            "description": "Available balance greater than or equals",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "availableBalanceLte",
+            "in": "query",
+            "description": "Available balance less than or equals",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "currentBalanceGte",
+            "in": "query",
+            "description": "Current balance greater than or equals",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "currentBalanceLte",
+            "in": "query",
+            "description": "Current balance less than or equals",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "updateAtFrom",
+            "in": "query",
+            "description": "Date format: YYYY-MM-dd HH:mm:ss",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "updateAtTo",
+            "in": "query",
+            "description": "Date format: YYYY-MM-dd HH:mm:ss",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "institutionId",
+            "in": "query",
+            "description": "Institution Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "ownerId",
+            "in": "query",
+            "description": "Owner Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "blocked",
+            "in": "query",
+            "description": "Blocked true or false",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "showBalanceInfo",
+            "in": "query",
+            "description": "Show Extra Balance Information",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "workspaceView",
+            "in": "query",
+            "description": "View name or id",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"content\": [\n        {\n            \"id\": \"118a011c-85cf-49cd-b818-c9fd1063f0ce\",\n            \"description\": \"Account Description\",\n            \"account_number\": \"45555223\",\n          \t\"type\": \"CA\", \n            \"category\t\": \"SAVING\",\n            \"balance\": {\n                \"current_balance\": 10.0,\n                \"available_balance\": 10.0,\n                \"currency\": \"USD\"\n            },\n            \"refreshed_at\": \"2022-05-13T13:01:11.952Z\",\n            \"created_at\": \"2022-05-13T12:57:45.564897Z\",\n            \"updated_at\": \"2022-05-13T13:01:12.168382Z\",\n            \"owner\": {\n                \"id\": \"a2d9a143-ab1e-4cba-874f-6d0fc2d7dd5d\",\n                \"document\": \"123456789\",\n                \"document_type\": \"CPF\",\n                \"first_name\": \"PEDRO\",\n                \"last_name\": \"OLIVEIRA\",\n                \"second_last_name\": \"NUNEZ\",\n                \"display_name\": \"PEDRO OLIVEIRA NUNEZ\",\n                \"email\": \"demo@demo.com\"\n             },\n          \t\"blocked\": false\n        }\n    ],\n    \"first\": true,\n    \"last\": true,\n    \"page_number\": 0,\n    \"page_size\": 50,\n    \"total_elements\": 1,\n    \"total_pages\": 1\n}"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"code\": 401,\n  \"type\": \"UNAUTHORIZED\",\n  \"message\": \"Invalid credentials\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "example": 401,
+                      "default": 0
+                    },
+                    "type": {
+                      "type": "string",
+                      "example": "UNAUTHORIZED"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid credentials"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/applications/details": {
+      "get": {
+        "description": "Returns the consolidated detail of all investment applications across the available application types (committed, fund, deposit, COE). Supports filtering by application type, date range, account, link, investment and institution. Results are paginated.",
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "applicationId": {
+                        "type": "string",
+                        "description": "Unique identifier of the application."
+                      },
+                      "applicationType": {
+                        "type": "string",
+                        "description": "Application type: one of COMMITTED, FUND, DEPOSIT, COE."
+                      },
+                      "investmentId": {
+                        "type": "string",
+                        "description": "Identifier of the investment that this application belongs to."
+                      },
+                      "accountId": {
+                        "type": "string",
+                        "description": "Account associated with the application."
+                      },
+                      "linkId": {
+                        "type": "string",
+                        "description": "Link associated with the application."
+                      },
+                      "institutionId": {
+                        "type": "string",
+                        "description": "Institution associated with the application."
+                      },
+                      "date": {
+                        "type": "string",
+                        "description": "Application date. Format: YYYY-MM-DD."
+                      },
+                      "mainBalance": {
+                        "type": "number",
+                        "description": "Principal amount of the application."
+                      },
+                      "grossBalance": {
+                        "type": "string",
+                        "description": "Gross balance of the application before taxes."
+                      },
+                      "netBalance": {
+                        "type": "string",
+                        "description": "Net balance of the application after taxes."
+                      }
+                    },
+                    "required": [
+                      "applicationId"
+                    ]
+                  }
+                },
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "content": [
+                        {
+                          "application_id": "11111111-1111-1111-1111-111111111111",
+                          "application_type": "DEPOSIT",
+                          "investment_id": "22222222-2222-2222-2222-222222222222",
+                          "investment_external_id": "1",
+                          "investment_description": "CDB-DI",
+                          "account_id": "33333333-3333-3333-3333-333333333333",
+                          "link_id": "44444444-4444-4444-4444-444444444444",
+                          "institution_id": "55555555-5555-5555-5555-555555555555",
+                          "institution_name": "ITAU_WEB",
+                          "date": "2026-06-25",
+                          "due_date": "2027-06-21",
+                          "main_balance": 355913,
+                          "gross_balance": 356460.15,
+                          "net_balance": 355985.09,
+                          "income_tax": 20.92,
+                          "income_tax_percentage": 22.5,
+                          "financial_tax": 454.13,
+                          "financial_tax_percentage": 83,
+                          "gross_profit": 547.15,
+                          "net_profit": 72.09,
+                          "cdi_based_remuneration_percentage": 97.5,
+                          "operation_number": "0000000000000",
+                          "status": "ACTIVE"
+                        }
+                      ],
+                      "first": true,
+                      "last": false,
+                      "page_number": 0,
+                      "page_size": 1,
+                      "total_elements": 134,
+                      "total_pages": 134
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "name": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "name"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "query",
+            "name": "applicationType",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "COMMITTED",
+                "FUND",
+                "DEPOSIT",
+                "COE"
+              ]
+            },
+            "description": "Application type to filter by. Can be repeated to include multiple types. Defaults to all four types."
+          },
+          {
+            "in": "query",
+            "name": "dateFrom",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Lower bound (inclusive) for the application date. Format: YYYY-MM-DD."
+          },
+          {
+            "in": "query",
+            "name": "dateTo",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Upper bound (inclusive) for the application date. Format: YYYY-MM-DD."
+          },
+          {
+            "in": "query",
+            "name": "accountId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by one or more account IDs. Can be repeated."
+          },
+          {
+            "in": "query",
+            "name": "linkId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by one or more link IDs. Can be repeated."
+          },
+          {
+            "in": "query",
+            "name": "investmentId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by one or more investment IDs. Can be repeated."
+          },
+          {
+            "in": "query",
+            "name": "institutionId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Filter by one or more institution IDs. Can be repeated."
+          }
+        ],
+        "operationId": "get_v1-applications-details",
+        "summary": "List Application Details"
+      }
+    },
+    "/v1/links/sync/assets/{linkId}": {
+      "post": {
+        "summary": "Sync Assets",
+        "description": "Consolidated information of yours links with owners, users, accounts and balances",
+        "operationId": "list-assets-copy",
+        "parameters": [
+          {
+            "name": "linkId",
+            "in": "query",
+            "description": "Identifier of the link from which you want to get detailed information about.",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "204": {
+            "description": "204",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"content\": [\n        {\n            \"id\": \"c40d94ca-184b-4520-9fd1-5cc418b8f612\",\n            \"description\": \"Test Link\",\n            \"institution\": \"BRADESCO\",\n            \"institution_logo\": \"https://resources.datanomik.com/institutions/uy/Bradesco.svg\",\n            \"access_type\": \"BUSINESS\",\n            \"country\": \"BR\",\n            \"refresh_rate\": \"180\",\n            \"accessed_at\": \"2022-02-15T19:04:57.980228\",\n            \"created_at\": \"2022-02-15T19:05:00.064292\",\n            \"updated_at\": \"2022-02-15T19:05:00.064308\",\n            \"source\": \"API\",\n            \"recurrent\": false,\n            \"live\": false,\n            \"status\": \"ACTIVE\",\n            \"accounts\": [\n          {\n            \"id\": \"118a011c-85cf-49cd-b818-c9fd1063f0ce\",\n            \"description\": \"Account Description\",\n            \"account_number\": \"45555223\",\n          \t\"type\": \"CA\", \n            \"category\t\": \"SAVING\",\n            \"balance\": {\n                \"current_balance\": 10.0,\n                \"available_balance\": 10.0,\n                \"currency\": \"USD\"\n            },\n            \"refreshed_at\": \"2022-05-13T13:01:11.952Z\",\n            \"created_at\": \"2022-05-13T12:57:45.564897Z\",\n            \"updated_at\": \"2022-05-13T13:01:12.168382Z\",\n            \"owners\": [\n                {\n                    \"id\": \"a2d9a143-ab1e-4cba-874f-6d0fc2d7dd5d\",\n                    \"document\": \"123456789\",\n                    \"document_type\": \"CPF\",\n                    \"first_name\": \"PEDRO\",\n                    \"last_name\": \"OLIVEIRA\",\n                    \"second_last_name\": \"NUNEZ\",\n                    \"display_name\": \"PEDRO OLIVEIRA NUNEZ\",\n                    \"email\": \"demo@demo.com\"\n             }\n            ],\n          \t\"blocked\": false\n        }\n            ],\n            \"users\": [\n                {\n                    \"id\": \"f5d70f6d-cbfe-495e-933e-42fb05ab648b\",\n                    \"username\": \"12345678\",\n                    \"metadata\": {\n                        \"document\": \"12345678\",\n                        \"document_type\": \"CI\",\n                        \"first_name\": \"PEDRO\",\n                        \"last_name\": \"OLIVEIRA\",\n                        \"second_last_name\": \"NUNEZ\",\n                        \"display_name\": \"PEDRO OLIVEIRA NUNEZ\",\n                        \"email\": \"pedrooliveira@gmail.com\",\n                        \"address\": \"ADDRESS 1234, 11300, MONTEVIDEO, URUGUAY\",\n                        \"phone_number\": \"099999999\"\n                    }\n                }\n            ]\n        }\n    ],\n    \"first\": true,\n    \"last\": true,\n    \"page_number\": 0,\n    \"page_size\": 20,\n    \"total_elements\": 1,\n    \"total_pages\": 1\n}"
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"code\": 401,\n  \"type\": \"UNAUTHORIZED\",\n  \"message\": \"Invalid credentials\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "example": 401,
+                      "default": 0
+                    },
+                    "type": {
+                      "type": "string",
+                      "example": "UNAUTHORIZED"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid credentials"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/balances/history": {
+      "get": {
+        "summary": "List Balances History",
+        "description": "List all accounts balance of yours links",
+        "operationId": "list-balances-copy",
+        "parameters": [
+          {
+            "name": "accountId",
+            "in": "query",
+            "description": "Identifier of the account from which you want to get detailed information about.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "dateFrom",
+            "in": "query",
+            "description": "Date From",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "dateTo",
+            "in": "query",
+            "description": "Date To",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"content\": [\n        {\n            \"current_balance\": 27889.0,\n            \"available_balance\": 4338.79,\n            \"currency\": \"EUR\",\n            \"link_id\": \"23786be0-62fd-4016-aa3d-fa886acaddd5\",\n            \"account\": {\n                \"id\": \"058ffd01-7268-43a8-bea3-893c501ab76e\",\n                \"description\": \"Account Description\",\n                \"account_number\": \"45555223\",\n                \"type\": \"CC\",\n                \"category\": \"SAVING\",\n                \"blocked\": false\n            }\n        }\n    ],\n    \"first\": true,\n    \"last\": true,\n    \"page_number\": 0,\n    \"page_size\": 50,\n    \"total_elements\":1,\n    \"total_pages\": 1\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "content": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "current_balance": {
+                            "type": "integer",
+                            "example": 27889,
+                            "default": 0
+                          },
+                          "available_balance": {
+                            "type": "number",
+                            "example": 4338.79,
+                            "default": 0
+                          },
+                          "currency": {
+                            "type": "string",
+                            "example": "EUR"
+                          },
+                          "link_id": {
+                            "type": "string",
+                            "example": "23786be0-62fd-4016-aa3d-fa886acaddd5"
+                          },
+                          "account": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "058ffd01-7268-43a8-bea3-893c501ab76e"
+                              },
+                              "description": {
+                                "type": "string",
+                                "example": "Account Description"
+                              },
+                              "account_number": {
+                                "type": "string",
+                                "example": "45555223"
+                              },
+                              "type": {
+                                "type": "string",
+                                "example": "CC"
+                              },
+                              "category": {
+                                "type": "string",
+                                "example": "SAVING"
+                              },
+                              "blocked": {
+                                "type": "boolean",
+                                "example": false,
+                                "default": true
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "first": {
+                      "type": "boolean",
+                      "example": true,
+                      "default": true
+                    },
+                    "last": {
+                      "type": "boolean",
+                      "example": true,
+                      "default": true
+                    },
+                    "page_number": {
+                      "type": "integer",
+                      "example": 0,
+                      "default": 0
+                    },
+                    "page_size": {
+                      "type": "integer",
+                      "example": 50,
+                      "default": 0
+                    },
+                    "total_elements": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "total_pages": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"code\": 401,\n  \"type\": \"UNAUTHORIZED\",\n  \"message\": \"Invalid credentials\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "example": 401,
+                      "default": 0
+                    },
+                    "type": {
+                      "type": "string",
+                      "example": "UNAUTHORIZED"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid credentials"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/general-owners": {
+      "get": {
+        "summary": "List General Owners",
+        "description": "List all account owners of yours links",
+        "operationId": "list-general-owners",
+        "parameters": [
+          {
+            "name": "displayName",
+            "in": "query",
+            "description": "General Owner Display Name",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n    \"content\": [\n        {\n            \"id\": \"00d2425e-d7bf-4162-ad33-5926bda057d2\",\n            \"document\": \"11.111.111/0001-11\",\n            \"document_type\": \"CNPJ\",\n            \"display_name\": \"GENERAL OWNER DISPLAY NAME\",\n            \"owners\": [\n                {\n                    \"id\": \"d88b5cb9-72b6-48fc-89fe-68145738DD33\",\n                    \"document\": \"11.111.111/0001-11\",\n                    \"document_type\": \"CNPJ\",\n                    \"display_name\": \"OWNER DISPLAY NAME\"\n                },\n                {\n                    \"id\": \"f49d1c1b-2cfd-4910-aab4-f80f82aaFF43\",\n                    \"display_name\": \"OWNER DISPLAY NAME\"\n                }\n            ],\n            \"created_at\": \"2023-10-30T20:10:01.389464Z\",\n            \"tags\": [\n                {\n                    \"id\": \"6c732538-ad5a-4c29-84fa-8ec19c05e7fa\",\n                    \"name\": \"GENERAL OWNER TAG\",\n                    \"type\": \"GENERAL_OWNER\"\n                }\n            ]\n        }\n    ],\n    \"first\": true,\n    \"last\": false,\n    \"page_number\": 0,\n    \"page_size\": 1,\n    \"total_elements\": 1,\n    \"total_pages\": 1\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "content": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "00d2425e-d7bf-4162-ad33-5926bda057d2"
+                          },
+                          "document": {
+                            "type": "string",
+                            "example": "11.111.111/0001-11"
+                          },
+                          "document_type": {
+                            "type": "string",
+                            "example": "CNPJ"
+                          },
+                          "display_name": {
+                            "type": "string",
+                            "example": "GENERAL OWNER DISPLAY NAME"
+                          },
+                          "owners": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "example": "d88b5cb9-72b6-48fc-89fe-68145738DD33"
+                                },
+                                "document": {
+                                  "type": "string",
+                                  "example": "11.111.111/0001-11"
+                                },
+                                "document_type": {
+                                  "type": "string",
+                                  "example": "CNPJ"
+                                },
+                                "display_name": {
+                                  "type": "string",
+                                  "example": "OWNER DISPLAY NAME"
+                                }
+                              }
+                            }
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "example": "2023-10-30T20:10:01.389464Z"
+                          },
+                          "tags": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "id": {
+                                  "type": "string",
+                                  "example": "6c732538-ad5a-4c29-84fa-8ec19c05e7fa"
+                                },
+                                "name": {
+                                  "type": "string",
+                                  "example": "GENERAL OWNER TAG"
+                                },
+                                "type": {
+                                  "type": "string",
+                                  "example": "GENERAL_OWNER"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    },
+                    "first": {
+                      "type": "boolean",
+                      "example": true,
+                      "default": true
+                    },
+                    "last": {
+                      "type": "boolean",
+                      "example": false,
+                      "default": true
+                    },
+                    "page_number": {
+                      "type": "integer",
+                      "example": 0,
+                      "default": 0
+                    },
+                    "page_size": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "total_elements": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    },
+                    "total_pages": {
+                      "type": "integer",
+                      "example": 1,
+                      "default": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "401",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{\n  \"code\": 401,\n  \"type\": \"UNAUTHORIZED\",\n  \"message\": \"Invalid credentials\"\n}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "code": {
+                      "type": "integer",
+                      "example": 401,
+                      "default": 0
+                    },
+                    "type": {
+                      "type": "string",
+                      "example": "UNAUTHORIZED"
+                    },
+                    "message": {
+                      "type": "string",
+                      "example": "Invalid credentials"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/investments/movements": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "content": [
+                        {
+                          "id": "11111111-1111-1111-1111-111111111111",
+                          "application_id": "22222222-2222-2222-2222-222222222222",
+                          "instrument_type": "DEPOSIT",
+                          "direction": "REDEEM",
+                          "date": "2026-06-30",
+                          "account_type": "Conta Corrente",
+                          "account_number": "0000 | 00000-0",
+                          "owner_document": "12.345.678/0001-99",
+                          "institution_name": "Itau",
+                          "institution_logo": "https://resources.datanomik.com/institutions/br/Itau.svg",
+                          "owner_id": "33333333-3333-3333-3333-333333333333",
+                          "owner_name": "000 | EXAMPLE OWNER NAME",
+                          "institution_id": "44444444-4444-4444-4444-444444444444",
+                          "type": "Renda Fixa",
+                          "asset": "CDB-DI",
+                          "value": -5074.26,
+                          "gross_value": -5074.26,
+                          "net_value": 5059.58,
+                          "income_tax_value": 14.68,
+                          "note_available": false
+                        }
+                      ],
+                      "first": true,
+                      "last": false,
+                      "page_number": 0,
+                      "page_size": 1,
+                      "total_elements": 11345,
+                      "total_pages": 11345
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "query",
+            "name": "instrumentType",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Instrument type: COE, BOND, FUND, STOCKS, DEPOSIT, COMMITTED or DERIVATIVE"
+          },
+          {
+            "in": "query",
+            "name": "direction",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Movement type: APPLY or REDEEM"
+          },
+          {
+            "in": "query",
+            "name": "investmentId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Investment identifier"
+          },
+          {
+            "in": "query",
+            "name": "accountId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Account identifier"
+          },
+          {
+            "in": "query",
+            "name": "applicationId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Application identifier"
+          },
+          {
+            "in": "query",
+            "name": "ownerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Owner identifier"
+          },
+          {
+            "in": "query",
+            "name": "generalOwnerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "General owner identifier"
+          },
+          {
+            "in": "query",
+            "name": "institutionId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Institution identifier"
+          },
+          {
+            "in": "query",
+            "name": "linkId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Link identifier"
+          },
+          {
+            "in": "query",
+            "name": "dateFrom",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Start date (YYYY-MM-DD)"
+          },
+          {
+            "in": "query",
+            "name": "dateTo",
+            "schema": {
+              "type": "string"
+            },
+            "description": "End date (YYYY-MM-DD)"
+          },
+          {
+            "in": "query",
+            "name": "noteAvailableOnly",
+            "schema": {
+              "type": "boolean"
+            },
+            "description": "Only movements with an available receipt"
+          }
+        ],
+        "summary": "List Investment Movements",
+        "operationId": "get_v1-investments-movements",
+        "description": "Flat list of investment movements from automatic applications. Role: ROLE_INVESTMENTS_READ."
+      }
+    },
+    "/v1/investments/history": {
+      "get": {
+        "summary": "List Investments History",
+        "description": "",
+        "operationId": "list-investments-history",
+        "parameters": [
+          {
+            "name": "linkId",
+            "in": "query",
+            "description": "Link Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "accountId",
+            "in": "query",
+            "description": "Account Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "investmentId",
+            "in": "query",
+            "description": "Investment Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "generalOwnerId",
+            "in": "query",
+            "description": "General Owner Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "instrumentType",
+            "in": "query",
+            "description": "Investment Instrument Type",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "FUND",
+                "COMMITED",
+                "BOND",
+                "STOCKS",
+                "DEPOSIT"
+              ]
+            }
+          },
+          {
+            "name": "dateFrom",
+            "in": "query",
+            "description": "Date From",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          },
+          {
+            "name": "dateTo",
+            "in": "query",
+            "description": "Date To",
+            "schema": {
+              "type": "string",
+              "format": "date"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "[{\n            \"id\": \"419a2fdb-853e-4ba6-88bb-3d56f0dc4043\",\n            \"instrument_type\": \"DEPOSIT\",\n            \"description\": \"CDB\",\n            \"net_balance\": 514.85,\n            \"gross_balance\": 1162.82,\n            \"account\": {\n                \"id\": \"c80c5b6e-f21e-4068-9dd7-c287cc98ca51\",\n                \"description\": \"Conta Corrente 60217-6\",\n                \"branch\": \"3957-2\",\n                \"account_number\": \"60217-6\",\n                \"type\": \"Conta Corrente\",\n                \"category\": \"CHECKING\",\n                \"balance\": {\n                    \"currency\": \"BRL\"\n                },\n                \"refreshed_at\": \"2023-07-05T15:28:13.091175Z\",\n                \"created_at\": \"2023-05-12T14:39:48.666683Z\",\n                \"updated_at\": \"2023-07-05T10:13:07.801974Z\",\n                \"owner\": {\n                    \"id\": \"47bd11f7-a024-469e-863a-0a5d24f374b8\",\n                    \"display_name\": \"VIEIRA S/A\"\n                },\n                \"blocked\": false,\n                \"status\": \"ACTIVE\",\n                \"country\": \"BR\",\n                \"institution_logo\": \"https://resources.datanomik.com/institutions/br/BancoBrasil.svg\",\n                \"institution\": \"BANCO_BRASIL\",\n                \"institution_description\": \"Banco do Brasil\",\n                \"link_id\": \"a284d0da-5de9-4edf-8a43-698d0b54d538\",\n                \"tags\": []\n            }\n}]"
+                  }
+                },
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "419a2fdb-853e-4ba6-88bb-3d56f0dc4043"
+                      },
+                      "instrument_type": {
+                        "type": "string",
+                        "example": "DEPOSIT"
+                      },
+                      "description": {
+                        "type": "string",
+                        "example": "CDB"
+                      },
+                      "net_balance": {
+                        "type": "number",
+                        "example": 514.85,
+                        "default": 0
+                      },
+                      "gross_balance": {
+                        "type": "number",
+                        "example": 1162.82,
+                        "default": 0
+                      },
+                      "account": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "c80c5b6e-f21e-4068-9dd7-c287cc98ca51"
+                          },
+                          "description": {
+                            "type": "string",
+                            "example": "Conta Corrente 60217-6"
+                          },
+                          "branch": {
+                            "type": "string",
+                            "example": "3957-2"
+                          },
+                          "account_number": {
+                            "type": "string",
+                            "example": "60217-6"
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "Conta Corrente"
+                          },
+                          "category": {
+                            "type": "string",
+                            "example": "CHECKING"
+                          },
+                          "balance": {
+                            "type": "object",
+                            "properties": {
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "refreshed_at": {
+                            "type": "string",
+                            "example": "2023-07-05T15:28:13.091175Z"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "example": "2023-05-12T14:39:48.666683Z"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "example": "2023-07-05T10:13:07.801974Z"
+                          },
+                          "owner": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "47bd11f7-a024-469e-863a-0a5d24f374b8"
+                              },
+                              "display_name": {
+                                "type": "string",
+                                "example": "VIEIRA S/A"
+                              }
+                            }
+                          },
+                          "blocked": {
+                            "type": "boolean",
+                            "example": false,
+                            "default": true
+                          },
+                          "status": {
+                            "type": "string",
+                            "example": "ACTIVE"
+                          },
+                          "country": {
+                            "type": "string",
+                            "example": "BR"
+                          },
+                          "institution_logo": {
+                            "type": "string",
+                            "example": "https://resources.datanomik.com/institutions/br/BancoBrasil.svg"
+                          },
+                          "institution": {
+                            "type": "string",
+                            "example": "BANCO_BRASIL"
+                          },
+                          "institution_description": {
+                            "type": "string",
+                            "example": "Banco do Brasil"
+                          },
+                          "link_id": {
+                            "type": "string",
+                            "example": "a284d0da-5de9-4edf-8a43-698d0b54d538"
+                          },
+                          "tags": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/investments": {
+      "get": {
+        "summary": "List Investments",
+        "description": "",
+        "operationId": "list-investments",
+        "parameters": [
+          {
+            "name": "linkId",
+            "in": "query",
+            "description": "Link Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "currency",
+            "in": "query",
+            "description": "Currency Iso Code",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "USD",
+                "BRL",
+                "UYU",
+                "EUR"
+              ]
+            }
+          },
+          {
+            "name": "institutionId",
+            "in": "query",
+            "description": "Institution Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "recurrent",
+            "in": "query",
+            "description": "Recurrent Link (True or False)",
+            "schema": {
+              "type": "boolean"
+            }
+          },
+          {
+            "name": "accountId",
+            "in": "query",
+            "description": "Account Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "country",
+            "in": "query",
+            "description": "Country Iso Code",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "UY",
+                "BR",
+                "AR",
+                "US"
+              ]
+            }
+          },
+          {
+            "name": "grossBalanceGte",
+            "in": "query",
+            "description": "Gross Balance Greater Than",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "grossBalanceLte",
+            "in": "query",
+            "description": "Gross Balance Less Than",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "netBalanceGte",
+            "in": "query",
+            "description": "Net Balance Greater Than",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "netBalanceLte",
+            "in": "query",
+            "description": "Net Balance Less Than",
+            "schema": {
+              "type": "number",
+              "format": "double"
+            }
+          },
+          {
+            "name": "ownerId",
+            "in": "query",
+            "description": "Owner Id",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "instrumentType",
+            "in": "query",
+            "description": "Investment Instrument Type",
+            "schema": {
+              "type": "string",
+              "enum": [
+                "FUND",
+                "COMMITED",
+                "BOND",
+                "STOCKS",
+                "DEPOSIT"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "200",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "[{\n            \"id\": \"419a2fdb-853e-4ba6-88bb-3d56f0dc4043\",\n            \"instrument_type\": \"DEPOSIT\",\n            \"description\": \"CDB\",\n            \"net_balance\": 514.85,\n            \"gross_balance\": 1162.82,\n            \"account\": {\n                \"id\": \"c80c5b6e-f21e-4068-9dd7-c287cc98ca51\",\n                \"description\": \"Conta Corrente 60217-6\",\n                \"branch\": \"3957-2\",\n                \"account_number\": \"60217-6\",\n                \"type\": \"Conta Corrente\",\n                \"category\": \"CHECKING\",\n                \"balance\": {\n                    \"currency\": \"BRL\"\n                },\n                \"refreshed_at\": \"2023-07-05T15:28:13.091175Z\",\n                \"created_at\": \"2023-05-12T14:39:48.666683Z\",\n                \"updated_at\": \"2023-07-05T10:13:07.801974Z\",\n                \"owner\": {\n                    \"id\": \"47bd11f7-a024-469e-863a-0a5d24f374b8\",\n                    \"display_name\": \"VIEIRA S/A\"\n                },\n                \"blocked\": false,\n                \"status\": \"ACTIVE\",\n                \"country\": \"BR\",\n                \"institution_logo\": \"https://resources.datanomik.com/institutions/br/BancoBrasil.svg\",\n                \"institution\": \"BANCO_BRASIL\",\n                \"institution_description\": \"Banco do Brasil\",\n                \"link_id\": \"a284d0da-5de9-4edf-8a43-698d0b54d538\",\n                \"tags\": []\n            }\n}]"
+                  }
+                },
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "example": "419a2fdb-853e-4ba6-88bb-3d56f0dc4043"
+                      },
+                      "instrument_type": {
+                        "type": "string",
+                        "example": "DEPOSIT"
+                      },
+                      "description": {
+                        "type": "string",
+                        "example": "CDB"
+                      },
+                      "net_balance": {
+                        "type": "number",
+                        "example": 514.85,
+                        "default": 0
+                      },
+                      "gross_balance": {
+                        "type": "number",
+                        "example": 1162.82,
+                        "default": 0
+                      },
+                      "account": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "example": "c80c5b6e-f21e-4068-9dd7-c287cc98ca51"
+                          },
+                          "description": {
+                            "type": "string",
+                            "example": "Conta Corrente 60217-6"
+                          },
+                          "branch": {
+                            "type": "string",
+                            "example": "3957-2"
+                          },
+                          "account_number": {
+                            "type": "string",
+                            "example": "60217-6"
+                          },
+                          "type": {
+                            "type": "string",
+                            "example": "Conta Corrente"
+                          },
+                          "category": {
+                            "type": "string",
+                            "example": "CHECKING"
+                          },
+                          "balance": {
+                            "type": "object",
+                            "properties": {
+                              "currency": {
+                                "type": "string",
+                                "example": "BRL"
+                              }
+                            }
+                          },
+                          "refreshed_at": {
+                            "type": "string",
+                            "example": "2023-07-05T15:28:13.091175Z"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "example": "2023-05-12T14:39:48.666683Z"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "example": "2023-07-05T10:13:07.801974Z"
+                          },
+                          "owner": {
+                            "type": "object",
+                            "properties": {
+                              "id": {
+                                "type": "string",
+                                "example": "47bd11f7-a024-469e-863a-0a5d24f374b8"
+                              },
+                              "display_name": {
+                                "type": "string",
+                                "example": "VIEIRA S/A"
+                              }
+                            }
+                          },
+                          "blocked": {
+                            "type": "boolean",
+                            "example": false,
+                            "default": true
+                          },
+                          "status": {
+                            "type": "string",
+                            "example": "ACTIVE"
+                          },
+                          "country": {
+                            "type": "string",
+                            "example": "BR"
+                          },
+                          "institution_logo": {
+                            "type": "string",
+                            "example": "https://resources.datanomik.com/institutions/br/BancoBrasil.svg"
+                          },
+                          "institution": {
+                            "type": "string",
+                            "example": "BANCO_BRASIL"
+                          },
+                          "institution_description": {
+                            "type": "string",
+                            "example": "Banco do Brasil"
+                          },
+                          "link_id": {
+                            "type": "string",
+                            "example": "a284d0da-5de9-4edf-8a43-698d0b54d538"
+                          },
+                          "tags": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {}
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "400",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "Result": {
+                    "value": "{}"
+                  }
+                },
+                "schema": {
+                  "type": "object",
+                  "properties": {}
+                }
+              }
+            }
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/v1/payments": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "content": [
+                        {
+                          "id": "11111111-1111-1111-1111-111111111111",
+                          "date": "2026-06-30",
+                          "relative_order": 0,
+                          "reference": "0000/000-00000",
+                          "type": "TICKET",
+                          "description": "Boleto outros bancos",
+                          "batch": "000000000",
+                          "amount": 3591.84,
+                          "beneficiary": {
+                            "document": "12.345.678/0001-99",
+                            "document_type": "CNPJ",
+                            "display_name": "EXAMPLE BENEFICIARY S/A"
+                          },
+                          "link": {
+                            "id": "22222222-2222-2222-2222-222222222222",
+                            "country": "BR",
+                            "institution": "ITAU_WEB",
+                            "institution_description": "Itau",
+                            "institution_logo": "https://resources.datanomik.com/institutions/br/Itau.svg"
+                          },
+                          "account": {
+                            "id": "33333333-3333-3333-3333-333333333333",
+                            "account_number": "00000-0",
+                            "branch": "0000",
+                            "currency": "BRL",
+                            "type": "Conta Corrente",
+                            "owner": {
+                              "id": "44444444-4444-4444-4444-444444444444",
+                              "document": "98.765.432/0001-10",
+                              "document_type": "CNPJ",
+                              "display_name": "EXAMPLE OWNER LTDA"
+                            },
+                            "category": "CHECKING"
+                          },
+                          "status": "EXECUTED",
+                          "downloadable": "PROCESSED",
+                          "downloadable_since": "2026-06-30T21:24:36.291797Z",
+                          "created_at": "2026-06-30T20:52:10.861343Z",
+                          "updated_at": "2026-06-30T21:24:36.291797Z"
+                        }
+                      ],
+                      "first": true,
+                      "last": false,
+                      "page_number": 0,
+                      "page_size": 1,
+                      "total_elements": 6788,
+                      "total_pages": 6788
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "query",
+            "name": "linkId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Link identifier"
+          },
+          {
+            "in": "query",
+            "name": "accountId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Account identifier"
+          },
+          {
+            "in": "query",
+            "name": "ownerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Owner identifier"
+          },
+          {
+            "in": "query",
+            "name": "generalOwnerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "General owner identifier"
+          },
+          {
+            "in": "query",
+            "name": "institutionId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Institution identifier"
+          },
+          {
+            "in": "query",
+            "name": "dateFrom",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Start date (YYYY-MM-DD)"
+          },
+          {
+            "in": "query",
+            "name": "dateTo",
+            "schema": {
+              "type": "string"
+            },
+            "description": "End date (YYYY-MM-DD)"
+          },
+          {
+            "in": "query",
+            "name": "type",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Payment type"
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Payment status"
+          },
+          {
+            "in": "query",
+            "name": "amountFrom",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Minimum amount"
+          },
+          {
+            "in": "query",
+            "name": "amountTo",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Maximum amount"
+          },
+          {
+            "in": "query",
+            "name": "currency",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Currency (BRL, USD, etc.)"
+          },
+          {
+            "in": "query",
+            "name": "country",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Country (BR, AR, etc.)"
+          },
+          {
+            "in": "query",
+            "name": "beneficiaryName",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Beneficiary name"
+          },
+          {
+            "in": "query",
+            "name": "beneficiaryDocument",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Beneficiary document"
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Description"
+          },
+          {
+            "in": "query",
+            "name": "transactionId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Transaction identifier"
+          },
+          {
+            "in": "query",
+            "name": "reference",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Reference"
+          },
+          {
+            "in": "query",
+            "name": "categoryId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Category identifier"
+          }
+        ],
+        "summary": "List Payments",
+        "operationId": "get_v1-payments",
+        "description": "List payments. Role: ROLE_PAYMENTS_READ."
+      }
+    },
+    "/v1/pix-transactions": {
+      "get": {
+        "responses": {
+          "200": {
+            "description": "",
+            "content": {
+              "application/json": {
+                "examples": {
+                  "OK": {
+                    "summary": "OK",
+                    "value": {
+                      "content": [
+                        {
+                          "id": "11111111-1111-1111-1111-111111111111",
+                          "type": "OUTFLOW",
+                          "date": "2026-06-30",
+                          "amount": -557.8,
+                          "description": "PIX Transfer√™ncias",
+                          "beneficiary": {
+                            "document": "12.345.678/0001-99",
+                            "document_type": "CNPJ",
+                            "display_name": "EXAMPLE BENEFICIARY LTDA"
+                          },
+                          "status": "EXECUTED",
+                          "link": {
+                            "id": "22222222-2222-2222-2222-222222222222",
+                            "country": "BR",
+                            "institution": "ITAU_WEB",
+                            "institution_description": "Itau",
+                            "institution_logo": "https://resources.datanomik.com/institutions/br/Itau.svg"
+                          },
+                          "account": {
+                            "id": "33333333-3333-3333-3333-333333333333",
+                            "account_number": "00000-0",
+                            "branch": "0000",
+                            "currency": "BRL",
+                            "type": "Conta Corrente",
+                            "owner": {
+                              "id": "44444444-4444-4444-4444-444444444444",
+                              "document": "98.765.432/0001-10",
+                              "document_type": "CNPJ",
+                              "display_name": "EXAMPLE OWNER LTDA"
+                            },
+                            "category": "CHECKING"
+                          },
+                          "created_at": "2026-06-30T21:41:10.46913Z",
+                          "updated_at": "2026-06-30T21:41:10.469134Z",
+                          "downloadable": "PENDING"
+                        }
+                      ],
+                      "first": true,
+                      "last": false,
+                      "page_number": 0,
+                      "page_size": 1,
+                      "total_elements": 1442,
+                      "total_pages": 1442
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "in": "query",
+            "name": "linkId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Link identifier"
+          },
+          {
+            "in": "query",
+            "name": "accountId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Account identifier"
+          },
+          {
+            "in": "query",
+            "name": "ownerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Owner identifier"
+          },
+          {
+            "in": "query",
+            "name": "generalOwnerId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "General owner identifier"
+          },
+          {
+            "in": "query",
+            "name": "institutionId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Institution identifier"
+          },
+          {
+            "in": "query",
+            "name": "dateFrom",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Start date (YYYY-MM-DD)"
+          },
+          {
+            "in": "query",
+            "name": "dateTo",
+            "schema": {
+              "type": "string"
+            },
+            "description": "End date (YYYY-MM-DD)"
+          },
+          {
+            "in": "query",
+            "name": "trxType",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Transaction type: INFLOW or OUTFLOW"
+          },
+          {
+            "in": "query",
+            "name": "status",
+            "schema": {
+              "type": "string"
+            },
+            "description": "PIX transaction status"
+          },
+          {
+            "in": "query",
+            "name": "currency",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Currency (BRL, USD, etc.)"
+          },
+          {
+            "in": "query",
+            "name": "country",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Country (BR, AR, etc.)"
+          },
+          {
+            "in": "query",
+            "name": "beneficiaryName",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Beneficiary name"
+          },
+          {
+            "in": "query",
+            "name": "beneficiaryDocument",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Beneficiary document"
+          },
+          {
+            "in": "query",
+            "name": "senderName",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Sender name"
+          },
+          {
+            "in": "query",
+            "name": "senderDocument",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Sender document"
+          },
+          {
+            "in": "query",
+            "name": "description",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Description"
+          },
+          {
+            "in": "query",
+            "name": "reference",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Reference"
+          },
+          {
+            "in": "query",
+            "name": "categoryId",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Category identifier"
+          }
+        ],
+        "summary": "List PIX Transactions",
+        "operationId": "get_v1-pix-transactions",
+        "description": "List PIX transactions. Role: ROLE_PAYMENTS_READ."
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "sec0": {
+        "type": "http",
+        "scheme": "basic"
+      }
+    }
+  }
+}
