@@ -177,6 +177,8 @@ apis:
   - type: Documentation
     url: https://docs.datanomik.com/reference
 common:
+- type: Overlay
+  url: overlays/datanomik-openbanking-overlay.yaml
 - type: DomainSecurity
   url: security/datanomik-domain-security.yml
 - type: AgenticAccess
