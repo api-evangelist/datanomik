@@ -1,0 +1,164 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "openbanking-api Accounts Payments API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Payments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Download Payment Receipt (PDF)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/v1/payments/:paymentId/receipt",
+            "params": [
+              {
+                "name": "paymentId",
+                "value": "",
+                "type": "path",
+                "description": "Payment identifier"
+              }
+            ]
+          },
+          "docs": "Downloads the payment receipt (PDF) by id (application/pdf). Role: ROLE_PAYMENTS_READ."
+        },
+        {
+          "info": {
+            "name": "List Payments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/v1/payments",
+            "params": [
+              {
+                "name": "linkId",
+                "value": "",
+                "type": "query",
+                "description": "Link identifier"
+              },
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "Account identifier"
+              },
+              {
+                "name": "ownerId",
+                "value": "",
+                "type": "query",
+                "description": "Owner identifier"
+              },
+              {
+                "name": "generalOwnerId",
+                "value": "",
+                "type": "query",
+                "description": "General owner identifier"
+              },
+              {
+                "name": "institutionId",
+                "value": "",
+                "type": "query",
+                "description": "Institution identifier"
+              },
+              {
+                "name": "dateFrom",
+                "value": "",
+                "type": "query",
+                "description": "Start date (YYYY-MM-DD)"
+              },
+              {
+                "name": "dateTo",
+                "value": "",
+                "type": "query",
+                "description": "End date (YYYY-MM-DD)"
+              },
+              {
+                "name": "type",
+                "value": "",
+                "type": "query",
+                "description": "Payment type"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "Payment status"
+              },
+              {
+                "name": "amountFrom",
+                "value": "",
+                "type": "query",
+                "description": "Minimum amount"
+              },
+              {
+                "name": "amountTo",
+                "value": "",
+                "type": "query",
+                "description": "Maximum amount"
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "Currency (BRL, USD, etc.)"
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query",
+                "description": "Country (BR, AR, etc.)"
+              },
+              {
+                "name": "beneficiaryName",
+                "value": "",
+                "type": "query",
+                "description": "Beneficiary name"
+              },
+              {
+                "name": "beneficiaryDocument",
+                "value": "",
+                "type": "query",
+                "description": "Beneficiary document"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "Description"
+              },
+              {
+                "name": "transactionId",
+                "value": "",
+                "type": "query",
+                "description": "Transaction identifier"
+              },
+              {
+                "name": "reference",
+                "value": "",
+                "type": "query",
+                "description": "Reference"
+              },
+              {
+                "name": "categoryId",
+                "value": "",
+                "type": "query",
+                "description": "Category identifier"
+              }
+            ]
+          },
+          "docs": "List payments. Role: ROLE_PAYMENTS_READ."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

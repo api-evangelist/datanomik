@@ -1,0 +1,262 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "openbanking-api Accounts Investments API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Investments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Investment Movement Receipt",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/v1/investments/movements/:movementId/receipt",
+            "params": [
+              {
+                "name": "movementId",
+                "value": "",
+                "type": "path",
+                "description": "Movement identifier"
+              }
+            ]
+          },
+          "docs": "Receipt metadata for an investment movement (clientId, accountId, institution, date, receiptUrl). Role: ROLE_INVESTMENTS_READ."
+        },
+        {
+          "info": {
+            "name": "List Investment Movements",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/v1/investments/movements",
+            "params": [
+              {
+                "name": "instrumentType",
+                "value": "",
+                "type": "query",
+                "description": "Instrument type: COE, BOND, FUND, STOCKS, DEPOSIT, COMMITTED or DERIVATIVE"
+              },
+              {
+                "name": "direction",
+                "value": "",
+                "type": "query",
+                "description": "Movement type: APPLY or REDEEM"
+              },
+              {
+                "name": "investmentId",
+                "value": "",
+                "type": "query",
+                "description": "Investment identifier"
+              },
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "Account identifier"
+              },
+              {
+                "name": "applicationId",
+                "value": "",
+                "type": "query",
+                "description": "Application identifier"
+              },
+              {
+                "name": "ownerId",
+                "value": "",
+                "type": "query",
+                "description": "Owner identifier"
+              },
+              {
+                "name": "generalOwnerId",
+                "value": "",
+                "type": "query",
+                "description": "General owner identifier"
+              },
+              {
+                "name": "institutionId",
+                "value": "",
+                "type": "query",
+                "description": "Institution identifier"
+              },
+              {
+                "name": "linkId",
+                "value": "",
+                "type": "query",
+                "description": "Link identifier"
+              },
+              {
+                "name": "dateFrom",
+                "value": "",
+                "type": "query",
+                "description": "Start date (YYYY-MM-DD)"
+              },
+              {
+                "name": "dateTo",
+                "value": "",
+                "type": "query",
+                "description": "End date (YYYY-MM-DD)"
+              },
+              {
+                "name": "noteAvailableOnly",
+                "value": "",
+                "type": "query",
+                "description": "Only movements with an available receipt"
+              }
+            ]
+          },
+          "docs": "Flat list of investment movements from automatic applications. Role: ROLE_INVESTMENTS_READ."
+        },
+        {
+          "info": {
+            "name": "List Investments History",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/v1/investments/history",
+            "params": [
+              {
+                "name": "linkId",
+                "value": "",
+                "type": "query",
+                "description": "Link Id"
+              },
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "Account Id"
+              },
+              {
+                "name": "investmentId",
+                "value": "",
+                "type": "query",
+                "description": "Investment Id"
+              },
+              {
+                "name": "generalOwnerId",
+                "value": "",
+                "type": "query",
+                "description": "General Owner Id"
+              },
+              {
+                "name": "instrumentType",
+                "value": "",
+                "type": "query",
+                "description": "Investment Instrument Type"
+              },
+              {
+                "name": "dateFrom",
+                "value": "",
+                "type": "query",
+                "description": "Date From"
+              },
+              {
+                "name": "dateTo",
+                "value": "",
+                "type": "query",
+                "description": "Date To"
+              }
+            ]
+          },
+          "docs": "List Investments History"
+        },
+        {
+          "info": {
+            "name": "List Investments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/v1/investments",
+            "params": [
+              {
+                "name": "linkId",
+                "value": "",
+                "type": "query",
+                "description": "Link Id"
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "Currency Iso Code"
+              },
+              {
+                "name": "institutionId",
+                "value": "",
+                "type": "query",
+                "description": "Institution Id"
+              },
+              {
+                "name": "recurrent",
+                "value": "",
+                "type": "query",
+                "description": "Recurrent Link (True or False)"
+              },
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "Account Id"
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query",
+                "description": "Country Iso Code"
+              },
+              {
+                "name": "grossBalanceGte",
+                "value": "",
+                "type": "query",
+                "description": "Gross Balance Greater Than"
+              },
+              {
+                "name": "grossBalanceLte",
+                "value": "",
+                "type": "query",
+                "description": "Gross Balance Less Than"
+              },
+              {
+                "name": "netBalanceGte",
+                "value": "",
+                "type": "query",
+                "description": "Net Balance Greater Than"
+              },
+              {
+                "name": "netBalanceLte",
+                "value": "",
+                "type": "query",
+                "description": "Net Balance Less Than"
+              },
+              {
+                "name": "ownerId",
+                "value": "",
+                "type": "query",
+                "description": "Owner Id"
+              },
+              {
+                "name": "instrumentType",
+                "value": "",
+                "type": "query",
+                "description": "Investment Instrument Type"
+              }
+            ]
+          },
+          "docs": "List Investments"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

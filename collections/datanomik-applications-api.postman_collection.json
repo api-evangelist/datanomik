@@ -1,0 +1,243 @@
+{
+  "item": [
+    {
+      "id": "d5df1281-5e30-4b96-9af4-21cc8ce6587c",
+      "name": "Applications",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "29589c8e-53b5-4677-a7b0-aca83de574b3",
+          "name": "List Application Details",
+          "request": {
+            "name": "List Application Details",
+            "description": {
+              "content": "Returns the consolidated detail of all investment applications across the available application types (committed, fund, deposit, COE). Supports filtering by application type, date range, account, link, investment and institution. Results are paginated.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "applications",
+                "details"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "applicationType",
+                  "value": "<string>",
+                  "description": "Application type to filter by. Can be repeated to include multiple types. Defaults to all four types."
+                },
+                {
+                  "disabled": false,
+                  "key": "dateFrom",
+                  "value": "<string>",
+                  "description": "Lower bound (inclusive) for the application date. Format: YYYY-MM-DD."
+                },
+                {
+                  "disabled": false,
+                  "key": "dateTo",
+                  "value": "<string>",
+                  "description": "Upper bound (inclusive) for the application date. Format: YYYY-MM-DD."
+                },
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "<string>",
+                  "description": "Filter by one or more account IDs. Can be repeated."
+                },
+                {
+                  "disabled": false,
+                  "key": "linkId",
+                  "value": "<string>",
+                  "description": "Filter by one or more link IDs. Can be repeated."
+                },
+                {
+                  "disabled": false,
+                  "key": "investmentId",
+                  "value": "<string>",
+                  "description": "Filter by one or more investment IDs. Can be repeated."
+                },
+                {
+                  "disabled": false,
+                  "key": "institutionId",
+                  "value": "<string>",
+                  "description": "Filter by one or more institution IDs. Can be repeated."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b63b1e9f-d5ea-40c7-9da3-72dcc5342b21",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "applications",
+                    "details"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "applicationType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "investmentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institutionId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"content\": [\n    {\n      \"application_id\": \"11111111-1111-1111-1111-111111111111\",\n      \"application_type\": \"DEPOSIT\",\n      \"investment_id\": \"22222222-2222-2222-2222-222222222222\",\n      \"investment_external_id\": \"1\",\n      \"investment_description\": \"CDB-DI\",\n      \"account_id\": \"33333333-3333-3333-3333-333333333333\",\n      \"link_id\": \"44444444-4444-4444-4444-444444444444\",\n      \"institution_id\": \"55555555-5555-5555-5555-555555555555\",\n      \"institution_name\": \"ITAU_WEB\",\n      \"date\": \"2026-06-25\",\n      \"due_date\": \"2027-06-21\",\n      \"main_balance\": 355913,\n      \"gross_balance\": 356460.15,\n      \"net_balance\": 355985.09,\n      \"income_tax\": 20.92,\n      \"income_tax_percentage\": 22.5,\n      \"financial_tax\": 454.13,\n      \"financial_tax_percentage\": 83,\n      \"gross_profit\": 547.15,\n      \"net_profit\": 72.09,\n      \"cdi_based_remuneration_percentage\": 97.5,\n      \"operation_number\": \"0000000000000\",\n      \"status\": \"ACTIVE\"\n    }\n  ],\n  \"first\": true,\n  \"last\": false,\n  \"page_number\": 0,\n  \"page_size\": 1,\n  \"total_elements\": 134,\n  \"total_pages\": 134\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "965872ed-725f-4e4c-a250-47e9574955f5",
+              "name": "Bad Request",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "applications",
+                    "details"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "applicationType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "linkId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "investmentId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institutionId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.datanomik.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "60bcb844-77fa-42c7-9b10-8fee66d02c74",
+    "name": "openbanking-api Accounts Applications API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

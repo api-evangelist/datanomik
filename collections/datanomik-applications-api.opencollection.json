@@ -1,0 +1,73 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "openbanking-api Accounts Applications API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Applications",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Application Details",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/v1/applications/details",
+            "params": [
+              {
+                "name": "applicationType",
+                "value": "",
+                "type": "query",
+                "description": "Application type to filter by. Can be repeated to include multiple types. Defaults to all four types."
+              },
+              {
+                "name": "dateFrom",
+                "value": "",
+                "type": "query",
+                "description": "Lower bound (inclusive) for the application date. Format: YYYY-MM-DD."
+              },
+              {
+                "name": "dateTo",
+                "value": "",
+                "type": "query",
+                "description": "Upper bound (inclusive) for the application date. Format: YYYY-MM-DD."
+              },
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by one or more account IDs. Can be repeated."
+              },
+              {
+                "name": "linkId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by one or more link IDs. Can be repeated."
+              },
+              {
+                "name": "investmentId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by one or more investment IDs. Can be repeated."
+              },
+              {
+                "name": "institutionId",
+                "value": "",
+                "type": "query",
+                "description": "Filter by one or more institution IDs. Can be repeated."
+              }
+            ]
+          },
+          "docs": "Returns the consolidated detail of all investment applications across the available application types (committed, fund, deposit, COE). Supports filtering by application type, date range, account, link, investment and institution. Results are paginated."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

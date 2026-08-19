@@ -1,0 +1,158 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "openbanking-api Accounts Pix Transactions API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Pix Transactions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Download PIX Receipt (PDF)",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/v1/pix-transactions/:pixTransactionId/receipt",
+            "params": [
+              {
+                "name": "pixTransactionId",
+                "value": "",
+                "type": "path",
+                "description": "PIX transaction identifier"
+              }
+            ]
+          },
+          "docs": "Downloads the PIX transaction receipt (PDF) by id (application/pdf). Role: ROLE_PAYMENTS_READ."
+        },
+        {
+          "info": {
+            "name": "List PIX Transactions",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/v1/pix-transactions",
+            "params": [
+              {
+                "name": "linkId",
+                "value": "",
+                "type": "query",
+                "description": "Link identifier"
+              },
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "Account identifier"
+              },
+              {
+                "name": "ownerId",
+                "value": "",
+                "type": "query",
+                "description": "Owner identifier"
+              },
+              {
+                "name": "generalOwnerId",
+                "value": "",
+                "type": "query",
+                "description": "General owner identifier"
+              },
+              {
+                "name": "institutionId",
+                "value": "",
+                "type": "query",
+                "description": "Institution identifier"
+              },
+              {
+                "name": "dateFrom",
+                "value": "",
+                "type": "query",
+                "description": "Start date (YYYY-MM-DD)"
+              },
+              {
+                "name": "dateTo",
+                "value": "",
+                "type": "query",
+                "description": "End date (YYYY-MM-DD)"
+              },
+              {
+                "name": "trxType",
+                "value": "",
+                "type": "query",
+                "description": "Transaction type: INFLOW or OUTFLOW"
+              },
+              {
+                "name": "status",
+                "value": "",
+                "type": "query",
+                "description": "PIX transaction status"
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "Currency (BRL, USD, etc.)"
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query",
+                "description": "Country (BR, AR, etc.)"
+              },
+              {
+                "name": "beneficiaryName",
+                "value": "",
+                "type": "query",
+                "description": "Beneficiary name"
+              },
+              {
+                "name": "beneficiaryDocument",
+                "value": "",
+                "type": "query",
+                "description": "Beneficiary document"
+              },
+              {
+                "name": "senderName",
+                "value": "",
+                "type": "query",
+                "description": "Sender name"
+              },
+              {
+                "name": "senderDocument",
+                "value": "",
+                "type": "query",
+                "description": "Sender document"
+              },
+              {
+                "name": "description",
+                "value": "",
+                "type": "query",
+                "description": "Description"
+              },
+              {
+                "name": "reference",
+                "value": "",
+                "type": "query",
+                "description": "Reference"
+              },
+              {
+                "name": "categoryId",
+                "value": "",
+                "type": "query",
+                "description": "Category identifier"
+              }
+            ]
+          },
+          "docs": "List PIX transactions. Role: ROLE_PAYMENTS_READ."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

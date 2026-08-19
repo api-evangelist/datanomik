@@ -1,0 +1,56 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "openbanking-api Accounts General Owners API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "General Owners",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Detail General Owner",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/v1/general-owners/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "General Owner Identifier (UUID)"
+              }
+            ]
+          },
+          "docs": "List all account owners of yours links"
+        },
+        {
+          "info": {
+            "name": "List General Owners",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/v1/general-owners",
+            "params": [
+              {
+                "name": "displayName",
+                "value": "",
+                "type": "query",
+                "description": "General Owner Display Name"
+              }
+            ]
+          },
+          "docs": "List all account owners of yours links"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

@@ -1,0 +1,1215 @@
+{
+  "item": [
+    {
+      "id": "54a910fc-3a6d-457d-b7bb-6f35fb67443d",
+      "name": "Accounts",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7ff4a6bf-4566-4ec5-9f94-e783dd0e0cad",
+          "name": "Account Position",
+          "request": {
+            "name": "Account Position",
+            "description": {
+              "content": "List all accounts of yours links",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "accounts",
+                "position"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkId",
+                  "value": "<string>",
+                  "description": "Identifier of the link from which you want to get detailed information about."
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Country code in ISO Alpha-2 format"
+                },
+                {
+                  "disabled": false,
+                  "key": "institution",
+                  "value": "<string>",
+                  "description": "Institution name"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "<string>",
+                  "description": "Identifier of the account from which you want to get detailed information about."
+                },
+                {
+                  "disabled": false,
+                  "key": "accountNumber",
+                  "value": "<string>",
+                  "description": "Account number in the institution"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountType",
+                  "value": "<string>",
+                  "description": "Account type, such as SAVING, CHECKING, etc"
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "Currency code in ISO 4217 format"
+                },
+                {
+                  "disabled": false,
+                  "key": "availableBalanceGte",
+                  "value": "<double>",
+                  "description": "Available balance greater than or equals"
+                },
+                {
+                  "disabled": false,
+                  "key": "availableBalanceLte",
+                  "value": "<double>",
+                  "description": "Available balance less than or equals"
+                },
+                {
+                  "disabled": false,
+                  "key": "currentBalanceGte",
+                  "value": "<double>",
+                  "description": "Current balance greater than or equals"
+                },
+                {
+                  "disabled": false,
+                  "key": "currentBalanceLte",
+                  "value": "<double>",
+                  "description": "Current balance less than or equals"
+                },
+                {
+                  "disabled": false,
+                  "key": "updateAtFrom",
+                  "value": "<string>",
+                  "description": "Date format: YYYY-MM-dd HH:mm:ss"
+                },
+                {
+                  "disabled": false,
+                  "key": "updateAtTo",
+                  "value": "<string>",
+                  "description": "Date format: YYYY-MM-dd HH:mm:ss"
+                },
+                {
+                  "disabled": false,
+                  "key": "institutionId",
+                  "value": "<string>",
+                  "description": "Institution Id"
+                },
+                {
+                  "disabled": false,
+                  "key": "ownerId",
+                  "value": "<string>",
+                  "description": "Owner Id"
+                },
+                {
+                  "disabled": false,
+                  "key": "workspaceView",
+                  "value": "<string>",
+                  "description": "View name or id"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f127f135-65f9-447c-b883-514126d51fc5",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts",
+                    "position"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institution",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "availableBalanceGte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "availableBalanceLte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "currentBalanceGte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "currentBalanceLte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "updateAtFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updateAtTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institutionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ownerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "workspaceView",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"content\\\": [\\n        {\\n            \\\"id\\\": \\\"5042b7b2-1914-44f0-8c59-18cfcf37eeea\\\",\\n            \\\"account_number\\\": \\\"2022612\\\",\\n            \\\"type\\\": \\\"Conta Corrente\\\",\\n            \\\"category\\\": \\\"CHECKING\\\",\\n            \\\"balance\\\": {\\n                \\\"current_balance\\\": 834662.03,\\n                \\\"available_balance\\\": 834662.03,\\n                \\\"diff_percentage\\\": 0,\\n                \\\"diff_indicator\\\": {\\n                    \\\"type\\\": \\\"REGULAR\\\"\\n                },\\n                \\\"start_of_day_balance\\\": 834662.03,\\n                \\\"last_day_balance\\\": 171134.17,\\n                \\\"currency\\\": \\\"BRL\\\",\\n                \\\"balance_history\\\": {},\\n                \\\"investment_current_balance\\\": 47160.73,\\n                \\\"investment_available_balance\\\": 46760.70,\\n                \\\"forecast_balance\\\": 171134.17,\\n                \\\"cash_position\\\": 217894.87\\n            },\\n            \\\"refreshed_at\\\": \\\"2024-06-13T10:00:43.202554Z\\\",\\n            \\\"up_to_date\\\": true,\\n            \\\"updated_at\\\": \\\"2024-06-13T10:00:25.97143Z\\\",\\n            \\\"owner\\\": {\\n                \\\"id\\\": \\\"16d0c3cc-059e-4765-915b-775611c2d29d\\\",\\n                \\\"document\\\": \\\"91.626.076/8512-79\\\",\\n                \\\"document_type\\\": \\\"CNPJ\\\",\\n                \\\"display_name\\\": \\\"FERREIRA PEIXOTO LTDA.\\\",\\n                \\\"email\\\": \\\"isabelly15@example.org\\\",\\n                \\\"phone_number\\\": \\\"21 2269 7817\\\"\\n            },\\n            \\\"metadata\\\": {},\\n            \\\"status\\\": \\\"ACTIVE\\\",\\n            \\\"country\\\": \\\"BR\\\",\\n            \\\"institution_logo\\\": \\\"https://resources.datanomik.com/institutions/br/XP.svg\\\",\\n            \\\"institution\\\": \\\"XP\\\",\\n            \\\"institution_description\\\": \\\"XP\\\",\\n            \\\"institution_id\\\": \\\"d2d8f39f-6daa-4623-92fd-797ef7d881da\\\",\\n            \\\"investments\\\": [\\n                {\\n                    \\\"id\\\": \\\"b402b168-84e5-4f3e-bf81-82c5e060966c\\\",\\n                    \\\"instrument_type\\\": \\\"DEPOSIT\\\",\\n                    \\\"description\\\": \\\"CDB BANCO\\\",\\n                    \\\"net_balance\\\": 46760.70,\\n                    \\\"main_balance\\\": 46760.70,\\n                    \\\"gross_balance\\\": 47160.73,\\n                    \\\"updated_at\\\": \\\"2024-06-13T10:00:43.698017Z\\\"\\n                }\\n            ],\\n            \\\"link_id\\\": \\\"dd265cf9-5851-4422-850c-0e03783a0a85\\\",\\n            \\\"external_id\\\": \\\"24e28561-b196-4c52-935c-7a22dc7c35ba\\\",\\n            \\\"tags\\\": [],\\n            \\\"favourite\\\": false,\\n            \\\"ownership\\\": 100.0,\\n            \\\"account_sync_status\\\": \\\"PROCESSED\\\",\\n            \\\"trx_sync_status\\\": \\\"PROCESSED\\\",\\n            \\\"investment_sync_status\\\": \\\"PROCESSED\\\",\\n            \\\"payment_sync_status\\\": \\\"PROCESSED\\\",\\n            \\\"account_group\\\": {}\\n        }\\n    ],\\n    \\\"first\\\": true,\\n    \\\"last\\\": true,\\n    \\\"page_number\\\": 0,\\n    \\\"page_size\\\": 50,\\n    \\\"total_elements\\\": 1,\\n    \\\"total_pages\\\": 1\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "72c2c1f3-cc8f-4dfc-abd1-603982211c42",
+              "name": "401",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts",
+                    "position"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institution",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "availableBalanceGte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "availableBalanceLte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "currentBalanceGte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "currentBalanceLte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "updateAtFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updateAtTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institutionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ownerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "workspaceView",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"code\\\": 401,\\n  \\\"type\\\": \\\"UNAUTHORIZED\\\",\\n  \\\"message\\\": \\\"Invalid credentials\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "f922ae25-4aec-438e-9d20-2ecaad8a812f",
+          "name": "Detail Account",
+          "request": {
+            "name": "Detail Account",
+            "description": {
+              "content": "Account detail information",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "accounts",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "workspaceView",
+                  "value": "<string>",
+                  "description": "View name or id"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) Account identifier (UUID)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "cf31b3d3-6660-4184-abdb-bfad1be9a0f5",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "workspaceView",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Account identifier (UUID)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"        {\\n            \\\"id\\\": \\\"118a011c-85cf-49cd-b818-c9fd1063f0ce\\\",\\n            \\\"description\\\": \\\"Account Description\\\",\\n            \\\"account_number\\\": \\\"45555223\\\",\\n          \\t\\\"type\\\": \\\"CA\\\", \\n            \\\"category\\t\\\": \\\"SAVING\\\",\\n            \\\"balance\\\": {\\n                \\\"current_balance\\\": 10.0,\\n                \\\"available_balance\\\": 10.0,\\n                \\\"currency\\\": \\\"USD\\\"\\n            },\\n            \\\"refreshed_at\\\": \\\"2022-05-13T13:01:11.952Z\\\",\\n            \\\"created_at\\\": \\\"2022-05-13T12:57:45.564897Z\\\",\\n            \\\"updated_at\\\": \\\"2022-05-13T13:01:12.168382Z\\\",\\n            \\\"owner\\\": {\\n                \\\"id\\\": \\\"a2d9a143-ab1e-4cba-874f-6d0fc2d7dd5d\\\",\\n                \\\"document\\\": \\\"123456789\\\",\\n                \\\"document_type\\\": \\\"CPF\\\",\\n                \\\"first_name\\\": \\\"PEDRO\\\",\\n                \\\"last_name\\\": \\\"OLIVEIRA\\\",\\n                \\\"second_last_name\\\": \\\"NUNEZ\\\",\\n                \\\"display_name\\\": \\\"PEDRO OLIVEIRA NUNEZ\\\",\\n                \\\"email\\\": \\\"demo@demo.com\\\"\\n             }\\n            ],\\n          \\t\\\"blocked\\\": false\\n        }\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "bfb19e73-bed4-4f13-8e4a-8ff7f21af959",
+              "name": "401",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "workspaceView",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Account identifier (UUID)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"code\\\": 401,\\n  \\\"type\\\": \\\"UNAUTHORIZED\\\",\\n  \\\"message\\\": \\\"Invalid credentials\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "83b03392-8a73-46c1-9e4a-a31c667eb53d",
+              "name": "404",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "workspaceView",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) Account identifier (UUID)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"code\\\": 620,\\n    \\\"type\\\": \\\"ACCOUNT_NOT_FOUND\\\",\\n    \\\"message\\\": \\\"Account resource not found.\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "440a1c19-2750-4628-bc59-c3f7530edb1b",
+          "name": "List Accounts",
+          "request": {
+            "name": "List Accounts",
+            "description": {
+              "content": "List all accounts of yours links",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkId",
+                  "value": "<string>",
+                  "description": "Identifier of the link from which you want to get detailed information about."
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Country code in ISO Alpha-2 format"
+                },
+                {
+                  "disabled": false,
+                  "key": "institution",
+                  "value": "<string>",
+                  "description": "Institution name"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "<string>",
+                  "description": "Identifier of the account from which you want to get detailed information about."
+                },
+                {
+                  "disabled": false,
+                  "key": "accountNumber",
+                  "value": "<string>",
+                  "description": "Account number in the institution"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountType",
+                  "value": "<string>",
+                  "description": "Account type, such as SAVING, CHECKING, etc"
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "Currency code in ISO 4217 format"
+                },
+                {
+                  "disabled": false,
+                  "key": "availableBalanceGte",
+                  "value": "<double>",
+                  "description": "Available balance greater than or equals"
+                },
+                {
+                  "disabled": false,
+                  "key": "availableBalanceLte",
+                  "value": "<double>",
+                  "description": "Available balance less than or equals"
+                },
+                {
+                  "disabled": false,
+                  "key": "currentBalanceGte",
+                  "value": "<double>",
+                  "description": "Current balance greater than or equals"
+                },
+                {
+                  "disabled": false,
+                  "key": "currentBalanceLte",
+                  "value": "<double>",
+                  "description": "Current balance less than or equals"
+                },
+                {
+                  "disabled": false,
+                  "key": "updateAtFrom",
+                  "value": "<string>",
+                  "description": "Date format: YYYY-MM-dd HH:mm:ss"
+                },
+                {
+                  "disabled": false,
+                  "key": "updateAtTo",
+                  "value": "<string>",
+                  "description": "Date format: YYYY-MM-dd HH:mm:ss"
+                },
+                {
+                  "disabled": false,
+                  "key": "institutionId",
+                  "value": "<string>",
+                  "description": "Institution Id"
+                },
+                {
+                  "disabled": false,
+                  "key": "ownerId",
+                  "value": "<string>",
+                  "description": "Owner Id"
+                },
+                {
+                  "disabled": false,
+                  "key": "blocked",
+                  "value": "<boolean>",
+                  "description": "Blocked true or false"
+                },
+                {
+                  "disabled": false,
+                  "key": "showBalanceInfo",
+                  "value": "<boolean>",
+                  "description": "Show Extra Balance Information"
+                },
+                {
+                  "disabled": false,
+                  "key": "workspaceView",
+                  "value": "<string>",
+                  "description": "View name or id"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b3417758-10c3-4873-9579-47e1848d3dbd",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institution",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "availableBalanceGte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "availableBalanceLte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "currentBalanceGte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "currentBalanceLte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "updateAtFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updateAtTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institutionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ownerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "blocked",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "showBalanceInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "workspaceView",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"content\\\": [\\n        {\\n            \\\"id\\\": \\\"118a011c-85cf-49cd-b818-c9fd1063f0ce\\\",\\n            \\\"description\\\": \\\"Account Description\\\",\\n            \\\"account_number\\\": \\\"45555223\\\",\\n          \\t\\\"type\\\": \\\"CA\\\", \\n            \\\"category\\t\\\": \\\"SAVING\\\",\\n            \\\"balance\\\": {\\n                \\\"current_balance\\\": 10.0,\\n                \\\"available_balance\\\": 10.0,\\n                \\\"currency\\\": \\\"USD\\\"\\n            },\\n            \\\"refreshed_at\\\": \\\"2022-05-13T13:01:11.952Z\\\",\\n            \\\"created_at\\\": \\\"2022-05-13T12:57:45.564897Z\\\",\\n            \\\"updated_at\\\": \\\"2022-05-13T13:01:12.168382Z\\\",\\n            \\\"owner\\\": {\\n                \\\"id\\\": \\\"a2d9a143-ab1e-4cba-874f-6d0fc2d7dd5d\\\",\\n                \\\"document\\\": \\\"123456789\\\",\\n                \\\"document_type\\\": \\\"CPF\\\",\\n                \\\"first_name\\\": \\\"PEDRO\\\",\\n                \\\"last_name\\\": \\\"OLIVEIRA\\\",\\n                \\\"second_last_name\\\": \\\"NUNEZ\\\",\\n                \\\"display_name\\\": \\\"PEDRO OLIVEIRA NUNEZ\\\",\\n                \\\"email\\\": \\\"demo@demo.com\\\"\\n             },\\n          \\t\\\"blocked\\\": false\\n        }\\n    ],\\n    \\\"first\\\": true,\\n    \\\"last\\\": true,\\n    \\\"page_number\\\": 0,\\n    \\\"page_size\\\": 50,\\n    \\\"total_elements\\\": 1,\\n    \\\"total_pages\\\": 1\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "3dfcb49c-e920-4af1-9ddc-e1cd43a7a2f8",
+              "name": "401",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institution",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountNumber",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "availableBalanceGte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "availableBalanceLte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "currentBalanceGte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "currentBalanceLte",
+                      "value": "<double>"
+                    },
+                    {
+                      "key": "updateAtFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "updateAtTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institutionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ownerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "blocked",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "showBalanceInfo",
+                      "value": "<boolean>"
+                    },
+                    {
+                      "key": "workspaceView",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"code\\\": 401,\\n  \\\"type\\\": \\\"UNAUTHORIZED\\\",\\n  \\\"message\\\": \\\"Invalid credentials\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9c47794a-9728-45b9-8051-958350e62e36",
+          "name": "Detail Account",
+          "request": {
+            "name": "Detail Account",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "accounts",
+                ""
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "fiscalNumber",
+                  "description": "(Required) Account Fiscal Number"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6c4b240d-4f98-492f-8361-8c181a692435",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "accounts",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fiscalNumber",
+                      "description": "(Required) Account Fiscal Number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"id\\\": \\\"56941234567890\\\",\\n    \\\"name\\\": \\\"DATANOMIK ACCOUNT LTDA\\\",\\n    \\\"cnpj\\\": \\\"56941234567890\\\",\\n    \\\"branch\\\": \\\"0001\\\",\\n    \\\"accountNumber\\\": \\\"123456-0\\\",\\n    \\\"totalBalance\\\": 37283.88,\\n    \\\"availableBalance\\\": 37283.88,\\n    \\\"blockedEarningBalance\\\": 0,\\n    \\\"lastUpdate\\\": \\\"2025-07-01T10:39:06.54Z\\\",\\n    \\\"currency\\\": \\\"BRL\\\",\\n    \\\"dailyEarnings\\\": [\\n        {\\n            \\\"date\\\": \\\"2025-06-23\\\",\\n            \\\"availableBalance\\\": 37283.88,\\n            \\\"blockedEarningBalance\\\": 0.00,\\n            \\\"totalBalance\\\": 37283.88\\n        },\\n        {\\n            \\\"date\\\": \\\"2025-06-24\\\",\\n            \\\"availableBalance\\\": 37283.88,\\n            \\\"blockedEarningBalance\\\": 0.00,\\n            \\\"totalBalance\\\": 37283.88\\n        },\\n        {\\n            \\\"date\\\": \\\"2025-06-25\\\",\\n            \\\"availableBalance\\\": 37283.88,\\n            \\\"blockedEarningBalance\\\": 0.00,\\n            \\\"totalBalance\\\": 37283.88\\n        },\\n        {\\n            \\\"date\\\": \\\"2025-06-26\\\",\\n            \\\"availableBalance\\\": 37283.88,\\n            \\\"blockedEarningBalance\\\": 0.00,\\n            \\\"totalBalance\\\": 37283.88\\n        },\\n        {\\n            \\\"date\\\": \\\"2025-06-27\\\",\\n            \\\"availableBalance\\\": 37283.88,\\n            \\\"blockedEarningBalance\\\": 0.00,\\n            \\\"totalBalance\\\": 37283.88\\n        },\\n        {\\n            \\\"date\\\": \\\"2025-06-30\\\",\\n            \\\"availableBalance\\\": 37283.88,\\n            \\\"blockedEarningBalance\\\": 0.00,\\n            \\\"totalBalance\\\": 37283.88\\n        },\\n        {\\n            \\\"date\\\": \\\"2025-07-01\\\",\\n            \\\"availableBalance\\\": 37283.88,\\n            \\\"blockedEarningBalance\\\": 0,\\n            \\\"totalBalance\\\": 37283.88\\n        }\\n    ],\\n    \\\"accountType\\\": \\\"Conta Corrente\\\",\\n    \\\"bankCode\\\": \\\"398\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "66463b24-70ff-4859-8fd6-3be2ade41f67",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "accounts",
+                    ""
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "fiscalNumber",
+                      "description": "(Required) Account Fiscal Number"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "004ca908-85f0-41ce-8b2b-3403e87c289c",
+          "name": "List Accounts",
+          "request": {
+            "name": "List Accounts",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "accounts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "0",
+                  "description": "(Required) Page Number"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "50",
+                  "description": "(Required) Page Size"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "51cbdaee-4521-4659-9f6e-a279e4737ab5",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"content\\\": [\\n        {\\n            \\\"id\\\": \\\"56941234567890\\\",\\n            \\\"name\\\": \\\"DATANOMIK ACCOUNT LTDA\\\",\\n            \\\"cnpj\\\": \\\"56941234567890\\\",\\n            \\\"branch\\\": \\\"0001\\\",\\n            \\\"accountNumber\\\": \\\"123456-0\\\",\\n            \\\"totalBalance\\\": 37283.88,\\n            \\\"availableBalance\\\": 37283.88,\\n            \\\"blockedEarningBalance\\\": 0,\\n            \\\"lastUpdate\\\": \\\"2025-07-01T10:39:06.54Z\\\",\\n            \\\"currency\\\": \\\"BRL\\\",\\n            \\\"dailyEarnings\\\": [\\n                {\\n                    \\\"date\\\": \\\"2025-06-23\\\",\\n                    \\\"availableBalance\\\": 37283.88,\\n                    \\\"blockedEarningBalance\\\": 0.00,\\n                    \\\"totalBalance\\\": 37283.88\\n                },\\n                {\\n                    \\\"date\\\": \\\"2025-06-24\\\",\\n                    \\\"availableBalance\\\": 37283.88,\\n                    \\\"blockedEarningBalance\\\": 0.00,\\n                    \\\"totalBalance\\\": 37283.88\\n                },\\n                {\\n                    \\\"date\\\": \\\"2025-06-25\\\",\\n                    \\\"availableBalance\\\": 37283.88,\\n                    \\\"blockedEarningBalance\\\": 0.00,\\n                    \\\"totalBalance\\\": 37283.88\\n                },\\n                {\\n                    \\\"date\\\": \\\"2025-06-26\\\",\\n                    \\\"availableBalance\\\": 37283.88,\\n                    \\\"blockedEarningBalance\\\": 0.00,\\n                    \\\"totalBalance\\\": 37283.88\\n                },\\n                {\\n                    \\\"date\\\": \\\"2025-06-27\\\",\\n                    \\\"availableBalance\\\": 37283.88,\\n                    \\\"blockedEarningBalance\\\": 0.00,\\n                    \\\"totalBalance\\\": 37283.88\\n                },\\n                {\\n                    \\\"date\\\": \\\"2025-06-30\\\",\\n                    \\\"availableBalance\\\": 37283.88,\\n                    \\\"blockedEarningBalance\\\": 0.00,\\n                    \\\"totalBalance\\\": 37283.88\\n                },\\n                {\\n                    \\\"date\\\": \\\"2025-07-01\\\",\\n                    \\\"availableBalance\\\": 37283.88,\\n                    \\\"blockedEarningBalance\\\": 0,\\n                    \\\"totalBalance\\\": 37283.88\\n                }\\n            ],\\n            \\\"accountType\\\": \\\"Conta Corrente\\\",\\n            \\\"bankCode\\\": \\\"398\\\"\\n        },\\n        {\\n            \\\"id\\\": \\\"12346576879809\\\",\\n            \\\"name\\\": \\\"DATANOMIK BRASIL LTDA\\\",\\n            \\\"cnpj\\\": \\\"12346576879809\\\",\\n            \\\"branch\\\": \\\"0001\\\",\\n            \\\"accountNumber\\\": \\\"654321-0\\\",\\n            \\\"totalBalance\\\": 46850.78,\\n            \\\"availableBalance\\\": 46850.78,\\n            \\\"blockedEarningBalance\\\": 0,\\n            \\\"lastUpdate\\\": \\\"2025-07-01T10:39:06.54Z\\\",\\n            \\\"currency\\\": \\\"BRL\\\",\\n            \\\"dailyEarnings\\\": [\\n                {\\n                    \\\"date\\\": \\\"2025-06-23\\\",\\n                    \\\"availableBalance\\\": 46851.78,\\n                    \\\"blockedEarningBalance\\\": 0.00,\\n                    \\\"totalBalance\\\": 46851.78\\n                },\\n                {\\n                    \\\"date\\\": \\\"2025-06-24\\\",\\n                    \\\"availableBalance\\\": 46851.78,\\n                    \\\"blockedEarningBalance\\\": 0.00,\\n                    \\\"totalBalance\\\": 46851.78\\n                },\\n                {\\n                    \\\"date\\\": \\\"2025-06-25\\\",\\n                    \\\"availableBalance\\\": 46850.78,\\n                    \\\"blockedEarningBalance\\\": 0.00,\\n                    \\\"totalBalance\\\": 46850.78\\n                },\\n                {\\n                    \\\"date\\\": \\\"2025-06-26\\\",\\n                    \\\"availableBalance\\\": 46850.78,\\n                    \\\"blockedEarningBalance\\\": 0.00,\\n                    \\\"totalBalance\\\": 46850.78\\n                },\\n                {\\n                    \\\"date\\\": \\\"2025-06-27\\\",\\n                    \\\"availableBalance\\\": 46850.78,\\n                    \\\"blockedEarningBalance\\\": 0.00,\\n                    \\\"totalBalance\\\": 46850.78\\n                },\\n                {\\n                    \\\"date\\\": \\\"2025-06-30\\\",\\n                    \\\"availableBalance\\\": 46850.78,\\n                    \\\"blockedEarningBalance\\\": 0.00,\\n                    \\\"totalBalance\\\": 46850.78\\n                },\\n                {\\n                    \\\"date\\\": \\\"2025-07-01\\\",\\n                    \\\"availableBalance\\\": 46850.78,\\n                    \\\"blockedEarningBalance\\\": 0,\\n                    \\\"totalBalance\\\": 46850.78\\n                }\\n            ],\\n            \\\"accountType\\\": \\\"Conta Corrente\\\",\\n            \\\"bankCode\\\": \\\"398\\\"\\n        }\\n    ],\\n    \\\"first\\\": true,\\n    \\\"last\\\": true,\\n    \\\"pageNumber\\\": 0,\\n    \\\"pageSize\\\": 50,\\n    \\\"totalElements\\\": 2,\\n    \\\"totalPages\\\": 1\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "40758d52-79df-4807-ad83-257b922efb4d",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "accounts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "50"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.datanomik.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "32173554-c08a-438a-a509-d8868b3028b0",
+    "name": "openbanking-api Accounts API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

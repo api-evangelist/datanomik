@@ -1,0 +1,195 @@
+{
+  "item": [
+    {
+      "id": "1531fde5-e19a-4c9c-9fe1-6e326cb6beab",
+      "name": "Payment Slips",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "f4072334-a239-4492-89c8-05cd5aae3264",
+          "name": "List Payment Slips",
+          "request": {
+            "name": "List Payment Slips",
+            "description": {
+              "content": "List payment slips. Role: ROLE_PAYMENTS_READ.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "payment-slips"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkId",
+                  "value": "<string>",
+                  "description": "Link identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "<string>",
+                  "description": "Account identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "ownerId",
+                  "value": "<string>",
+                  "description": "Owner identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "generalOwnerId",
+                  "value": "<string>",
+                  "description": "General owner identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "institutionId",
+                  "value": "<string>",
+                  "description": "Institution identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateFrom",
+                  "value": "<string>",
+                  "description": "Start date (YYYY-MM-DD)"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateTo",
+                  "value": "<string>",
+                  "description": "End date (YYYY-MM-DD)"
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "Currency (BRL, USD, etc.)"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Country (BR, AR, etc.)"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "52a3f4e0-b823-4f75-8553-6612a24fc078",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payment-slips"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ownerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "generalOwnerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institutionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"content\": [\n    {\n      \"id\": \"11111111-1111-1111-1111-111111111111\",\n      \"bank_number\": \"00000000000\",\n      \"client_number\": \"0000000\",\n      \"amount\": 14860.34,\n      \"charged_amount\": 14860.34,\n      \"fee\": 0,\n      \"date\": \"2026-05-29\",\n      \"due_date\": \"2026-06-05\",\n      \"metadata\": {\n        \"display_name\": \"EXAMPLE BENEFICIARY LTDA\",\n        \"fluctuation\": 0,\n        \"occurrence\": 1,\n        \"modality\": \"BOLETO\",\n        \"payer_document\": \"12.345.678/0001-99\",\n        \"tx_id\": \"00000000000000000000\",\n        \"movement_description\": \"Boleto outros bancos\",\n        \"status\": \"SETTLED\",\n        \"settlement_date\": \"2026-05-29\",\n        \"settled_amount\": 14860.34,\n        \"discount\": 0,\n        \"rebate\": 0,\n        \"penalty\": 0,\n        \"interest\": 0,\n        \"tariff\": 0,\n        \"costs\": 0\n      },\n      \"link\": {\n        \"id\": \"22222222-2222-2222-2222-222222222222\",\n        \"country\": \"BR\",\n        \"institution\": \"ITAU_WEB\",\n        \"institution_description\": \"Itau\",\n        \"institution_logo\": \"https://resources.datanomik.com/institutions/br/Itau.svg\"\n      },\n      \"account\": {\n        \"id\": \"33333333-3333-3333-3333-333333333333\",\n        \"account_number\": \"00000-0\",\n        \"branch\": \"0000\",\n        \"currency\": \"BRL\",\n        \"type\": \"Conta Corrente\",\n        \"owner\": {\n          \"id\": \"44444444-4444-4444-4444-444444444444\",\n          \"document\": \"98.765.432/0001-10\",\n          \"document_type\": \"CNPJ\",\n          \"display_name\": \"EXAMPLE OWNER LTDA\"\n        },\n        \"description\": \"Conta Corrente\",\n        \"category\": \"CHECKING\"\n      }\n    }\n  ],\n  \"first\": true,\n  \"last\": false,\n  \"page_number\": 0,\n  \"page_size\": 1,\n  \"total_elements\": 12,\n  \"total_pages\": 12\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.datanomik.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "53ca00c4-bc59-49b0-a97f-22094a4d544f",
+    "name": "openbanking-api Accounts Payment Slips API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

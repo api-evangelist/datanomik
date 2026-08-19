@@ -1,0 +1,166 @@
+{
+  "item": [
+    {
+      "id": "78288118-eff8-4740-8008-a240ef41dbf6",
+      "name": "Links",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "97e5e93e-8055-44db-a2a8-a05c93508abf",
+          "name": "Sync Assets",
+          "request": {
+            "name": "Sync Assets",
+            "description": {
+              "content": "Consolidated information of yours links with owners, users, accounts and balances",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "links",
+                "sync",
+                "assets",
+                ":linkId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkId",
+                  "value": "<string>",
+                  "description": "Identifier of the link from which you want to get detailed information about."
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6e00bf42-a3cd-4084-b427-7a56466a9430",
+              "name": "204",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "links",
+                    "sync",
+                    "assets",
+                    ":linkId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "No Content",
+              "code": 204,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"content\\\": [\\n        {\\n            \\\"id\\\": \\\"c40d94ca-184b-4520-9fd1-5cc418b8f612\\\",\\n            \\\"description\\\": \\\"Test Link\\\",\\n            \\\"institution\\\": \\\"BRADESCO\\\",\\n            \\\"institution_logo\\\": \\\"https://resources.datanomik.com/institutions/uy/Bradesco.svg\\\",\\n            \\\"access_type\\\": \\\"BUSINESS\\\",\\n            \\\"country\\\": \\\"BR\\\",\\n            \\\"refresh_rate\\\": \\\"180\\\",\\n            \\\"accessed_at\\\": \\\"2022-02-15T19:04:57.980228\\\",\\n            \\\"created_at\\\": \\\"2022-02-15T19:05:00.064292\\\",\\n            \\\"updated_at\\\": \\\"2022-02-15T19:05:00.064308\\\",\\n            \\\"source\\\": \\\"API\\\",\\n            \\\"recurrent\\\": false,\\n            \\\"live\\\": false,\\n            \\\"status\\\": \\\"ACTIVE\\\",\\n            \\\"accounts\\\": [\\n          {\\n            \\\"id\\\": \\\"118a011c-85cf-49cd-b818-c9fd1063f0ce\\\",\\n            \\\"description\\\": \\\"Account Description\\\",\\n            \\\"account_number\\\": \\\"45555223\\\",\\n          \\t\\\"type\\\": \\\"CA\\\", \\n            \\\"category\\t\\\": \\\"SAVING\\\",\\n            \\\"balance\\\": {\\n                \\\"current_balance\\\": 10.0,\\n                \\\"available_balance\\\": 10.0,\\n                \\\"currency\\\": \\\"USD\\\"\\n            },\\n            \\\"refreshed_at\\\": \\\"2022-05-13T13:01:11.952Z\\\",\\n            \\\"created_at\\\": \\\"2022-05-13T12:57:45.564897Z\\\",\\n            \\\"updated_at\\\": \\\"2022-05-13T13:01:12.168382Z\\\",\\n            \\\"owners\\\": [\\n                {\\n                    \\\"id\\\": \\\"a2d9a143-ab1e-4cba-874f-6d0fc2d7dd5d\\\",\\n                    \\\"document\\\": \\\"123456789\\\",\\n                    \\\"document_type\\\": \\\"CPF\\\",\\n                    \\\"first_name\\\": \\\"PEDRO\\\",\\n                    \\\"last_name\\\": \\\"OLIVEIRA\\\",\\n                    \\\"second_last_name\\\": \\\"NUNEZ\\\",\\n                    \\\"display_name\\\": \\\"PEDRO OLIVEIRA NUNEZ\\\",\\n                    \\\"email\\\": \\\"demo@demo.com\\\"\\n             }\\n            ],\\n          \\t\\\"blocked\\\": false\\n        }\\n            ],\\n            \\\"users\\\": [\\n                {\\n                    \\\"id\\\": \\\"f5d70f6d-cbfe-495e-933e-42fb05ab648b\\\",\\n                    \\\"username\\\": \\\"12345678\\\",\\n                    \\\"metadata\\\": {\\n                        \\\"document\\\": \\\"12345678\\\",\\n                        \\\"document_type\\\": \\\"CI\\\",\\n                        \\\"first_name\\\": \\\"PEDRO\\\",\\n                        \\\"last_name\\\": \\\"OLIVEIRA\\\",\\n                        \\\"second_last_name\\\": \\\"NUNEZ\\\",\\n                        \\\"display_name\\\": \\\"PEDRO OLIVEIRA NUNEZ\\\",\\n                        \\\"email\\\": \\\"pedrooliveira@gmail.com\\\",\\n                        \\\"address\\\": \\\"ADDRESS 1234, 11300, MONTEVIDEO, URUGUAY\\\",\\n                        \\\"phone_number\\\": \\\"099999999\\\"\\n                    }\\n                }\\n            ]\\n        }\\n    ],\\n    \\\"first\\\": true,\\n    \\\"last\\\": true,\\n    \\\"page_number\\\": 0,\\n    \\\"page_size\\\": 20,\\n    \\\"total_elements\\\": 1,\\n    \\\"total_pages\\\": 1\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "13400a9e-5978-448c-9b5d-471b96780365",
+              "name": "401",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "links",
+                    "sync",
+                    "assets",
+                    ":linkId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"code\\\": 401,\\n  \\\"type\\\": \\\"UNAUTHORIZED\\\",\\n  \\\"message\\\": \\\"Invalid credentials\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.datanomik.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4aed4eb3-b975-4b17-8a7b-6262dcb755c8",
+    "name": "openbanking-api Accounts Links API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

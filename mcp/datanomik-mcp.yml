@@ -72,3 +72,9 @@ tools:
 - name: list_remuneration_accounts
   description: List Accounts
   source_operation: openapi/datanomik-remuneration-openapi.json#list-remuneration-accounts
+deployment:
+  mode: none
+  verified: derived
+  tools: 21
+  checked: '2026-08-12'
+  source: catalog MCP census

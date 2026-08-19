@@ -1,0 +1,374 @@
+{
+  "item": [
+    {
+      "id": "e9027e57-fe1d-437b-9dc2-01c1aaa8d950",
+      "name": "Payments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "6461fe64-0aa8-4857-bfec-3ccc2a3f6896",
+          "name": "Download Payment Receipt (PDF)",
+          "request": {
+            "name": "Download Payment Receipt (PDF)",
+            "description": {
+              "content": "Downloads the payment receipt (PDF) by id (application/pdf). Role: ROLE_PAYMENTS_READ.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "payments",
+                ":paymentId",
+                "receipt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "paymentId",
+                  "description": "(Required) Payment identifier"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c88230e8-399e-4e6e-a434-4009be824226",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments",
+                    ":paymentId",
+                    "receipt"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "paymentId",
+                      "description": "(Required) Payment identifier"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e8f4fba3-ad76-4233-b968-fdc0bd7ecfda",
+          "name": "List Payments",
+          "request": {
+            "name": "List Payments",
+            "description": {
+              "content": "List payments. Role: ROLE_PAYMENTS_READ.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "payments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkId",
+                  "value": "<string>",
+                  "description": "Link identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "<string>",
+                  "description": "Account identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "ownerId",
+                  "value": "<string>",
+                  "description": "Owner identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "generalOwnerId",
+                  "value": "<string>",
+                  "description": "General owner identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "institutionId",
+                  "value": "<string>",
+                  "description": "Institution identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateFrom",
+                  "value": "<string>",
+                  "description": "Start date (YYYY-MM-DD)"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateTo",
+                  "value": "<string>",
+                  "description": "End date (YYYY-MM-DD)"
+                },
+                {
+                  "disabled": false,
+                  "key": "type",
+                  "value": "<string>",
+                  "description": "Payment type"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "Payment status"
+                },
+                {
+                  "disabled": false,
+                  "key": "amountFrom",
+                  "value": "<string>",
+                  "description": "Minimum amount"
+                },
+                {
+                  "disabled": false,
+                  "key": "amountTo",
+                  "value": "<string>",
+                  "description": "Maximum amount"
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "Currency (BRL, USD, etc.)"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Country (BR, AR, etc.)"
+                },
+                {
+                  "disabled": false,
+                  "key": "beneficiaryName",
+                  "value": "<string>",
+                  "description": "Beneficiary name"
+                },
+                {
+                  "disabled": false,
+                  "key": "beneficiaryDocument",
+                  "value": "<string>",
+                  "description": "Beneficiary document"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Description"
+                },
+                {
+                  "disabled": false,
+                  "key": "transactionId",
+                  "value": "<string>",
+                  "description": "Transaction identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "reference",
+                  "value": "<string>",
+                  "description": "Reference"
+                },
+                {
+                  "disabled": false,
+                  "key": "categoryId",
+                  "value": "<string>",
+                  "description": "Category identifier"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "4076d8f2-dece-4c90-a3e0-b91eef4288be",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "payments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ownerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "generalOwnerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institutionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "type",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "amountFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "amountTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "beneficiaryName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "beneficiaryDocument",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "transactionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reference",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categoryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"content\": [\n    {\n      \"id\": \"11111111-1111-1111-1111-111111111111\",\n      \"date\": \"2026-06-30\",\n      \"relative_order\": 0,\n      \"reference\": \"0000/000-00000\",\n      \"type\": \"TICKET\",\n      \"description\": \"Boleto outros bancos\",\n      \"batch\": \"000000000\",\n      \"amount\": 3591.84,\n      \"beneficiary\": {\n        \"document\": \"12.345.678/0001-99\",\n        \"document_type\": \"CNPJ\",\n        \"display_name\": \"EXAMPLE BENEFICIARY S/A\"\n      },\n      \"link\": {\n        \"id\": \"22222222-2222-2222-2222-222222222222\",\n        \"country\": \"BR\",\n        \"institution\": \"ITAU_WEB\",\n        \"institution_description\": \"Itau\",\n        \"institution_logo\": \"https://resources.datanomik.com/institutions/br/Itau.svg\"\n      },\n      \"account\": {\n        \"id\": \"33333333-3333-3333-3333-333333333333\",\n        \"account_number\": \"00000-0\",\n        \"branch\": \"0000\",\n        \"currency\": \"BRL\",\n        \"type\": \"Conta Corrente\",\n        \"owner\": {\n          \"id\": \"44444444-4444-4444-4444-444444444444\",\n          \"document\": \"98.765.432/0001-10\",\n          \"document_type\": \"CNPJ\",\n          \"display_name\": \"EXAMPLE OWNER LTDA\"\n        },\n        \"category\": \"CHECKING\"\n      },\n      \"status\": \"EXECUTED\",\n      \"downloadable\": \"PROCESSED\",\n      \"downloadable_since\": \"2026-06-30T21:24:36.291797Z\",\n      \"created_at\": \"2026-06-30T20:52:10.861343Z\",\n      \"updated_at\": \"2026-06-30T21:24:36.291797Z\"\n    }\n  ],\n  \"first\": true,\n  \"last\": false,\n  \"page_number\": 0,\n  \"page_size\": 1,\n  \"total_elements\": 6788,\n  \"total_pages\": 6788\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.datanomik.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "06a18b6a-19fd-4481-8f40-d86da531435f",
+    "name": "openbanking-api Accounts Payments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

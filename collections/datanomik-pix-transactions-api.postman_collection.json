@@ -1,0 +1,364 @@
+{
+  "item": [
+    {
+      "id": "cc6927dc-344f-4de9-b56a-fec7134aaf6a",
+      "name": "Pix Transactions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7493d382-0895-4ed7-a9b6-e25626c80af7",
+          "name": "Download PIX Receipt (PDF)",
+          "request": {
+            "name": "Download PIX Receipt (PDF)",
+            "description": {
+              "content": "Downloads the PIX transaction receipt (PDF) by id (application/pdf). Role: ROLE_PAYMENTS_READ.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "pix-transactions",
+                ":pixTransactionId",
+                "receipt"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "pixTransactionId",
+                  "description": "(Required) PIX transaction identifier"
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "c58981b8-5ed8-4e2f-aeff-9a7743e0269d",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "pix-transactions",
+                    ":pixTransactionId",
+                    "receipt"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "pixTransactionId",
+                      "description": "(Required) PIX transaction identifier"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "98bba971-d306-4dd4-be09-4e4e35fd3759",
+          "name": "List PIX Transactions",
+          "request": {
+            "name": "List PIX Transactions",
+            "description": {
+              "content": "List PIX transactions. Role: ROLE_PAYMENTS_READ.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "pix-transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "linkId",
+                  "value": "<string>",
+                  "description": "Link identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "<string>",
+                  "description": "Account identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "ownerId",
+                  "value": "<string>",
+                  "description": "Owner identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "generalOwnerId",
+                  "value": "<string>",
+                  "description": "General owner identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "institutionId",
+                  "value": "<string>",
+                  "description": "Institution identifier"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateFrom",
+                  "value": "<string>",
+                  "description": "Start date (YYYY-MM-DD)"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateTo",
+                  "value": "<string>",
+                  "description": "End date (YYYY-MM-DD)"
+                },
+                {
+                  "disabled": false,
+                  "key": "trxType",
+                  "value": "<string>",
+                  "description": "Transaction type: INFLOW or OUTFLOW"
+                },
+                {
+                  "disabled": false,
+                  "key": "status",
+                  "value": "<string>",
+                  "description": "PIX transaction status"
+                },
+                {
+                  "disabled": false,
+                  "key": "currency",
+                  "value": "<string>",
+                  "description": "Currency (BRL, USD, etc.)"
+                },
+                {
+                  "disabled": false,
+                  "key": "country",
+                  "value": "<string>",
+                  "description": "Country (BR, AR, etc.)"
+                },
+                {
+                  "disabled": false,
+                  "key": "beneficiaryName",
+                  "value": "<string>",
+                  "description": "Beneficiary name"
+                },
+                {
+                  "disabled": false,
+                  "key": "beneficiaryDocument",
+                  "value": "<string>",
+                  "description": "Beneficiary document"
+                },
+                {
+                  "disabled": false,
+                  "key": "senderName",
+                  "value": "<string>",
+                  "description": "Sender name"
+                },
+                {
+                  "disabled": false,
+                  "key": "senderDocument",
+                  "value": "<string>",
+                  "description": "Sender document"
+                },
+                {
+                  "disabled": false,
+                  "key": "description",
+                  "value": "<string>",
+                  "description": "Description"
+                },
+                {
+                  "disabled": false,
+                  "key": "reference",
+                  "value": "<string>",
+                  "description": "Reference"
+                },
+                {
+                  "disabled": false,
+                  "key": "categoryId",
+                  "value": "<string>",
+                  "description": "Category identifier"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "b7ffbb87-2e10-4356-96aa-62dc6102b485",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "pix-transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "linkId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "ownerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "generalOwnerId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "institutionId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateFrom",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateTo",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "trxType",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "status",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "currency",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "country",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "beneficiaryName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "beneficiaryDocument",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "senderName",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "senderDocument",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "description",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "reference",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "categoryId",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"content\": [\n    {\n      \"id\": \"11111111-1111-1111-1111-111111111111\",\n      \"type\": \"OUTFLOW\",\n      \"date\": \"2026-06-30\",\n      \"amount\": -557.8,\n      \"description\": \"PIX Transfer√™ncias\",\n      \"beneficiary\": {\n        \"document\": \"12.345.678/0001-99\",\n        \"document_type\": \"CNPJ\",\n        \"display_name\": \"EXAMPLE BENEFICIARY LTDA\"\n      },\n      \"status\": \"EXECUTED\",\n      \"link\": {\n        \"id\": \"22222222-2222-2222-2222-222222222222\",\n        \"country\": \"BR\",\n        \"institution\": \"ITAU_WEB\",\n        \"institution_description\": \"Itau\",\n        \"institution_logo\": \"https://resources.datanomik.com/institutions/br/Itau.svg\"\n      },\n      \"account\": {\n        \"id\": \"33333333-3333-3333-3333-333333333333\",\n        \"account_number\": \"00000-0\",\n        \"branch\": \"0000\",\n        \"currency\": \"BRL\",\n        \"type\": \"Conta Corrente\",\n        \"owner\": {\n          \"id\": \"44444444-4444-4444-4444-444444444444\",\n          \"document\": \"98.765.432/0001-10\",\n          \"document_type\": \"CNPJ\",\n          \"display_name\": \"EXAMPLE OWNER LTDA\"\n        },\n        \"category\": \"CHECKING\"\n      },\n      \"created_at\": \"2026-06-30T21:41:10.46913Z\",\n      \"updated_at\": \"2026-06-30T21:41:10.469134Z\",\n      \"downloadable\": \"PENDING\"\n    }\n  ],\n  \"first\": true,\n  \"last\": false,\n  \"page_number\": 0,\n  \"page_size\": 1,\n  \"total_elements\": 1442,\n  \"total_pages\": 1442\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.datanomik.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "baa58efc-4676-4875-bd01-445da87f6311",
+    "name": "openbanking-api Accounts Pix Transactions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

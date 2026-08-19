@@ -1,0 +1,292 @@
+{
+  "item": [
+    {
+      "id": "53bccdcb-c7fa-4f3d-bf8d-48f4d308b150",
+      "name": "General Owners",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "fb2b4028-b699-4852-bba7-2381558877d5",
+          "name": "Detail General Owner",
+          "request": {
+            "name": "Detail General Owner",
+            "description": {
+              "content": "List all account owners of yours links",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "general-owners",
+                ":id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "id",
+                  "description": "(Required) General Owner Identifier (UUID)"
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6e5337f7-5598-49a8-9ede-3454047359d2",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "general-owners",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) General Owner Identifier (UUID)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"\\n        {\\n            \\\"id\\\": \\\"00d2425e-d7bf-4162-ad33-5926bda057d2\\\",\\n            \\\"document\\\": \\\"11.111.111/0001-11\\\",\\n            \\\"document_type\\\": \\\"CNPJ\\\",\\n            \\\"display_name\\\": \\\"GENERAL OWNER DISPLAY NAME\\\",\\n            \\\"owners\\\": [\\n                {\\n                    \\\"id\\\": \\\"d88b5cb9-72b6-48fc-89fe-68145738DD33\\\",\\n                    \\\"document\\\": \\\"11.111.111/0001-11\\\",\\n                    \\\"document_type\\\": \\\"CNPJ\\\",\\n                    \\\"display_name\\\": \\\"OWNER DISPLAY NAME\\\"\\n                },\\n                {\\n                    \\\"id\\\": \\\"f49d1c1b-2cfd-4910-aab4-f80f82aaFF43\\\",\\n                    \\\"display_name\\\": \\\"OWNER DISPLAY NAME\\\"\\n                }\\n            ],\\n            \\\"created_at\\\": \\\"2023-10-30T20:10:01.389464Z\\\",\\n            \\\"tags\\\": [\\n                {\\n                    \\\"id\\\": \\\"6c732538-ad5a-4c29-84fa-8ec19c05e7fa\\\",\\n                    \\\"name\\\": \\\"GENERAL OWNER TAG\\\",\\n                    \\\"type\\\": \\\"GENERAL_OWNER\\\"\\n                }\\n            ]\\n        }\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "db039b4e-f4e6-4cb5-ab83-c3a0ffe3e4a6",
+              "name": "401",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "general-owners",
+                    ":id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "id",
+                      "description": "(Required) General Owner Identifier (UUID)"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"code\\\": 401,\\n  \\\"type\\\": \\\"UNAUTHORIZED\\\",\\n  \\\"message\\\": \\\"Invalid credentials\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "a93f260c-8c85-461c-bc10-51d83840749f",
+          "name": "List General Owners",
+          "request": {
+            "name": "List General Owners",
+            "description": {
+              "content": "List all account owners of yours links",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "general-owners"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "displayName",
+                  "value": "<string>",
+                  "description": "General Owner Display Name"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "f7f979ed-bf56-4604-aa59-bed7517ab480",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "general-owners"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "displayName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"content\\\": [\\n        {\\n            \\\"id\\\": \\\"00d2425e-d7bf-4162-ad33-5926bda057d2\\\",\\n            \\\"document\\\": \\\"11.111.111/0001-11\\\",\\n            \\\"document_type\\\": \\\"CNPJ\\\",\\n            \\\"display_name\\\": \\\"GENERAL OWNER DISPLAY NAME\\\",\\n            \\\"owners\\\": [\\n                {\\n                    \\\"id\\\": \\\"d88b5cb9-72b6-48fc-89fe-68145738DD33\\\",\\n                    \\\"document\\\": \\\"11.111.111/0001-11\\\",\\n                    \\\"document_type\\\": \\\"CNPJ\\\",\\n                    \\\"display_name\\\": \\\"OWNER DISPLAY NAME\\\"\\n                },\\n                {\\n                    \\\"id\\\": \\\"f49d1c1b-2cfd-4910-aab4-f80f82aaFF43\\\",\\n                    \\\"display_name\\\": \\\"OWNER DISPLAY NAME\\\"\\n                }\\n            ],\\n            \\\"created_at\\\": \\\"2023-10-30T20:10:01.389464Z\\\",\\n            \\\"tags\\\": [\\n                {\\n                    \\\"id\\\": \\\"6c732538-ad5a-4c29-84fa-8ec19c05e7fa\\\",\\n                    \\\"name\\\": \\\"GENERAL OWNER TAG\\\",\\n                    \\\"type\\\": \\\"GENERAL_OWNER\\\"\\n                }\\n            ]\\n        }\\n    ],\\n    \\\"first\\\": true,\\n    \\\"last\\\": false,\\n    \\\"page_number\\\": 0,\\n    \\\"page_size\\\": 1,\\n    \\\"total_elements\\\": 1,\\n    \\\"total_pages\\\": 1\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "37217c9a-b378-4f91-9217-c181851d575e",
+              "name": "401",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "general-owners"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "displayName",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"code\\\": 401,\\n  \\\"type\\\": \\\"UNAUTHORIZED\\\",\\n  \\\"message\\\": \\\"Invalid credentials\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.datanomik.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "4fbd720b-9fd4-42ec-9243-8788819975c3",
+    "name": "openbanking-api Accounts General Owners API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

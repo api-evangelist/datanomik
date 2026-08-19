@@ -1,0 +1,188 @@
+{
+  "item": [
+    {
+      "id": "6d55a922-72d5-4711-aa10-7a199b295fac",
+      "name": "Balances",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "85c560af-0be3-4c01-bd81-a9a3abacfb93",
+          "name": "List Balances History",
+          "request": {
+            "name": "List Balances History",
+            "description": {
+              "content": "List all accounts balance of yours links",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "balances",
+                "history"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "accountId",
+                  "value": "<string>",
+                  "description": "Identifier of the account from which you want to get detailed information about."
+                },
+                {
+                  "disabled": false,
+                  "key": "dateFrom",
+                  "value": "<date>",
+                  "description": "Date From"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateTo",
+                  "value": "<date>",
+                  "description": "Date To"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "5aed9e06-8ba8-4c75-90f1-29cf698ee37d",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "balances",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateFrom",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "dateTo",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"content\\\": [\\n        {\\n            \\\"current_balance\\\": 27889.0,\\n            \\\"available_balance\\\": 4338.79,\\n            \\\"currency\\\": \\\"EUR\\\",\\n            \\\"link_id\\\": \\\"23786be0-62fd-4016-aa3d-fa886acaddd5\\\",\\n            \\\"account\\\": {\\n                \\\"id\\\": \\\"058ffd01-7268-43a8-bea3-893c501ab76e\\\",\\n                \\\"description\\\": \\\"Account Description\\\",\\n                \\\"account_number\\\": \\\"45555223\\\",\\n                \\\"type\\\": \\\"CC\\\",\\n                \\\"category\\\": \\\"SAVING\\\",\\n                \\\"blocked\\\": false\\n            }\\n        }\\n    ],\\n    \\\"first\\\": true,\\n    \\\"last\\\": true,\\n    \\\"page_number\\\": 0,\\n    \\\"page_size\\\": 50,\\n    \\\"total_elements\\\":1,\\n    \\\"total_pages\\\": 1\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "0cb36c13-9d95-4b6c-ae1b-04b26c6a2298",
+              "name": "401",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "balances",
+                    "history"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "accountId",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "dateFrom",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "dateTo",
+                      "value": "<date>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n  \\\"code\\\": 401,\\n  \\\"type\\\": \\\"UNAUTHORIZED\\\",\\n  \\\"message\\\": \\\"Invalid credentials\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.datanomik.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "03a51d71-0b87-434c-8a2f-07458801edcb",
+    "name": "openbanking-api Accounts Balances API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

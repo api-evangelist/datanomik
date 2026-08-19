@@ -1,0 +1,397 @@
+{
+  "item": [
+    {
+      "id": "be6a2b87-a531-4bd6-bf8b-94a0838537e5",
+      "name": "Transactions",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "cb5c1dd7-c8f0-4e93-ab31-8d92549ef15f",
+          "name": "Create Manual Transaction",
+          "request": {
+            "name": "Create Manual Transaction",
+            "description": {
+              "content": "Create a link",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"RAW_BODY\": [\n    {\n      \"account_id\": \"<string>\",\n      \"date\": \"<date>\",\n      \"type\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"external_id\": \"<string>\",\n      \"description\": \"<string>\",\n      \"reference\": \"<string>\"\n    },\n    {\n      \"account_id\": \"<string>\",\n      \"date\": \"<date>\",\n      \"type\": \"<string>\",\n      \"amount\": \"<double>\",\n      \"external_id\": \"<string>\",\n      \"description\": \"<string>\",\n      \"reference\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "9e50ee5a-b449-4db5-896c-99a78bae5f9e",
+              "name": "201",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"account_id\": \"bb01472b-e39e-467c-9661-99e48b090efd\",\n    \"categories_ids\": [\n      \"79c7e4d8-888c-48cc-b680-2e7f04b8d255\"\n    ],\n    \"date\": \"2028-02-01\",\n    \"type\": \"OUTFLOW\",\n    \"reference\": \"Reference\",\n    \"description\": \"Description\",\n    \"amount\": 100,\n    \"external_id\": \"123456789\",\n    \"sender\": {\n      \"document\": \"91.336.009/0001-23\",\n      \"document_type\": \"CNPJ\",\n      \"display_name\": \"Juan Carlos Da Silva\",\n      \"reference\": \"Pagamento\"\n    },\n    \"beneficiary\": {\n      \"document\": \"34.267.781/0001-05\",\n      \"document_type\": \"CNPJ\",\n      \"display_name\": \"Alison\",\n      \"reference\": \"Pagamento\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Created",
+              "code": 201,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"[\\n    {\\n        \\\"id\\\": \\\"0771de3f-1df9-46ab-b7c5-e28c4a864093\\\",\\n        \\\"date\\\": \\\"2028-02-01\\\",\\n        \\\"description\\\": \\\"Description\\\",\\n        \\\"reference\\\": \\\"Reference\\\",\\n        \\\"type\\\": \\\"OUTFLOW\\\",\\n        \\\"mode\\\": \\\"MANUAL\\\",\\n        \\\"currency\\\": \\\"UYU\\\",\\n        \\\"amount\\\": 100.00,\\n        \\\"link\\\": {\\n            \\\"id\\\": \\\"ac89fb64-272b-460e-a6d1-6a572b547bf9\\\",\\n            \\\"country\\\": \\\"UY\\\",\\n            \\\"institution\\\": \\\"ITAU\\\",\\n            \\\"institution_description\\\": \\\"Itau\\\",\\n            \\\"institution_logo\\\": \\\"https://resources.datanomik.com/institutions/uy/Itau.svg\\\"\\n        },\\n        \\\"account\\\": {\\n            \\\"id\\\": \\\"bb01472b-e39e-467c-9661-99e48b090efd\\\",\\n            \\\"account_number\\\": \\\"2346467\\\",\\n            \\\"owner\\\": {\\n                \\\"id\\\": \\\"012ca1d9-6193-49e4-bf83-c5c058d92d10\\\",\\n                \\\"document\\\": \\\"333587948682\\\",\\n                \\\"document_type\\\": \\\"RUT\\\",\\n                \\\"display_name\\\": \\\"BATISTA BARRIOS PLC\\\"\\n            }\\n        },\\n        \\\"status\\\": \\\"APPROVED\\\",\\n        \\\"additional_data\\\": {},\\n        \\\"categories\\\": [\\n            {\\n                \\\"id\\\": \\\"79c7e4d8-888c-48cc-b680-2e7f04b8d255\\\",\\n                \\\"name\\\": \\\"Test Categories\\\",\\n                \\\"color\\\": \\\"#FFE2B6\\\",\\n                \\\"type\\\": \\\"OUTFLOW\\\",\\n                \\\"ordering\\\": 0,\\n                \\\"multiple_categorize\\\": false\\n            }\\n        ]\\n    }\\n]\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "43c138ca-ea9c-4cc0-92ca-190b2b8b2e4b",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"account_id\": \"bb01472b-e39e-467c-9661-99e48b090efd\",\n    \"categories_ids\": [\n      \"79c7e4d8-888c-48cc-b680-2e7f04b8d255\"\n    ],\n    \"date\": \"2028-02-01\",\n    \"type\": \"OUTFLOW\",\n    \"reference\": \"Reference\",\n    \"description\": \"Description\",\n    \"amount\": 100,\n    \"external_id\": \"123456789\",\n    \"sender\": {\n      \"document\": \"91.336.009/0001-23\",\n      \"document_type\": \"CNPJ\",\n      \"display_name\": \"Juan Carlos Da Silva\",\n      \"reference\": \"Pagamento\"\n    },\n    \"beneficiary\": {\n      \"document\": \"34.267.781/0001-05\",\n      \"document_type\": \"CNPJ\",\n      \"display_name\": \"Alison\",\n      \"reference\": \"Pagamento\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"code\\\": 456,\\n    \\\"type\\\": \\\"INVALID_REQUEST_BODY\\\",\\n    \\\"message\\\": \\\"Invalid request body\\\",\\n    \\\"trace_id\\\": \\\"d7640f6728efb826\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "8d33685e-ffe9-4114-a0d7-f240b79ae823",
+              "name": "404",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "[\n  {\n    \"account_id\": \"bb01472b-e39e-467c-9661-99e48b090efd\",\n    \"categories_ids\": [\n      \"79c7e4d8-888c-48cc-b680-2e7f04b8d255\"\n    ],\n    \"date\": \"2028-02-01\",\n    \"type\": \"OUTFLOW\",\n    \"reference\": \"Reference\",\n    \"description\": \"Description\",\n    \"amount\": 100,\n    \"external_id\": \"123456789\",\n    \"sender\": {\n      \"document\": \"91.336.009/0001-23\",\n      \"document_type\": \"CNPJ\",\n      \"display_name\": \"Juan Carlos Da Silva\",\n      \"reference\": \"Pagamento\"\n    },\n    \"beneficiary\": {\n      \"document\": \"34.267.781/0001-05\",\n      \"document_type\": \"CNPJ\",\n      \"display_name\": \"Alison\",\n      \"reference\": \"Pagamento\"\n    }\n  }\n]",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"code\\\": 620,\\n    \\\"type\\\": \\\"ACCOUNT_NOT_FOUND\\\",\\n    \\\"message\\\": \\\"Account resource not found.\\\",\\n    \\\"trace_id\\\": \\\"8d274b5b5c502dbe\\\"\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "9b5d74dc-04e0-4d85-9b44-226d4ffa8701",
+          "name": "List Transactions",
+          "request": {
+            "name": "List Transactions",
+            "description": {
+              "content": "",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "v1",
+                "transactions"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "page",
+                  "value": "0",
+                  "description": "(Required) Page Number"
+                },
+                {
+                  "disabled": false,
+                  "key": "size",
+                  "value": "50",
+                  "description": "(Required) Page Size"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateFrom",
+                  "value": "<date>",
+                  "description": "(Required) Transaction Date From"
+                },
+                {
+                  "disabled": false,
+                  "key": "dateTo",
+                  "value": "<date>",
+                  "description": "(Required) Transaction Date To"
+                },
+                {
+                  "disabled": false,
+                  "key": "fiscalNumber",
+                  "value": "<string>",
+                  "description": "Account Fiscal Number"
+                }
+              ],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3f243f29-57bf-424b-a1b6-522f00b350d1",
+              "name": "200",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "50"
+                    },
+                    {
+                      "key": "dateFrom",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "dateTo",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "fiscalNumber",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{\\n    \\\"content\\\": [\\n        {\\n            \\\"id\\\": \\\"79470875-dcdc-447b-8bd2-881f1ae6be2e\\\",\\n            \\\"externalId\\\": \\\"20250401-2201-EMP600016\\\",\\n            \\\"cnpj\\\": \\\"56941234567890\\\",\\n            \\\"branch\\\": \\\"0001\\\",\\n            \\\"accountNumber\\\": \\\"654321-0\\\",\\n            \\\"currency\\\": \\\"BRL\\\",\\n            \\\"amount\\\": 22.00,\\n            \\\"date\\\": \\\"2025-04-01\\\",\\n            \\\"type\\\": \\\"INFLOW\\\",\\n            \\\"mode\\\": \\\"CONTAREMUNERADA\\\",\\n            \\\"description\\\": \\\"REPASSE CONTA REMUNERADA CLIENTE\\\",\\n            \\\"redemptionProcessed\\\": false\\n        }\\n    ],\\n    \\\"first\\\": true,\\n    \\\"last\\\": true,\\n    \\\"pageNumber\\\": 0,\\n    \\\"pageSize\\\": 50,\\n    \\\"totalElements\\\": 1,\\n    \\\"totalPages\\\": 1\\n}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "fa693465-a4db-4bf9-9687-132eda7b7d31",
+              "name": "400",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "v1",
+                    "transactions"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "page",
+                      "value": "0"
+                    },
+                    {
+                      "key": "size",
+                      "value": "50"
+                    },
+                    {
+                      "key": "dateFrom",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "dateTo",
+                      "value": "<date>"
+                    },
+                    {
+                      "key": "fiscalNumber",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Bad Request",
+              "code": 400,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "\"{}\"",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://api.datanomik.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "7376fa4a-d377-4e76-8426-5fa9de43b8ee",
+    "name": "openbanking-api Accounts Transactions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "",
+      "type": "text/plain"
+    }
+  }
+}

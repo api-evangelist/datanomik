@@ -1,0 +1,317 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "openbanking-api Accounts API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Accounts",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Account Position",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/v1/accounts/position",
+            "params": [
+              {
+                "name": "linkId",
+                "value": "",
+                "type": "query",
+                "description": "Identifier of the link from which you want to get detailed information about."
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query",
+                "description": "Country code in ISO Alpha-2 format"
+              },
+              {
+                "name": "institution",
+                "value": "",
+                "type": "query",
+                "description": "Institution name"
+              },
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "Identifier of the account from which you want to get detailed information about."
+              },
+              {
+                "name": "accountNumber",
+                "value": "",
+                "type": "query",
+                "description": "Account number in the institution"
+              },
+              {
+                "name": "accountType",
+                "value": "",
+                "type": "query",
+                "description": "Account type, such as SAVING, CHECKING, etc"
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "Currency code in ISO 4217 format"
+              },
+              {
+                "name": "availableBalanceGte",
+                "value": "",
+                "type": "query",
+                "description": "Available balance greater than or equals"
+              },
+              {
+                "name": "availableBalanceLte",
+                "value": "",
+                "type": "query",
+                "description": "Available balance less than or equals"
+              },
+              {
+                "name": "currentBalanceGte",
+                "value": "",
+                "type": "query",
+                "description": "Current balance greater than or equals"
+              },
+              {
+                "name": "currentBalanceLte",
+                "value": "",
+                "type": "query",
+                "description": "Current balance less than or equals"
+              },
+              {
+                "name": "updateAtFrom",
+                "value": "",
+                "type": "query",
+                "description": "Date format: YYYY-MM-dd HH:mm:ss"
+              },
+              {
+                "name": "updateAtTo",
+                "value": "",
+                "type": "query",
+                "description": "Date format: YYYY-MM-dd HH:mm:ss"
+              },
+              {
+                "name": "institutionId",
+                "value": "",
+                "type": "query",
+                "description": "Institution Id"
+              },
+              {
+                "name": "ownerId",
+                "value": "",
+                "type": "query",
+                "description": "Owner Id"
+              },
+              {
+                "name": "workspaceView",
+                "value": "",
+                "type": "query",
+                "description": "View name or id"
+              }
+            ]
+          },
+          "docs": "List all accounts of yours links"
+        },
+        {
+          "info": {
+            "name": "Detail Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/v1/accounts/:id",
+            "params": [
+              {
+                "name": "id",
+                "value": "",
+                "type": "path",
+                "description": "Account identifier (UUID)"
+              },
+              {
+                "name": "workspaceView",
+                "value": "",
+                "type": "query",
+                "description": "View name or id"
+              }
+            ]
+          },
+          "docs": "Account detail information"
+        },
+        {
+          "info": {
+            "name": "List Accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/v1/accounts",
+            "params": [
+              {
+                "name": "linkId",
+                "value": "",
+                "type": "query",
+                "description": "Identifier of the link from which you want to get detailed information about."
+              },
+              {
+                "name": "country",
+                "value": "",
+                "type": "query",
+                "description": "Country code in ISO Alpha-2 format"
+              },
+              {
+                "name": "institution",
+                "value": "",
+                "type": "query",
+                "description": "Institution name"
+              },
+              {
+                "name": "accountId",
+                "value": "",
+                "type": "query",
+                "description": "Identifier of the account from which you want to get detailed information about."
+              },
+              {
+                "name": "accountNumber",
+                "value": "",
+                "type": "query",
+                "description": "Account number in the institution"
+              },
+              {
+                "name": "accountType",
+                "value": "",
+                "type": "query",
+                "description": "Account type, such as SAVING, CHECKING, etc"
+              },
+              {
+                "name": "currency",
+                "value": "",
+                "type": "query",
+                "description": "Currency code in ISO 4217 format"
+              },
+              {
+                "name": "availableBalanceGte",
+                "value": "",
+                "type": "query",
+                "description": "Available balance greater than or equals"
+              },
+              {
+                "name": "availableBalanceLte",
+                "value": "",
+                "type": "query",
+                "description": "Available balance less than or equals"
+              },
+              {
+                "name": "currentBalanceGte",
+                "value": "",
+                "type": "query",
+                "description": "Current balance greater than or equals"
+              },
+              {
+                "name": "currentBalanceLte",
+                "value": "",
+                "type": "query",
+                "description": "Current balance less than or equals"
+              },
+              {
+                "name": "updateAtFrom",
+                "value": "",
+                "type": "query",
+                "description": "Date format: YYYY-MM-dd HH:mm:ss"
+              },
+              {
+                "name": "updateAtTo",
+                "value": "",
+                "type": "query",
+                "description": "Date format: YYYY-MM-dd HH:mm:ss"
+              },
+              {
+                "name": "institutionId",
+                "value": "",
+                "type": "query",
+                "description": "Institution Id"
+              },
+              {
+                "name": "ownerId",
+                "value": "",
+                "type": "query",
+                "description": "Owner Id"
+              },
+              {
+                "name": "blocked",
+                "value": "",
+                "type": "query",
+                "description": "Blocked true or false"
+              },
+              {
+                "name": "showBalanceInfo",
+                "value": "",
+                "type": "query",
+                "description": "Show Extra Balance Information"
+              },
+              {
+                "name": "workspaceView",
+                "value": "",
+                "type": "query",
+                "description": "View name or id"
+              }
+            ]
+          },
+          "docs": "List all accounts of yours links"
+        },
+        {
+          "info": {
+            "name": "Detail Account",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/api/v1/accounts/",
+            "params": [
+              {
+                "name": "fiscalNumber",
+                "value": "",
+                "type": "path",
+                "description": "Account Fiscal Number"
+              }
+            ]
+          },
+          "docs": "Detail Account"
+        },
+        {
+          "info": {
+            "name": "List Accounts",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://api.datanomik.com/api/v1/accounts",
+            "params": [
+              {
+                "name": "page",
+                "value": "",
+                "type": "query",
+                "description": "Page Number"
+              },
+              {
+                "name": "size",
+                "value": "",
+                "type": "query",
+                "description": "Page Size"
+              }
+            ]
+          },
+          "docs": "List Accounts"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

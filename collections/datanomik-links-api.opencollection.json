@@ -1,0 +1,37 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "openbanking-api Accounts Links API",
+    "version": "1.0"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Links",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Sync Assets",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.datanomik.com/v1/links/sync/assets/:linkId",
+            "params": [
+              {
+                "name": "linkId",
+                "value": "",
+                "type": "query",
+                "description": "Identifier of the link from which you want to get detailed information about."
+              }
+            ]
+          },
+          "docs": "Consolidated information of yours links with owners, users, accounts and balances"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
