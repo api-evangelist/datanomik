@@ -44,6 +44,19 @@ tags:
 - Treasury Management
 - Cash Management
 - Payments
+- Pix
+- Financial Data
+- Bank Connectivity
+- Brazil
+- LatAm
+- Fintech
+tags_raw:
+- Company
+- Open Finance
+- Open Banking
+- Treasury Management
+- Cash Management
+- Payments
 - PIX
 - Financial Data
 - Bank Connectivity
@@ -62,6 +75,8 @@ apis:
   humanURL: https://docs.datanomik.com/docs/getting-started
   baseURL: https://api.datanomik.com
   tags:
+  - Account
+  tags_raw:
   - Accounts
   properties:
   - type: OpenAPI
@@ -74,6 +89,8 @@ apis:
   humanURL: https://docs.datanomik.com/docs/getting-started
   baseURL: https://api.datanomik.com
   tags:
+  - Application
+  tags_raw:
   - Applications
   properties:
   - type: OpenAPI
@@ -170,6 +187,8 @@ apis:
   humanURL: https://docs.datanomik.com/docs/getting-started
   baseURL: https://api.datanomik.com
   tags:
+  - Transaction
+  tags_raw:
   - Transactions
   properties:
   - type: OpenAPI
