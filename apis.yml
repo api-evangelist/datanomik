@@ -62,7 +62,7 @@ tags:
 - Financial Data
 - Bank Connectivity
 - Brazil
-- LatAm
+- Latin America
 - Fintech
 tags_raw:
 - Company
@@ -141,6 +141,8 @@ apis:
   humanURL: https://docs.datanomik.com/docs/getting-started
   baseURL: https://api.datanomik.com
   tags:
+  - Investment
+  tags_raw:
   - Investments
   properties:
   - type: OpenAPI
