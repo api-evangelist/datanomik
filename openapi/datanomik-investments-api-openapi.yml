@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: openbanking-api Accounts Investments API
+  title: openbanking-api Investments API
   version: '1.0'
 servers:
 - url: https://api.datanomik.com

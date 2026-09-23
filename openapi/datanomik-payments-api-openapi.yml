@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: openbanking-api Accounts Payments API
+  title: openbanking-api Payments API
   version: '1.0'
 servers:
 - url: https://api.datanomik.com

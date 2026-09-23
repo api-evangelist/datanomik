@@ -1,9 +1,11 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: openbanking-api Accounts API
+  title: Datanomik Accounts API
   version: '1.0'
+  description: 'Operations tagged Accounts across 2 of this provider''s published API definitions: datanomik-openbanking-openapi.json, datanomik-remuneration-openapi.json. Each path carries the servers of the definition it was published in.'
 servers:
 - url: https://api.datanomik.com
+- url: https://treasury-api.datanomik.com
 tags:
 - name: Accounts
 paths:
@@ -347,6 +349,8 @@ paths:
       deprecated: false
       tags:
       - Accounts
+    servers:
+    - url: https://api.datanomik.com
   /v1/accounts/{id}:
     get:
       summary: Detail Account
@@ -415,6 +419,8 @@ paths:
       deprecated: false
       tags:
       - Accounts
+    servers:
+    - url: https://api.datanomik.com
   /v1/accounts:
     get:
       summary: List Accounts
@@ -555,6 +561,8 @@ paths:
       deprecated: false
       tags:
       - Accounts
+    servers:
+    - url: https://api.datanomik.com
   /api/v1/accounts/:
     get:
       summary: Detail Account
@@ -650,6 +658,8 @@ paths:
       deprecated: false
       tags:
       - Accounts
+    servers:
+    - url: https://treasury-api.datanomik.com
   /api/v1/accounts:
     get:
       summary: List Accounts
@@ -784,8 +794,13 @@ paths:
       deprecated: false
       tags:
       - Accounts
+    servers:
+    - url: https://treasury-api.datanomik.com
 components:
   securitySchemes:
     sec0:
       type: http
       scheme: basic
+x-refined-from:
+- datanomik-openbanking-openapi.json
+- datanomik-remuneration-openapi.json
