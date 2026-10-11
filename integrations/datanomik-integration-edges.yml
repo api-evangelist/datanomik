@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/datanomik/integrations
+- https://n8n.io/integrations/datanomik/
+- https://composio.dev/toolkits/datanomik
+- https://monid.ai/tools/datanomik
+checked:
+- https://composio.dev/toolkits/datanomik
+- https://monid.ai/tools/datanomik
+- https://n8n.io/integrations/datanomik/
+- https://zapier.com/apps/datanomik/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
