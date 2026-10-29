@@ -64,6 +64,139 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Datanomik is a company surfaced as a portfolio company of a16z and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Datanomik is a Brazilian open finance and treasury-management platform that gives mid-to-large enterprises real-time, consolidated visibility across their bank accounts, balances, investments and payments through a single API. Authorized by Banco Central do Brasil as a Payment Transaction Initiator (ITP) and a participant in Brazil's Open Finance ecosystem, Datanomik connects to 30+ Brazilian financial institutions (Banco do Brasil, Itau, Bradesco, Caixa, BTG, Nubank, Safra, Mercado Pago and others) to deliver bank connectivity, cash and liquidity management, investment-portfolio tracking, cash-flow forecasting, cash pooling and transfers, automated bank statements and financial reporting. The company exposes two REST APIs - an OpenBanking data API and a Treasury/Remuneration API - secured with HTTP Basic API keys, documented on a ReadMe developer portal with a public Postman workspace and a dedicated sandbox. Backed by a16z, its clients include iFood, Magalu, Flamengo and Unimed.
 
-Backed by: a16z
+**Areas:** Company · Open Finance · Open Banking · Treasury Management · Cash Management · Payments · Pix · Financial Data · Bank Connectivity · Brazil · Latin America · Fintech
+
+## Datanomik on APIs.io
+
+Everything profiled for Datanomik is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/datanomik/](https://apis.io/providers/datanomik/)** — or go straight to one of the APIs or properties below.
+
+### APIs (10)
+
+- [Datanomik Accounts API](https://apis.io/apis/datanomik/datanomik-accounts-api/) — The Accounts API from Datanomik — 5 operation(s) for accounts.
+- [Datanomik Applications API](https://apis.io/apis/datanomik/datanomik-applications-api/) — The Applications API from Datanomik — 1 operation(s) for applications.
+- [Datanomik Balances API](https://apis.io/apis/datanomik/datanomik-balances-api/) — The Balances API from Datanomik — 1 operation(s) for balances.
+- [Datanomik General Owners API](https://apis.io/apis/datanomik/datanomik-general-owners-api/) — The General Owners API from Datanomik — 2 operation(s) for general owners.
+- [Datanomik Investments API](https://apis.io/apis/datanomik/datanomik-investments-api/) — The Investments API from Datanomik — 4 operation(s) for investments.
+- [Datanomik Links API](https://apis.io/apis/datanomik/datanomik-links-api/) — The Links API from Datanomik — 1 operation(s) for links.
+- [Datanomik Payment Slips API](https://apis.io/apis/datanomik/datanomik-payment-slips-api/) — The Payment Slips API from Datanomik — 1 operation(s) for payment slips.
+- [Datanomik Payments API](https://apis.io/apis/datanomik/datanomik-payments-api/) — The Payments API from Datanomik — 2 operation(s) for payments.
+- [Datanomik Pix Transactions API](https://apis.io/apis/datanomik/datanomik-pix-transactions-api/) — The Pix Transactions API from Datanomik — 2 operation(s) for pix transactions.
+- [Datanomik Transactions API](https://apis.io/apis/datanomik/datanomik-transactions-api/) — The Transactions API from Datanomik — 2 operation(s) for transactions.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [datanomik](https://apis.io/servers/datanomik/datanomik/)
+
+#### Agentic access (1)
+
+Which operations an agent can call, which act, and which need a human in the loop.
+
+- [Datanomik Agentic Access](https://apis.io/agentic-access/datanomik/datanomik-agentic-access/)
+
+#### Collections (10)
+
+Postman and Open Collection request collections.
+
+- [openbanking-api Accounts API](https://apis.io/collections/datanomik/open-datanomik-accounts-api/)
+- [openbanking-api Accounts Applications API](https://apis.io/collections/datanomik/open-datanomik-applications-api/)
+- [openbanking-api Accounts Balances API](https://apis.io/collections/datanomik/open-datanomik-balances-api/)
+- [openbanking-api Accounts General Owners API](https://apis.io/collections/datanomik/open-datanomik-general-owners-api/)
+- [openbanking-api Accounts Investments API](https://apis.io/collections/datanomik/open-datanomik-investments-api/)
+- [openbanking-api Accounts Links API](https://apis.io/collections/datanomik/open-datanomik-links-api/)
+- [openbanking-api Accounts Payment Slips API](https://apis.io/collections/datanomik/open-datanomik-payment-slips-api/)
+- [openbanking-api Accounts Payments API](https://apis.io/collections/datanomik/open-datanomik-payments-api/)
+- [openbanking-api Accounts Pix Transactions API](https://apis.io/collections/datanomik/open-datanomik-pix-transactions-api/)
+- [openbanking-api Accounts Transactions API](https://apis.io/collections/datanomik/open-datanomik-transactions-api/)
+
+#### Overlays (2)
+
+OpenAPI overlays, including conversational phrasing for each operation.
+
+- [Datanomik Openbanking Overlay](https://apis.io/overlays/datanomik/datanomik-openbanking-overlay/)
+- [Datanomik Remuneration Overlay](https://apis.io/overlays/datanomik/datanomik-remuneration-overlay/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Datanomik Authentication](https://apis.io/security/datanomik/datanomik-authentication/)
+- [Datanomik Domain Security](https://apis.io/security/datanomik/datanomik-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://datanomik.com)
+- [Documentation](https://docs.datanomik.com/docs/getting-started)
+- [Getting started](https://docs.datanomik.com/docs/quick-start)
+- [API reference](https://docs.datanomik.com/reference)
+- [Sign up](https://dashboard.datanomik.com/#/sign-up)
+- [Blog](https://datanomik.com/entre-tesoureiros)
+- [Compliance](https://datanomik.com/seguranca)
+- [Terms of service](https://datanomik.com/termos-e-condicoes)
+- [Privacy policy](https://datanomik.com/politica-de-privacidade)
+- [GitHub](https://github.com/datanomik)
+- [Status](https://status.datanomik.com)
+
+## API Evangelist rating
+
+**Kin Score 44.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 47.4 |
+| Contract governance | 18.2 |
+| Operational transparency | 18.4 |
+| Developer ergonomics | 57.7 |
+| Access clarity | 35.5 |
+
+**Agent readiness 22.6** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | derived (partial credit) |
+| OpenAPI Examples | verified |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | — |
+| Operation Distinctiveness | — |
+
+**Regulatory alignment 23.6** — Banking & Open Finance
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/datanomik/](https://apis.io/providers/datanomik/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Datanomik: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/datanomik/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
